@@ -7,11 +7,11 @@ tags:
   - ice-shelf dynamics
 authors:
   - name: Yongji Wang
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0002-3987-9038
     affiliation: "1, 2" # (Multiple affiliations must be quoted)
     corresponding: true # (This is how to denote the corresponding author)
   - name: Ching-Yao Lai
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0002-6552-7546
     affiliation: 2
 affiliations:
  - name: Department of Mathematics, New York University, USA

@@ -66,10 +66,11 @@ is approximate to a two-dimensional flow, independent of the vertical direction.
 which can be described by the the 2-D shallow-shelf Approximation (SSA) equation, 
 which reads:
 
-$$\Theta(x) = \left\{\begin{array}{l}
-0\textrm{ if } x < 0\cr
-1\textrm{ else}
-\end{array}\right.$$
+$$\begin{array}{l}
+\displaystyle \frac{\partial} {\partial x}\left(4 \mu h \frac{\partial  u}{\partial x} + 2\mu h \frac{\partial  v}{\partial y}  \right) 
+	+ \frac{\partial} {\partial y} \left( \mu h\frac{\partial  u}{\partial y} + \mu h\frac{\partial v}{\partial x}  \right)   = \rho g \left(1-\frac{\rho}{\rho_w}\right)h\frac{\partial h}{\partial x} \cr
+\displaystyle  \frac{\partial} {\partial x} \left(\mu h\frac{\partial  u}{\partial y} + \mu h\frac{\partial  v}{\partial x} \right) + \frac{\partial} {\partial y} \left( 2\mu h\frac{\partial u}{\partial x} + 4 \mu h\frac{\partial v}{\partial y} \right)  = \rho g \left(1-\frac{\rho}{\rho_w}\right)h\frac{\partial h}{\partial y}
+\end{array}$$
 
 You can also use plain \LaTeX for equations
 \begin{equation}\label{eq:fourier}

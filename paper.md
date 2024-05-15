@@ -1,11 +1,10 @@
 ---
-title: 'Gala: A Python package for galactic dynamics'
+title: 'Deep-learning-based differentiable solver for data assimilation and physics inversion of ice shelves'
 tags:
   - Python
-  - astronomy
-  - dynamics
-  - galactic dynamics
-  - milky way
+  - physics-informed deep learning
+  - geophysics
+  - ice-shelf dynamics
 authors:
   - name: Yongji Wang
     orcid: 0000-0000-0000-0000
@@ -21,12 +20,6 @@ affiliations:
    index: 2
 date: 14 May 2024
 bibliography: paper.bib
-
-# Optional fields if submitting to a AAS journal too, see this blog post:
-# https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
-aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
-aas-journal: Astrophysical Journal <- The name of the AAS journal.
----
 
 # Summary
 

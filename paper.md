@@ -58,10 +58,13 @@ scientific explorations of forthcoming data releases from the *Gaia* mission
 
 # Mathematics
 
-<!Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
+<!Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$>
 
-The governing equations for ice-shelf dynamics are the shallow-shelf Approximation 
-(SSA) equation, which reads:
+Ice shelf a viscous gradient current with slender-body shape. Due to the absence 
+of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
+is approximate to a two-dimensional flow, independent of the vertical direction. 
+which can be described by the the 2-D shallow-shelf Approximation (SSA) equation, 
+which reads:
 
 $$\Theta(x) = \left\{\begin{array}{l}
 0\textrm{ if } x < 0\cr

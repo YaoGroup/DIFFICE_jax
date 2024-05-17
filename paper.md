@@ -36,8 +36,9 @@ past decades, the viscosity and flow law of the entire ice shelves can be inferr
 from these data as an inverse problem. We present pinnIceShelf as a python package
 that can conduct data assimilation that convert descretized remote-sensing data to
 meshless and differentible functions, and to further infer the viscosity profile
-from that. The inversion algorithm is based on the Physics-informed Neural Networks.
-The pinnIceShelf respository provided a tutorial example
+from that. The inversion algorithm is based on the Physics-informed Neural 
+Networks (PINNs) and written in JAX. The pinnIceShelf respository provided 
+a tutorial example for users to better understand and implement the method.
 
 
 # Statement of need

@@ -24,15 +24,17 @@ bibliography: paper.bib
 
 # Summary
 
-The forces on stars, galaxies, and dark matter under external gravitational
-fields lead to the dynamical evolution of structures in the universe. The orbits
-of these bodies are therefore key to understanding the formation, history, and
-future state of galaxies. The field of "galactic dynamics," which aims to model
-the gravitating components of galaxies to study their structure and evolution,
-is now well-established, commonly taught, and frequently used in astronomy.
-Aside from toy problems and demonstrations, the majority of problems require
-efficient numerical tools, many of which require the same base code (e.g., for
-performing numerical orbit integration).
+Sea-level rise is one of the most serious implications of climate change (IPCC) 
+and will impact the lives of hundreds of millions of people. A dominant 
+contribution to rising sea levels is ice loss from Antarctica through the 
+collapse of ice shelves. However, the fundamental mechanical properties, such 
+as the viscosity and flow law of ice shelves, have been highly debated for 
+over half a century. Mis-representing these properties can lead to imprecise 
+forecasts of ice mass loss into the oceans and its consequent impact on global 
+sea-level rise. With the continent-wide remote-sensing data available over the
+past decades, the viscosity and flow law of the entire ice shelves can be inferred
+by either the classical numerical method and the recently-developed 
+physics-informed neural network.
 
 # Statement of need
 
@@ -61,8 +63,8 @@ scientific explorations of forthcoming data releases from the *Gaia* mission
 Ice shelf a viscous gradient current with slender-body shape. Due to the absence 
 of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
 is approximate to a two-dimensional flow, independent of the vertical direction. 
-Assuming isotropic property, the ice-shelf dynamics can can be described by the 
-the 2-D Shallow-Shelf Approximation (SSA) equations, which read:
+Assuming isotropic property, the ice-shelf dynamics is governed by the 2-D
+Shallow-Shelf Approximation (SSA) equations, which read:
 
 $$\begin{array}{l}
 \displaystyle \frac{\partial} {\partial x}\left(4 \mu h \frac{\partial  u}{\partial x} + 2\mu h \frac{\partial  v}{\partial y}  \right) 
@@ -70,7 +72,7 @@ $$\begin{array}{l}
 \displaystyle  \frac{\partial} {\partial x} \left(\mu h\frac{\partial  u}{\partial y} + \mu h\frac{\partial  v}{\partial x} \right) + \frac{\partial} {\partial y} \left( 2\mu h\frac{\partial u}{\partial x} + 4 \mu h\frac{\partial v}{\partial y} \right)  = \rho g \left(1-\frac{\rho}{\rho_w}\right)h\frac{\partial h}{\partial y}
 \end{array}$$
 
-where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity. To close the model of ice shelf, we also need an dynamic boundary condition at the calving front of the ice shelf, which reads
+where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity. The associated boundary conditions required for the equations is the *dynamic boundary condition* at the calving front of the ice shelf, which indicates the balance of the extensional stress of ice shelves with ocean hydrostatic pressure. It gives,
 
 $$\begin{array}{l}
 \displaystyle 2\mu \left(2\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) n_x + \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_y = \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_x  \cr

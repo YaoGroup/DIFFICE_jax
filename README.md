@@ -1,2 +1,2 @@
-# Ice_shelf_inversion
+# pinnIceModel
 Deep-learning-based differentiable solver for data assimilation and inverse modeling of ice shelves

@@ -33,8 +33,12 @@ over half a century. Mis-representing these properties can lead to imprecise
 forecasts of ice mass loss into the oceans and its consequent impact on global 
 sea-level rise. With the continent-wide remote-sensing data available over the
 past decades, the viscosity and flow law of the entire ice shelves can be inferred
-by either the classical numerical method and the recently-developed 
-physics-informed neural network.
+from these data as an inverse problem. We present pinnIceShelf as a python package
+that can conduct data assimilation that convert descretized remote-sensing data to
+meshless and differentible functions, and to further infer the viscosity profile
+from that. The inversion algorithm is based on the Physics-informed Neural Networks.
+The pinnIceShelf respository provided a tutorial example
+
 
 # Statement of need
 

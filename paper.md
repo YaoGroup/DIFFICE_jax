@@ -28,7 +28,7 @@ Sea-level rise is one of the most serious implications of climate change (IPCC)
 and will impact the lives of hundreds of millions of people. A dominant 
 contribution to rising sea levels is ice loss from Antarctica through the 
 collapse of ice shelves. However, the fundamental mechanical properties, such 
-as the viscosity and flow law of ice shelves, have been highly debated for 
+as viscosity and flow law of ice shelves, have been highly debated for 
 over half a century. Mis-representing these properties can lead to imprecise 
 forecasts of ice mass loss into the oceans and its consequent impact on global 
 sea-level rise. With the continent-wide remote-sensing data available over the

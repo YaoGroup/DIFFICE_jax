@@ -43,7 +43,7 @@ a tutorial example for users to better understand and implement the method.
 
 # Statement of need
 
-outline draft:
+rough outline:
 
 Infer rheology is important, need a reliable tool to do that
 

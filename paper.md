@@ -65,7 +65,7 @@ scientific explorations of forthcoming data releases from the *Gaia* mission
 
 # Mathematics
 
-Ice shelf a viscous gradient current with slender-body shape. Due to the absence 
+Ice shelf is a viscous gradient current with slender-body shape. Due to the absence 
 of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
 is approximate to a two-dimensional flow, independent of the vertical direction. 
 Assuming isotropic property, the ice-shelf dynamics is governed by the 2-D

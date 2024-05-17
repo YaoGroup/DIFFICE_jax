@@ -61,8 +61,8 @@ scientific explorations of forthcoming data releases from the *Gaia* mission
 Ice shelf a viscous gradient current with slender-body shape. Due to the absence 
 of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
 is approximate to a two-dimensional flow, independent of the vertical direction. 
-which can be described by the the 2-D shallow-shelf Approximation (SSA) equation, 
-which reads:
+Assuming isotropic property, the ice-shelf dynamics can can be described by the 
+the 2-D Shallow-Shelf Approximation (SSA) equations, which read:
 
 $$\begin{array}{l}
 \displaystyle \frac{\partial} {\partial x}\left(4 \mu h \frac{\partial  u}{\partial x} + 2\mu h \frac{\partial  v}{\partial y}  \right) 
@@ -70,12 +70,14 @@ $$\begin{array}{l}
 \displaystyle  \frac{\partial} {\partial x} \left(\mu h\frac{\partial  u}{\partial y} + \mu h\frac{\partial  v}{\partial x} \right) + \frac{\partial} {\partial y} \left( 2\mu h\frac{\partial u}{\partial x} + 4 \mu h\frac{\partial v}{\partial y} \right)  = \rho g \left(1-\frac{\rho}{\rho_w}\right)h\frac{\partial h}{\partial y}
 \end{array}$$
 
-where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity. To close the model of ice shelf, we also need an dynamic boundary condition at the calving front of the ice shelf, which reads
+where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity. To close the model of ice shelf, we also need an dynamic boundary condition at the calving front of the ice shelf, which reads
 
 $$\begin{array}{l}
 \displaystyle 2\mu \left(2\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) n_x + \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_y = \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_x  \cr
 \displaystyle  \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_x  + 2\mu \left(\frac{\partial u}{\partial x} + 2\frac{\partial v}{\partial y} \right) n_y  =  \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y
-\end{array}$$
+\end{array} \quad \text{at} \  (x, y) \in {\partial \Omega_c} $$
+
+where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the local unit normal vector towards outwards to the calving front.
 
 
 You can also use plain \LaTeX for equations

@@ -43,16 +43,18 @@ a tutorial example for users to better understand and implement the method.
 
 # Statement of need
 
-`Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
-enables wrapping low-level languages (e.g., C) for speed without losing
-flexibility or ease-of-use in the user-interface. The API for `Gala` was
-designed to provide a class-based and user-friendly interface to fast (C or
-Cython-optimized) implementations of common operations such as gravitational
-potential and force evaluation, orbit integration, dynamical transformations,
-and chaos indicators for nonlinear dynamics. `Gala` also relies heavily on and
-interfaces well with the implementations of physical units and astronomical
-coordinate systems in the `Astropy` package [@astropy] (`astropy.units` and
-`astropy.coordinates`).
+outline draft:
+
+Infer rheology is important, need a reliable tool to do that
+
+the package involved unified data normalization method, best setting of
+hyper-parameter for the training, the optimal design of neural network structure.
+and the correct implementation of the optimizer.
+
+provide a wide range of example in the repository
+tutorial example using synthetic data for students,  
+regular example using real data for analyzing small ice shelf
+advanced example using real data for analyzing large ice shelves
 
 `Gala` was designed to be used by both astronomical researchers and by
 students in courses on gravitational dynamics or astronomy. It has already been

@@ -33,11 +33,11 @@ over half a century. Mis-representing these properties can lead to imprecise
 forecasts of ice mass loss into the oceans and its consequent impact on global 
 sea-level rise. With the continent-wide remote-sensing data available over the
 past decades, the viscosity and flow law of the entire ice shelves can be inferred
-from these data as an inverse problem. We present pinnIceShelf as a python package
+from these data as an inverse problem. We present `pinnIceShelf` as a python package
 that can conduct data assimilation that convert descretized remote-sensing data to
 meshless and differentible functions, and to further infer the viscosity profile
 from that. The inversion algorithm is based on the Physics-informed Neural 
-Networks (PINNs) and written in JAX. The pinnIceShelf respository provided 
+Networks (PINNs) and written in JAX. The `pinnIceShelf` respository provided 
 a tutorial example for users to better understand and implement the method.
 
 
@@ -65,7 +65,7 @@ scientific explorations of forthcoming data releases from the *Gaia* mission
 
 # Mathematics
 
-Ice shelf is a viscous gradient current with slender-body shape. Due to the absence 
+Ice shelf is a viscous gradient current that has slender-body shape. Due to the absence 
 of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
 is approximate to a two-dimensional flow, independent of the vertical direction. 
 Assuming isotropic property, the ice-shelf dynamics is governed by the 2-D

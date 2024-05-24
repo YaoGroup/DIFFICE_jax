@@ -58,7 +58,11 @@ across the entire Antarctica, the effective viscosity can be inferred as an inve
 problem by solving the Shallow-Shelf Approximation (SSA) equations, which governs
 the ice-shelf dynamics.
 
-Due to the potential high-level error or noise in the observational data, the 
+Due to the potential high-level error or noise in the observational data, inverse 
+problems need to be solved by specific techniques. In cyrosphere, conventional
+method for inverse problems includes control method [@Macayeal:1989], or called 
+adjoint method, which is quite challenging for beginners who have less background 
+in numerical methods to understand or use for solving diverse problem
 
 the package involved unified data normalization method, best setting of
 hyper-parameter for the training, the optimal design of neural network structure.

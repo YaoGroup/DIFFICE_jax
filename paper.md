@@ -86,6 +86,10 @@ tutorial example using synthetic data for students,
 regular example using real data for analyzing small ice shelf
 advanced example using real data for analyzing large ice shelves
 
+additional feature to mention: (differentiable, meshless)
+
+Question: existing library for convention method
+
 
 # Mathematics
 

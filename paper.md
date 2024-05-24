@@ -38,12 +38,23 @@ that can conduct data assimilation that convert descretized remote-sensing data 
 meshless and differentible functions, and to further infer the viscosity profile
 from that. The inversion algorithm is based on the Physics-informed Neural 
 Networks (PINNs) and written in JAX. The `pinnIceShelf` respository provided 
-a tutorial example for users to better understand and implement the method.
+a tutorial example for users to have a good command of the method.
 
 
 # Statement of need
 
-rough outline:
+One of the main research focus of cryoshphere, or general field of geophyscs
+is to uncover hidden physical properties of different geophysical flows 
+on earth, such as Antarctica Ice Shelves. Ice shelves is the floating extension 
+of grounded ice sheet, which plays a critical role in slowing ice discharging 
+into the ocean, mitigating the global sea level rise. One of the crtical physical 
+properties of Ice Shelves that governs both its initial discharging from the ground
+to its final breakup into the ocean is the effective ice viscosity, which is also 
+critical for unveiling the flow law of ice shelves. However, the large lengthscale
+and long timescale of the ice-shelf flow make the in-situ measurement
+of its properties very challenging anc costly. With the availability of
+remote-sensing data for both ice velocity and thickness across all the Antarctic
+Ice Shelves, an alternative way to reveal their hidden physical properties to 
 
 Infer rheology is important, need a reliable tool to do that
 

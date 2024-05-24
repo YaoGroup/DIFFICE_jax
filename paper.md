@@ -52,11 +52,13 @@ properties of Ice Shelves that governs both its initial discharging from the gro
 to its final breakup into the ocean is the effective ice viscosity, which is also 
 critical for unveiling the flow law of ice shelves. However, the large lengthscale
 and long timescale of the ice-shelf flow make the in-situ measurement
-of its properties very challenging anc costly. With the availability of
-remote-sensing data for both ice velocity and thickness across all the Antarctic
-Ice Shelves, an alternative way to reveal their hidden physical properties to 
+of the viscosity significantly challenging anc costly. Alternatively, with the 
+high-resolution data available for both the ice velocity $(u, v)$ and thickness $h$ 
+across the entire Antarctica, the effective viscosity can be inferred as an inverse
+problem by solving the Shallow-Shelf Approximation (SSA) equations, which governs
+the ice-shelf dynamics.
 
-Infer rheology is important, need a reliable tool to do that
+Due to the potential high-level error or noise in the observational data, the 
 
 the package involved unified data normalization method, best setting of
 hyper-parameter for the training, the optimal design of neural network structure.

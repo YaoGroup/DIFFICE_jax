@@ -59,11 +59,17 @@ problem by solving the Shallow-Shelf Approximation (SSA) equations, which govern
 the ice-shelf dynamics.
 
 Due to the potential high-level error or noise in the observational data, inverse 
-problems need to be solved by specific techniques. In cyrosphere, conventional
+problems are more difficult to solve than an forward problem. In cyrosphere, conventional
 method for inverse problems includes control method [@Macayeal:1989], or called 
-adjoint method, which is quite challenging for beginners, especially with less 
+adjoint method, which is quite challenging for beginners, especially those with less 
 knowledge in applied mathematics or numerical methods to implement for solving
-diverse problems. 
+diverse problems. In addition, a deep-learning based method, named physics-informed
+neural networks (PINNs) was newly-developed and validated to be efficient for solving
+inverse problem. Compared with the ajoint method, PINNs has no need to involve extra ajoint 
+equations and associated adjoint conditions for any inverse problems and the default
+setting (including the network structure and the optimization methods) tends to denoise 
+the high-frequency error and noise involved in the data and no extra regularization term 
+are required in the cost function for solving the inverse problem.
 
 
 the package involved unified data normalization method, best setting of

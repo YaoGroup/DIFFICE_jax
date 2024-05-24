@@ -61,8 +61,10 @@ the ice-shelf dynamics.
 Due to the potential high-level error or noise in the observational data, inverse 
 problems need to be solved by specific techniques. In cyrosphere, conventional
 method for inverse problems includes control method [@Macayeal:1989], or called 
-adjoint method, which is quite challenging for beginners who have less background 
-in numerical methods to understand or use for solving diverse problem
+adjoint method, which is quite challenging for beginners, especially with less 
+knowledge in applied mathematics or numerical methods to implement for solving
+diverse problems. 
+
 
 the package involved unified data normalization method, best setting of
 hyper-parameter for the training, the optimal design of neural network structure.

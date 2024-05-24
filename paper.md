@@ -59,19 +59,21 @@ problem by solving the Shallow-Shelf Approximation (SSA) equations, which govern
 the ice-shelf dynamics.
 
 Due to the potential high-level error or noise in the observational data, inverse 
-problems are more difficult to solve than an forward problem. In cyrosphere, conventional
-method for inverse problems includes control method [@Macayeal:1989], or called 
-adjoint method, which is quite challenging for beginners, especially those with less 
-knowledge in applied mathematics or numerical methods to implement for solving
-diverse problems. In addition, a deep-learning based method, named physics-informed
-neural networks (PINNs) was newly-developed and validated to be efficient for solving
-inverse problem. Compared with the ajoint method, PINNs has no need to involve extra ajoint 
-equations and associated adjoint conditions for any inverse problems and the default
-setting (including the network structure and the optimization methods) tends to denoise 
-the high-frequency error and noise involved in the data and no extra regularization term 
-are required in the cost function for solving the inverse problem.
+problems are more difficult to solve than an forward problem. In cyrosphere, 
+conventional method for inverse problems includes control method [@Macayeal:1989], 
+or called adjoint method, which is, however, quite challenging to implement or 
+generalize for various problems, especially for beginners with less knowledge in 
+applied mathematics or classical numerical methods. Additionally, a newly-developed 
+deep-learning based method, named physics-informed neural networks (PINNs), are shown 
+to be efficient in solving inverse problem. Different from ajoint method, PINNs have 
+no need to introduce extra ajoint equations and associated adjoint boundary conditions 
+in the calculation, which are usually hard to derive for complicated problems. 
+Moreover, the default setting (including network structure and the optimization 
+methods) of PINNs tends to inherently denoise the high-frequency error and noise 
+involved in the data. Thus, there is no need to extra regularization terms in the cost
+function when solving the inverse problem.
 
-
+However, the 
 the package involved unified data normalization method, best setting of
 hyper-parameter for the training, the optimal design of neural network structure.
 and the correct implementation of the optimizer.
@@ -81,14 +83,6 @@ tutorial example using synthetic data for students,
 regular example using real data for analyzing small ice shelf
 advanced example using real data for analyzing large ice shelves
 
-`Gala` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
-design, and support for Astropy functionality in `Gala` will enable exciting
-scientific explorations of forthcoming data releases from the *Gaia* mission
-[@gaia] by students and experts alike.
 
 # Mathematics
 

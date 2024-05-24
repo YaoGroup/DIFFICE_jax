@@ -73,8 +73,11 @@ methods) of PINNs tends to inherently denoise the high-frequency error and noise
 involved in the data. Thus, there is no need to extra regularization terms in the cost
 function when solving the inverse problem.
 
-However, the 
-the package involved unified data normalization method, best setting of
+However, to infer the effective viscosity from the SSA equations and remote-sensing 
+data, the existing library or codes of PINNs available in public might be inadequate. 
+Additional settings of the neural networks, optimization method, pre-processing of both 
+the SSA equations and observational data are all essential to ensure the success for 
+the inversion. the package involved unified data normalization method, best setting of
 hyper-parameter for the training, the optimal design of neural network structure.
 and the correct implementation of the optimizer.
 

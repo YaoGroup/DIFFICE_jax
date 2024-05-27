@@ -91,8 +91,18 @@ viscosity inference includes: (1) data and equation normalization; (2) Optimal s
 equation weight; (3) Positive-definite design of network structure;(4) Residual-based
 random-sampling of data during training; (5) Extended-PINNs (XPINNs) for studying large
 ice shelves; (6) Inversion of anisotropic viscosity. The need for each of these features
-for the success of viscosity inference are summarized below.
+for the success of viscosity inference are explained below.
 
+Proper training of neural networks requires both input and output of the network to 
+be normalized, namely within range of $[-1, 1]$. However, the value of observational 
+data of ice velocity and thickness in their original unit differs for several order of
+magnitude. Both their values (output) and spatial positions (input), thus, need to be 
+normalized before being used for the training. After normalizing the data, the new
+SSA equation associated with the normalized quantities need to be derived, where each 
+term should have the magnitude of $O(1)$. `pinnIceShelf` provides the algorithm that 
+can automatically normalize the data and SSA equation for all different ice shelves.
+
+With the normalized 
 
 
 provide a wide range of example in the repository

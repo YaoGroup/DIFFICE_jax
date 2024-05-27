@@ -90,19 +90,31 @@ Critical features of `pinnIceShelf` that go beyond regular PINNs and are essenti
 viscosity inference includes: (1) data and equation normalization; (2) Optimal setting of 
 equation weight; (3) Positive-definite design of network structure;(4) Residual-based
 random-sampling of data during training; (5) Extended-PINNs (XPINNs) for studying large
-ice shelves; (6) Inversion of anisotropic viscosity. The need for each of these features
-for the success of viscosity inference are explained below.
+ice shelves; (6) Inversion of anisotropic viscosity. The need of these features to ensure
+the success of viscosity inference is explained below.
 
-Proper training of neural networks requires both input and output of the network to 
-be normalized, namely within range of $[-1, 1]$. However, the value of observational 
+First, proper training of neural networks requires both input and output of the network
+to be normalized, namely within range of $[-1, 1]$. However, the value of observational 
 data of ice velocity and thickness in their original unit differs for several order of
 magnitude. Both their values (output) and spatial positions (input), thus, need to be 
-normalized before being used for the training. After normalizing the data, the new
-SSA equation associated with the normalized quantities need to be derived, where each 
-term should have the magnitude of $O(1)$. `pinnIceShelf` provides the algorithm that 
-can automatically normalize the data and SSA equation for all different ice shelves.
+normalized before being used for the training. After normalizing the data, the new SSA
+equations and associated boundary conditions in terms of the normalized quantities need
+to be re-derived, in which each term should have the magnitude of $O(1)$. `pinnIceShelf` 
+provides the algorithm that can automatically normalize the data and the equations for 
+all different ice shelves.
 
-With the normalized 
+Second, The cost function of PINNs involves two terms, the data loss $\mathcal{L}_d$ 
+and the equation loss $\mathcal{L}_e$. For viscosity inference, the data loss 
+$\mathcal{L}_d$ quantifies the mismatch between the observed data and neural network 
+approximation $\mathrm{NN}_d$ via mean squared error, while the equation loss (or 
+boundary condition loss) is defined as the mean squared error between the right and 
+left-hand side of the equations (or boundary conditions). With the normalized data and
+equations, the data loss and equation loss are also normalized. The pre-factor of data 
+loss is often set to be 1. The value for the prefactor of the equation loss 
+and the boundary condition loss are optimized to minimizing the training error and are 
+verified to be universal for studying different ice shelves.
+
+Third, the 
 
 
 provide a wide range of example in the repository

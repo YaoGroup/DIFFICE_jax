@@ -77,7 +77,7 @@ However, to infer the effective viscosity from the SSA equations and remote-sens
 data, the existing library or codes of PINNs available online might be inadequate. 
 Additional settings for neural networks, optimization method, pre-processing of both 
 the SSA equations and observational data are all essential for the success of 
-the viscosity inversion vis PINNs. `pinnIceShelf' incorperate the optimal settings
+the viscosity inversion vis PINNs. `pinnIceShelf` incorperate the optimal settings
 of PINNs in all these aspects. All settings are either universal for training
 different ice shelves or automatically determined by the algorithm based on the 
 features of the given ice shelf. Hence, `pinnIceShelf` respository is designed to 

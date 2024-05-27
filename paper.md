@@ -83,12 +83,14 @@ different ice shelves or automatically determined by the algorithm based on the
 features of the given ice shelf. Hence, `pinnIceShelf` respository is designed to 
 make the inversion of ice-shelf viscosity more accessible for beginners or users 
 with less knowledge on PINNs. On the other end, the repository also provide enough
-details (including descrption and examples) of various algorithms that can be generalized
-to conduct cutting-edge research in the field.
+details of algorithms (including comments and examples) that can be employed
+or generalized to conduct cutting-edge research in the field.
 
-the package involved unified data normalization method, best setting of
-hyper-parameter for the training, the optimal design of neural network structure.
-and the correct implementation of the optimizer.
+The critical features of `pinnIceShelf` that go beyond regular PINNs and are essential
+for viscosity inference includes: (1) data and equation normalization; (2) Positive-definite
+design of network structure; (3) Optimal setting of equation weight; (4) Residual-based
+random-sampling of data during training; (5) Extended-PINNs (XPINNs) for studying large
+ice shelves; (6) Inversion of anisotropic viscosity. 
 
 provide a wide range of example in the repository
 tutorial example using synthetic data for students,  

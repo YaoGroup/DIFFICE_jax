@@ -90,8 +90,8 @@ Critical features of `pinnIceShelf` that go beyond regular PINNs and are essenti
 viscosity inference includes: (1) data and equation normalization; (2) Optimal setting of 
 equation weight; (3) Positive-definite design of network structure;(4) Residual-based
 random-sampling of data during training; (5) Extended-PINNs (XPINNs) for studying large
-ice shelves; (6) Inversion of anisotropic viscosity. The need of these features to ensure
-the success of viscosity inference is explained below.
+ice shelves; (6) Inversion of anisotropic viscosity. The necessity of these features to 
+ensure the success of viscosity inference is explained below.
 
 First, proper training of neural networks requires both input and output of the network
 to be normalized, namely within range of $[-1, 1]$. However, the value of observational 
@@ -114,7 +114,16 @@ loss is often set to be 1. The value for the prefactor of the equation loss
 and the boundary condition loss are optimized to minimizing the training error and are 
 verified to be universal for studying different ice shelves.
 
-Third, the 
+Third, in theory, effective viscosity $\mu$ is a physical quantity that must be positive 
+everywhere. In addition, evidence shows that the spatial variation of $\mu$ within the 
+ice shelf could cover several order of magnitude. Considering these two properties for the
+inferred viscosity $\mu$ via PINNs, we introduce the viscosity expression as 
+$\mu = \exp(\mathrm{NN}_\mu)$ where $\mathrm{NN}_\mu$ is the output of the fully-connected
+network created for $\mu$. This setting ensures the positive-definiteness of the inferred 
+viscosity and has been tested essential for inferring both local and global viscosity profile
+with high accuracy over large spatial domain.
+
+Fourth, 
 
 
 provide a wide range of example in the repository

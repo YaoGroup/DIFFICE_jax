@@ -74,10 +74,15 @@ involved in the data. Thus, there is no need to extra regularization terms in th
 function when solving the inverse problem.
 
 However, to infer the effective viscosity from the SSA equations and remote-sensing 
-data, the existing library or codes of PINNs available in public might be inadequate. 
-Additional settings of the neural networks, optimization method, pre-processing of both 
-the SSA equations and observational data are all essential to ensure the success for 
-the inversion. the package involved unified data normalization method, best setting of
+data, the existing library or codes of PINNs available online might be inadequate. 
+Additional settings for neural networks, optimization method, pre-processing of both 
+the SSA equations and observational data are all essential for the success of 
+the viscosity inversion vis PINNs. `pinnIceShelf' incorperate the optimal settings
+of PINNs in all these aspects. All settings are either universal for the training of
+different ice shelves or self-adjustable by the algorithm involved in the library 
+based on the auto-detection of different features of given ice shelf. 
+
+the package involved unified data normalization method, best setting of
 hyper-parameter for the training, the optimal design of neural network structure.
 and the correct implementation of the optimizer.
 

@@ -78,9 +78,13 @@ data, the existing library or codes of PINNs available online might be inadequat
 Additional settings for neural networks, optimization method, pre-processing of both 
 the SSA equations and observational data are all essential for the success of 
 the viscosity inversion vis PINNs. `pinnIceShelf' incorperate the optimal settings
-of PINNs in all these aspects. All settings are either universal for the training of
-different ice shelves or self-adjustable by the algorithm involved in the library 
-based on the auto-detection of different features of given ice shelf. 
+of PINNs in all these aspects. All settings are either universal for training
+different ice shelves or automatically determined by the algorithm based on the 
+features of the given ice shelf. Hence, `pinnIceShelf` respository is designed to 
+make the inversion of ice-shelf viscosity more accessible for beginners or users 
+with less knowledge on PINNs. On the other end, the repository also provide enough
+details (including descrption and examples) of various algorithms that can be generalized
+to conduct cutting-edge research in the field.
 
 the package involved unified data normalization method, best setting of
 hyper-parameter for the training, the optimal design of neural network structure.

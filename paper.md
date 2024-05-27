@@ -86,11 +86,14 @@ with less knowledge on PINNs. On the other end, the repository also provide enou
 details of algorithms (including comments and examples) that can be employed
 or generalized to conduct cutting-edge research in the field.
 
-The critical features of `pinnIceShelf` that go beyond regular PINNs and are essential
-for viscosity inference includes: (1) data and equation normalization; (2) Positive-definite
-design of network structure; (3) Optimal setting of equation weight; (4) Residual-based
+Critical features of `pinnIceShelf` that go beyond regular PINNs and are essential for
+viscosity inference includes: (1) data and equation normalization; (2) Optimal setting of 
+equation weight; (3) Positive-definite design of network structure;(4) Residual-based
 random-sampling of data during training; (5) Extended-PINNs (XPINNs) for studying large
-ice shelves; (6) Inversion of anisotropic viscosity. 
+ice shelves; (6) Inversion of anisotropic viscosity. The need for each of these features
+for the success of viscosity inference are summarized below.
+
+
 
 provide a wide range of example in the repository
 tutorial example using synthetic data for students,  

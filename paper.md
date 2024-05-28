@@ -159,6 +159,11 @@ anisotropic SSA equations with the associated boundary conditions, and the addit
 loss terms in the cost functions for the well-posedness of the inversion are detailedly 
 described in the `Anisotropic` subfolder under the Github repository. 
 
+In a nutshell, the combination of the above six features can ensure the successful 
+inversion of ice viscosity via PINNs. Apart from ease-of-use as mentioned above, PINNs
+have other advantages over the classical control method for solving inverse problems. 
+First, 
+
 To make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
 understandable and accessible to users in general, we provide a tutorial example that
 infers the ice viscosity from the synthetic data of ice velocity and thickness. Both

@@ -142,12 +142,12 @@ to be captured by one single neural network due to spectral biases of network tr
 To ensure the PINNs to capture the spatial variation of viscosity, `pinnIceShelf` adopted 
 the approach of extended physics-informed neural networks (X-PINNs) [@jagtap2020extended]
 for studying large ice shelves, which separate the training domains into several sub-regions
-and arrange different networks for them. In this approach, each network only focus on a 
-small sub-region of the large ice shelves, which allow them to capture the local profile with
-higher precision. We note that XPINNs required extra pre-processing of the observational data
-and need to involve extra constraint, namely, loss term in the cost function to guarantee the
-sucess of training. Detailed steps are documented in the `XPINNs` subfolder under the 
-'pinnIceShelf' repository.
+and arrange different networks for them. In this approach, each network is trained to learn
+a small sub-region of the large ice shelf, allowing it to capture the local variation with
+high precision. We note that XPINNs require extra pre-processing of the observational data
+and extra contraint or penalty terms in the cost function to guarantee the sucess of 
+training. Detailed requirements are documented in the `XPINNs` subfolder under the 
+Github repository.
 
 Sixth, prior studies showed that the inference of isotropic viscosity of ice shelves
 could be over-constraint by the remote-sensing data and the isotropic SSA equations, 
@@ -157,13 +157,20 @@ in fact anisotropic. The `pinnIceShelf` repository provides a closed algorithm w
 well-posed settings for inferring anisotropic viscosity. The derviation of the 
 anisotropic SSA equations with the associated boundary conditions, and the additional 
 loss terms in the cost functions for the well-posedness of the inversion are detailedly 
-described in the `Anisotropic` subfolder under the repository. Clear examples are 
-provided in the same subfolder to help users employ or further generalize the code.
+described in the `Anisotropic` subfolder under the Github repository. 
 
-provide a wide range of example in the repository
-tutorial example using synthetic data for students,  
-regular example using real data for analyzing small ice shelf
-advanced example using real data for analyzing large ice shelves
+To make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
+understandable and accessible to users in general, we provide a tutorial example that
+infers the ice viscosity from the synthetic data of ice velocity and thickness. Both
+datasets are created by solving the isotropic SSA equations and mass conservation 
+equation with a given viscosity profile numerically via COMSOL Multiphysics. The COMSOL 
+file is provided in the `Tutorial` subfolder. Users can freely generate the new synthetic
+data by changing the given viscosity profile and test whether the PINN algorithm can 
+infer the correct viscosity profile as given from the synthetic data. We note that the
+tutorial example only contains the first four features of `pinnIceShelf`. For the last 
+two advanced features: (5) extended-PINNs approach and (6) inversion of anisotropic 
+viscosity, well-documented examples for selected ice shelves are provided in their 
+corresponding subfolders to help users employ or further generalize the methods.
 
 additional feature to mention: (differentiable, meshless)
 

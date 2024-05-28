@@ -89,7 +89,7 @@ or generalized to conduct cutting-edge research in the field.
 Critical features of `pinnIceShelf` that go beyond regular PINNs and are essential for
 viscosity inference includes: (1) data and equation normalization; (2) Optimal setting of 
 equation weight; (3) Positive-definite design of network structure;(4) Residual-based
-random-sampling of data during training; (5) Extended-PINNs (XPINNs) for studying large
+re-sampling of points during training; (5) Extended-PINNs (XPINNs) for studying large
 ice shelves; (6) Inversion of anisotropic viscosity. The necessity of these features to 
 ensure the success of viscosity inference is explained below.
 
@@ -127,10 +127,14 @@ Fourth, PINN training with observed data could often cheat as the observed data 
 contains error and noise. Here, cheating refers to the case where the networks overfit 
 the data provided in the training at the cost of generating larger error somewhere else,
 which leads to a small training loss but a large validation error. A basic way to resolve 
-this issue is to randomly re-sample both data points and the collocation points during
-the training, reducing the chance of cheating to occur. Here, the collocaiton point 
-refers to the point used to compute equation residue. Moreover, a better way is to r
-the high residue 
+this issue is to randomly re-sample both data points and the collocation points every 
+certain iteration during the training. This, to certain extents, can reduce the chance 
+of cheating to occur. Here, collocation points refer to the points used to compute 
+equation residue. Moreover, a better way to prevent cheating, which can also enahnce 
+training efficiency, is to re-samping the data and collocation points with higher 
+concentration at the position where the spatial profile of the network error with data
+or the equation residue is larger. This residual-based resampling scheme is embedded in
+`pinnIceShelf' as a default training option.
 
 
 provide a wide range of example in the repository

@@ -149,15 +149,15 @@ and need to involve extra constraint, namely, loss term in the cost function to 
 sucess of training. Detailed steps are documented in the `XPINNs` subfolder under the 
 'pinnIceShelf' repository.
 
-Sixth, prior studies showed that the inversion of isotropic viscosity of ice shelves could
-be an ill-posed problem that is over-constraint by the remote-sensing data and the isotropic
-SSA equations, resulting in non-existence of the solution. A solution to resolve the 
-over-constraint issue is to consider that ice-shelf has anisotropic effective viscosity. The 
-`pinnIceShelf` repository also provided the algorithms and setting required for inferring 
-the anisotropic viscosity. The derviation of the anisotropic SSA equation and the associated
-boundary condition, the cost functions for the training are detailed described in the 
-`anisotropic` subfolder under the 'pinnIceShelf' repository. Several examples are provided in
-the same subfolder.
+Sixth, prior studies showed that the inversion of isotropic viscosity of ice shelves
+could be an ill-posed problem that is over-constraint by the remote-sensing data and 
+the isotropic SSA equations, resulting in non-existence of the solution. A solution 
+to resolve the over-constraint issue is to consider that ice-shelf has anisotropic 
+effective viscosity. The `pinnIceShelf` repository also provided the algorithms and 
+setting required for inferring the anisotropic viscosity. The derviation of the 
+anisotropic SSA equation and the associated boundary condition, the cost functions
+for the training are detailed described in the `Anisotropic` subfolder under the 
+'pinnIceShelf' repository. Several examples are provided in the same subfolder.
 
 provide a wide range of example in the repository
 tutorial example using synthetic data for students,  

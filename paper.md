@@ -162,7 +162,21 @@ described in the `Anisotropic` subfolder under the Github repository.
 In a nutshell, the combination of the above six features can ensure the successful 
 inversion of ice viscosity via PINNs. Apart from ease-of-use as mentioned above, PINNs
 have other advantages over the classical control method for solving inverse problems. 
-First, 
+First, the training of PINNs are effective even when given irregularly sampled data, 
+such as the velocity (450 m resolution) and thickness data (500 m resolution) do not 
+lie on the same grid. Second, the outputs of classical numerical-based methods are 
+discretized points, which take an enormous amount of memory to store when the resolution
+is high. On the other hand, the outputs of PINNs are continuous functions parameterized
+by a fixed number of weights and biases, which require relatively little memory to store
+even when higher resolution is demanded. Third, because of the continous function 
+representation, after the networks are trained to approach the target function, we can 
+compute the exact derivative of the network output via automatic differentation, while
+computing the derivative of discretized points from the classical numerical method always
+contains truncation error. This is etremely useful when computing effective strain rate, 
+which is composed of the spatial derivative of the ice velocity. Fourth, neural network
+training tends to capture the main variation (low-frequency information) of the data, 
+preventing the disturbance of the high-frequency error or noise that are often involved in
+the data. Thus, no regulazation techniques need to be applied for the PINN training.
 
 To make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
 understandable and accessible to users in general, we provide a tutorial example that

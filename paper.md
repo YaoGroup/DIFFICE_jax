@@ -134,8 +134,20 @@ equation residue. Moreover, a better way to prevent cheating, which can also ena
 training efficiency, is to re-samping the data and collocation points with higher 
 concentration at the position where the spatial profile of the network error with data
 or the equation residue is larger. This residual-based resampling scheme is embedded in
-`pinnIceShelf' as a default training option.
+`pinnIceShelf` as a default training option.
 
+Fifth, large ice shelves, such as Ross, contains local structural provinces，causing the 
+physical quantities there with dense local variations. These local variation are difficult 
+to be captured by one single neural network due to spectral biases of network training.
+To ensure the PINNs to capture the spatial variation of viscosity, `pinnIceShelf` adopted 
+the approach of extended physics-informed neural networks (X-PINNs) [@jagtap2020extended]
+for studying large ice shelves, which separate the training domains into several sub-regions
+and arrange different networks for them. In this approach, each network only focus on a 
+small sub-region of the large ice shelves, which allow them to capture the local profile with
+higher precision. We note that XPINNs required extra pre-processing of the observational data
+and need to involve extra constraint, namely, loss term in the cost function to guarantee the
+sucess of training. Detailed steps are documented in `XPINNs` subfolder under the 'pinnIceShelf'
+repository.
 
 provide a wide range of example in the repository
 tutorial example using synthetic data for students,  

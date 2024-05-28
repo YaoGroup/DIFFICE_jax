@@ -123,12 +123,14 @@ network created for $\mu$. This setting ensures the positive-definiteness of the
 viscosity and enhance the training to capture both the local and global profile of 
 viscosity with high accuracy over large spatial domain.
 
-Fourth, PINN training with observed data tends to cheat as the observed data always contains
-error and noise. Here, cheating refers to the case where the networks overfit the data 
-provided in the training at the cost of generating larger error somewhere else, which 
-leads to a small training loss but a large validation error. A best way to resolve this issue
-is to keep re-sampling both data points and the collocation points over iterations. Here, the
-collocaiton point refers to the point that are used to compute equation residue.
+Fourth, PINN training with observed data could often cheat as the observed data always 
+contains error and noise. Here, cheating refers to the case where the networks overfit 
+the data provided in the training at the cost of generating larger error somewhere else,
+which leads to a small training loss but a large validation error. A basic way to resolve 
+this issue is to randomly re-sample both data points and the collocation points during
+the training, reducing the chance of cheating to occur. Here, the collocaiton point 
+refers to the point used to compute equation residue. Moreover, a better way is to r
+the high residue 
 
 
 provide a wide range of example in the repository

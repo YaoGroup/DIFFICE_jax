@@ -178,7 +178,7 @@ training tends to capture the main variation (low-frequency information) of the 
 preventing the disturbance of the high-frequency error or noise that are often involved in
 the data. Thus, no regulazation techniques need to be applied for the PINN training.
 
-To make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
+Finally. to make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
 understandable and accessible to users in general, we provide a tutorial example that
 infers the ice viscosity from the synthetic data of ice velocity and thickness. Both
 datasets are created by solving the isotropic SSA equations and mass conservation 

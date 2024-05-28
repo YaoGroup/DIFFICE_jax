@@ -114,16 +114,21 @@ loss is often set to be 1. The value for the prefactor of the equation loss
 and the boundary condition loss are optimized to minimizing the training error and are 
 verified to be universal for studying different ice shelves.
 
-Third, in theory, effective viscosity $\mu$ is a physical quantity that must be positive 
+Third, effective viscosity $\mu$ is a physical quantity that must be positive 
 everywhere. In addition, evidence shows that the spatial variation of $\mu$ within the 
-ice shelf could cover several order of magnitude. Considering these two properties for the
-inferred viscosity $\mu$ via PINNs, we introduce the viscosity expression as 
-$\mu = \exp(\mathrm{NN}_\mu)$ where $\mathrm{NN}_\mu$ is the output of the fully-connected
+ice shelf could cover several order of magnitude. Considering these two properties of
+viscosity $\mu$ to be captured by PINNs, we introduce the viscosity expression as 
+$\mu = \exp(\mathrm{NN_\mu})$ where $\mathrm{NN}_\mu$ is the output of the fully-connected
 network created for $\mu$. This setting ensures the positive-definiteness of the inferred 
-viscosity and has been tested essential for inferring both local and global viscosity profile
-with high accuracy over large spatial domain.
+viscosity and enhance the training to capture both the local and global profile of 
+viscosity with high accuracy over large spatial domain.
 
-Fourth, 
+Fourth, PINN training with observed data tends to cheat as the observed data always contains
+error and noise. Here, cheating refers to the case where the networks overfit the data 
+provided in the training at the cost of generating larger error somewhere else, which 
+leads to a small training loss but a large validation error. A best way to resolve this issue
+is to keep re-sampling both data points and the collocation points over iterations. Here, the
+collocaiton point refers to the point that are used to compute equation residue.
 
 
 provide a wide range of example in the repository

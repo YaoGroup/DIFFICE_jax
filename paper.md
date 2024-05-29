@@ -63,7 +63,7 @@ the ice-shelf dynamics.
 
 Due to the potential high-level error or noise in the observational data, inverse 
 problems are more difficult to solve than an forward problem. In cyrosphere, 
-conventional method for inverse problems includes control method [@Macayeal:1989], 
+conventional method for inverse problems includes control method [@MacAyeal:1989], 
 or called adjoint method, which is, however, quite challenging to implement or 
 generalize for various problems, especially for beginners with less knowledge in 
 applied mathematics or classical numerical methods. Additionally, a newly-developed 

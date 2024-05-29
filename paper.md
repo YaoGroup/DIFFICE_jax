@@ -143,16 +143,16 @@ or the equation residue is larger. This residual-based resampling scheme is embe
 
 Fifth, large ice shelves, such as Ross, contains local structural provinces，causing the 
 physical quantities there with dense local variations. These local variation are difficult 
-to be captured by one single neural network due to spectral biases of network training.
-To ensure the PINNs to capture the spatial variation of viscosity, `pinnIceShelf` adopted 
-the approach of extended physics-informed neural networks (X-PINNs) [@jagtap2020extended]
-for studying large ice shelves, which separate the training domains into several sub-regions
-and arrange different networks for them. In this approach, each network is trained to learn
-a small sub-region of the large ice shelf, allowing it to capture the local variation with
-high precision. We note that XPINNs require extra pre-processing of the observational data
-and extra contraint or penalty terms in the cost function to guarantee the sucess of 
-training. Detailed requirements are documented in the `XPINNs` subfolder under the 
-Github repository.
+to be captured by one single neural network due to the spectral biases of networks 
+[@rahaman2019spectral]. To ensure the PINNs to capture the spatial variation of viscosity, 
+The `pinnIceShelf` package adopts the approach of extended physics-informed neural networks
+(XPINNs) [@jagtap2020extended] for studying large ice shelves, which separates the training
+domains into several sub-regions and arrange different networks for them. In this approach,
+each network is trained to learn a specified small sub-region of the large ice shelf, 
+allowing it to capture the local variation with high precision. We note that XPINNs require
+extra pre-processing of the observational data and extra contraint or penalty terms in the 
+cost function to guarantee the sucess of training. Detailed requirements are documented in
+the `XPINNs` subfolder under the Github repository.
 
 Sixth, prior studies showed that the inference of isotropic viscosity of ice shelves
 could be over-constraint by the remote-sensing data and the isotropic SSA equations, 

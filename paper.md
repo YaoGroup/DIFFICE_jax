@@ -89,6 +89,8 @@ with less knowledge on PINNs. On the other end, the repository also provide enou
 details of algorithms (including comments and examples) that can be employed
 or generalized to conduct cutting-edge research in the field.
 
+# Features and advantages
+
 Critical features of `pinnIceShelf` that go beyond regular PINNs and are essential for
 viscosity inference includes: (1) data and equation normalization; (2) Optimal setting of 
 equation weight; (3) Positive-definite design of network structure;(4) Residual-based
@@ -181,7 +183,9 @@ training tends to capture the main variation (low-frequency information) of the 
 preventing the disturbance of the high-frequency error or noise that are often involved in
 the data. Thus, no regulazation techniques need to be applied for the PINN training.
 
-Finally. to make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
+# Accessibility
+
+To make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
 understandable and accessible to users in general, we provide a tutorial example that
 infers the ice viscosity from the synthetic data of ice velocity and thickness. Both
 datasets are created by solving the isotropic SSA equations and mass conservation 
@@ -193,8 +197,6 @@ tutorial example only contains the first four features of `pinnIceShelf`. For th
 two advanced features: (5) extended-PINNs approach and (6) inversion of anisotropic 
 viscosity, well-documented examples for selected ice shelves are provided in their 
 corresponding subfolders to help users employ or further generalize the methods.
-
-additional feature to mention: (differentiable, meshless)
 
 <!Question: existing library for convention method, (2) name of the libary. 
 (3) what is the figure to add in the paper.!>

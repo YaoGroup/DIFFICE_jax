@@ -37,11 +37,11 @@ from these data as an inverse problem. We present `pinnIceShelf` as a Python pac
 that can conduct data assimilation to convert descretized remote-sensing data into
 meshless and differentible functions, and further infer the viscosity profile
 from them. The inversion algorithm is based on physics-informed Neural 
-Networks (PINNs) and implemented in JAX. The `pinnIceShelf` package involves 
-advanced features in addition to regular PINNs algorithms, which are essential 
-for solving inversion problem correctly. The package is designed to be 
-user-friendly and accessible for beginners. The Github respository also provides
-tutorial examples for users at different levels to help master the method.
+Networks (PINNs) [@Raissi2019] and implemented in JAX [@jax2018github]. The 
+`pinnIceShelf` package involves advanced features in addition to regular PINNs
+algorithms, which are essential for solving inversion problem correctly. The package
+is designed to be user-friendly and accessible for beginners. The Github respository
+also provides tutorial examples for users at different levels to help master the method.
 
 
 # Statement of need
@@ -164,8 +164,8 @@ anisotropic SSA equations with the associated boundary conditions, and the addit
 loss terms in the cost functions for the well-posedness of the inversion are detailedly 
 described in the `Anisotropic` subfolder under the Github repository. 
 
-In a nutshell, the combination of the above six features can ensure the successful 
-inversion of ice viscosity via PINNs. Apart from ease-of-use as mentioned above, PINNs
+The combination of the above six features ensure PINNs to be a reliable tools for 
+inferring ice viscosity. Besides ease of use as mentioned above, PINNs
 have other advantages over the classical control method for solving inverse problems. 
 First, the training of PINNs are effective even when given irregularly sampled data, 
 such as the velocity (450 m resolution) and thickness data (500 m resolution) do not 

@@ -1,5 +1,5 @@
 ---
-title: 'Deep-learning-based differentiable solver for data assimilation and physics inversion of ice shelves'
+title: 'Deep-learning-based differentiable solver for data assimilation and inverse modeling of ice shelves'
 tags:
   - Python
   - physics-informed deep learning

@@ -92,21 +92,21 @@ examples, that can help users conduct cutting-edge research in the field.
 # Features and advantages
 
 Critical features of `pinnIceShelf` that go beyond regular PINNs and are essential for
-viscosity inference includes: (1) data and equation normalization; (2) Optimal setting of 
-equation weight; (3) Positive-definite design of network structure;(4) Residual-based
+viscosity inference includes: (1) data and equation normalization; (2) optimal setting of 
+equation weight; (3) design of networks with positive-definiteness; (4) Residual-based
 re-sampling of points during training; (5) Extended-PINNs (XPINNs) for studying large
 ice shelves; (6) Inversion of anisotropic viscosity. The necessity of these features to 
 ensure the success of viscosity inference is explained below.
 
 First, proper training of neural networks requires both input and output of the network
-to be normalized, namely within range of $[-1, 1]$. However, the value of observational 
-data of ice velocity and thickness in their original unit differs for several order of
-magnitude. Both their values (output) and spatial positions (input), thus, need to be 
-normalized before being used for the training. After normalizing the data, the new SSA
-equations and associated boundary conditions in terms of the normalized quantities need
-to be re-derived, in which each term should have the magnitude of $O(1)$. `pinnIceShelf` 
-provides the algorithm that can automatically normalize the data and the equations for 
-all different ice shelves.
+to be normalized, typically within the range of $[-1, 1]$. However, the values of 
+observational data of ice velocity and thickness differ by several order of magnitude
+in their original units. Therefore, both their values (output) and spatial positions 
+(input) need to be normalized before training. After normalizing the data, the new SSA
+equations and associated boundary conditions, expressed in terms of the normalized 
+quantities need to be re-derived, and each term should have a magnitude of $O(1)$. The
+`pinnIceShelf` package provides the algorithm that can automatically normalize the data
+and equations for all different ice shelves.
 
 Second, The cost function of PINNs involves two terms, the data loss $\mathcal{L}_d$ 
 and the equation loss $\mathcal{L}_e$. For viscosity inference, the data loss 

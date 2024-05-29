@@ -46,18 +46,18 @@ different levels gain a good command of the method.
 
 # Statement of need
 
-One of the main research focus of cryoshphere, or general field of geophyscs
-is to uncover hidden physical properties of different geophysical flows 
-on earth, such as Antarctica Ice Shelves. Ice shelves is the floating extension 
-of grounded ice sheet, which plays a critical role in slowing ice discharging 
-into the ocean, mitigating the global sea level rise. One of the crtical physical 
-properties of Ice Shelves that governs both its initial discharging from the ground
-to its final breakup into the ocean is the effective ice viscosity, which is also 
-critical for unveiling the flow law of ice shelves. However, the large lengthscale
-and long timescale of the ice-shelf flow make the in-situ measurement
-of the viscosity significantly challenging anc costly. Alternatively, with the 
-high-resolution data available for both the ice velocity $(u, v)$ and thickness $h$ 
-across the entire Antarctica, the effective viscosity can be inferred as an inverse
+One of the main research focus of cryoshphere, or broader field of geophyscs
+is to uncover the hidden physical properties of various geophysical flows 
+on Earth, such as Antarctica Ice Shelves. Ice shelves are the floating extensions 
+of grounded ice sheet, and play a critical role in slowing ice discharging 
+into the ocean, thereby mitigating the global sea level rise. A crtical physical
+properties of Ice Shelves that governs their initial discharging from the ground
+to their final breakup into the ocean is the effective ice viscosity, which is also 
+essential for understanding the flow law of ice shelves. However, the large length 
+scales and long time scales of ice-shelf flow make the in-situ measurement
+of the viscosity significantly challenging anc costly. Alternatively, with
+high-resolution data available for both ice velocity $(u, v)$ and thickness $h$ 
+across Antarctica, effective viscosity can be inferred as an inverse
 problem by solving the Shallow-Shelf Approximation (SSA) equations, which governs
 the ice-shelf dynamics.
 

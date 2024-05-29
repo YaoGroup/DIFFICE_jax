@@ -76,18 +76,18 @@ error and noise involved in the data. Thus, there is no need to employ regulariz
 techqniues, such as adding regularization terms in the cost function, when solving 
 inverse problems.
 
-However, to infer effective viscosity successfully from the SSA equations and 
-remote-sensing data, regular PINNs codes or algorithms available online might be inadequate. 
-Additional settings for neural networks, optimization method, pre-processing of both 
-the SSA equations and observational data are all essential for the success of 
-the viscosity inversion vis PINNs. `pinnIceShelf` incorperate the optimal settings
-of PINNs in all these aspects. All settings are either universal for training
-different ice shelves or automatically determined by the algorithm based on the 
-features of the given ice shelf. Hence, `pinnIceShelf` respository is designed to 
-make the inversion of ice-shelf viscosity more accessible for beginners or users 
-with less knowledge on PINNs. On the other end, the repository also provide enough
-details of algorithms (including comments and examples) that can be employed
-or generalized to conduct cutting-edge research in the field.
+However, to successfully infer effective viscosity from the SSA equations and 
+remote-sensing data, regular PINNs codes or algorithms available online might be 
+inadequate. Additional settings for neural networks, optimization methods, and 
+pre-processing of both the SSA equations and observational data are all essential
+for the success of viscosity inversion via PINNs. The `pinnIceShelf` package 
+incorperates the optimal settings of PINNs in all these aspects. These settings are
+either universally applicable for training different ice shelves or can be determined 
+automatically based on the data of given ice shelf. Overall, The `pinnIceShelf`
+package is designed to make the inversion of ice-shelf viscosity more accessible for
+beginners with less knowledge or experience on PINNs. On the other end, the package
+provides comprehensive details of the key algorithms involved, including comments and
+examples, that can help users conduct cutting-edge research in the field.
 
 # Features and advantages
 

@@ -68,13 +68,13 @@ or called adjoint method, which is, however, quite challenging to implement or
 generalize for various problems, especially for beginners with less knowledge in 
 applied mathematics or numerical methods. Additionally, a newly-developed 
 deep-learning based method, named physics-informed neural networks (PINNs), are shown 
-to be efficient in solving inverse problem. Different from the ajoint method, PINNs have 
-no need to introduce extra ajoint equations and associated adjoint boundary conditions 
-in the calculation, which are usually difficult to derive for complicated problems. 
-Moreover, the default setting (including network structure and the optimization 
-methods) of PINNs tends to inherently denoise the high-frequency error and noise 
-involved in the data. Thus, there is no need to add regularization terms in the cost
-function when solving inverse problems.
+to be efficient in solving inverse problem. Unlike the ajoint method, PINNs do not 
+require the introduction of extra ajoint equations and associated adjoint boundary
+conditions, which are usually difficult to derive for complicated problems. 
+Moreover, the inherent properties of neural networks tends to denoise high-frequency 
+error and noise involved in the data. Thus, there is no need to employ regularization 
+techqniues, such as adding regularization terms in the cost function, when solving 
+inverse problems.
 
 However, to infer effective viscosity successfully from the SSA equations and 
 remote-sensing data, regular PINNs codes or algorithms available online might be inadequate. 

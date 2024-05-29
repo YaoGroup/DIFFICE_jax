@@ -76,8 +76,8 @@ methods) of PINNs tends to inherently denoise the high-frequency error and noise
 involved in the data. Thus, there is no need to add regularization terms in the cost
 function when solving inverse problems.
 
-However, to infer the effective viscosity from the SSA equations and remote-sensing 
-data, the regular PINNs codes or algorithms available online might be inadequate. 
+However, to infer effective viscosity successfully from the SSA equations and 
+remote-sensing data, regular PINNs codes or algorithms available online might be inadequate. 
 Additional settings for neural networks, optimization method, pre-processing of both 
 the SSA equations and observational data are all essential for the success of 
 the viscosity inversion vis PINNs. `pinnIceShelf` incorperate the optimal settings

@@ -26,19 +26,22 @@ bibliography: paper.bib
 
 Sea-level rise is one of the most serious implications of climate change (IPCC) 
 and will impact the lives of hundreds of millions of people. A dominant 
-contribution to rising sea levels is ice loss from Antarctica through the 
+contributor to rising sea levels is ice loss from Antarctica due to the 
 collapse of ice shelves. However, the fundamental mechanical properties, such 
 as viscosity and flow law of ice shelves, have been highly debated for 
 over half a century. Mis-representing these properties can lead to imprecise 
 forecasts of ice mass loss into the oceans and its consequent impact on global 
 sea-level rise. With the continent-wide remote-sensing data available over the
 past decades, the viscosity and flow law of the entire ice shelves can be inferred
-from these data as an inverse problem. We present `pinnIceShelf` as a python package
-that can conduct data assimilation that convert descretized remote-sensing data to
-meshless and differentible functions, and to further infer the viscosity profile
-from that. The inversion algorithm is based on the Physics-informed Neural 
-Networks (PINNs) and written in JAX. The `pinnIceShelf` respository provided 
-a tutorial example for users to have a good command of the method.
+from these data as an inverse problem. We present `pinnIceShelf` as a Python package
+that can conduct data assimilation to convert descretized remote-sensing data into
+meshless and differentible functions, and further infer the viscosity profile
+from them. The inversion algorithm is based on physics-informed Neural 
+Networks (PINNs) and implemented in JAX. `pinnIceShelf` involved advanced features
+compared with regular PINNs algorithm, that enhance the success of solving inversion 
+problem. The package is designed to be user-friendly and accessible for beginners. 
+The Github respository also provides tutorial examples for users at
+different levels to gain a good command of the method.
 
 
 # Statement of need

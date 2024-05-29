@@ -63,21 +63,21 @@ the ice-shelf dynamics.
 
 Due to the potential high-level error or noise in the observational data, inverse 
 problems are more difficult to solve than an forward problem. In cyrosphere, 
-conventional method for inverse problems includes control method [@MacAyeal:1989], 
+conventional method for inverse problems includes control method [@MacAyeal1993], 
 or called adjoint method, which is, however, quite challenging to implement or 
 generalize for various problems, especially for beginners with less knowledge in 
-applied mathematics or classical numerical methods. Additionally, a newly-developed 
+applied mathematics or numerical methods. Additionally, a newly-developed 
 deep-learning based method, named physics-informed neural networks (PINNs), are shown 
-to be efficient in solving inverse problem. Different from ajoint method, PINNs have 
+to be efficient in solving inverse problem. Different from the ajoint method, PINNs have 
 no need to introduce extra ajoint equations and associated adjoint boundary conditions 
-in the calculation, which are usually hard to derive for complicated problems. 
+in the calculation, which are usually difficult to derive for complicated problems. 
 Moreover, the default setting (including network structure and the optimization 
 methods) of PINNs tends to inherently denoise the high-frequency error and noise 
-involved in the data. Thus, there is no need to extra regularization terms in the cost
-function when solving the inverse problem.
+involved in the data. Thus, there is no need to add regularization terms in the cost
+function when solving inverse problems.
 
 However, to infer the effective viscosity from the SSA equations and remote-sensing 
-data, the existing library or codes of PINNs available online might be inadequate. 
+data, the regular PINNs codes or algorithms available online might be inadequate. 
 Additional settings for neural networks, optimization method, pre-processing of both 
 the SSA equations and observational data are all essential for the success of 
 the viscosity inversion vis PINNs. `pinnIceShelf` incorperate the optimal settings
@@ -240,9 +240,7 @@ Citations to entries in paper.bib should be in
 [rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
 format.
 
-If you want to cite a software repository URL (e.g. something on GitHub without a preferred
-citation) then you can do it with the example BibTeX entry below for @fidgit.
-
+=
 For a quick reference, the following citation commands can be used:
 - `@author:2001`  ->  "Author et al. (2001)"
 - `[@author:2001]` -> "(Author et al., 2001)"

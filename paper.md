@@ -37,11 +37,11 @@ from these data as an inverse problem. We present `pinnIceShelf` as a Python pac
 that can conduct data assimilation to convert descretized remote-sensing data into
 meshless and differentible functions, and further infer the viscosity profile
 from them. The inversion algorithm is based on physics-informed Neural 
-Networks (PINNs) and implemented in JAX. `pinnIceShelf` involved advanced features
+Networks (PINNs) and implemented in JAX. `pinnIceShelf` involves advanced features
 compared to regular PINNs algorithm, that are essential for solving inversion 
 problem correctly. The package is designed to be user-friendly and accessible for 
 beginners. The Github respository also provides tutorial examples for users at
-different levels to gain a good command of the method.
+different levels gain a good command of the method.
 
 
 # Statement of need

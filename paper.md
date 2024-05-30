@@ -108,15 +108,15 @@ quantities need to be re-derived, and each term should have a magnitude of $O(1)
 `pinnIceShelf` package provides the algorithm that can automatically normalize the data
 and equations for all different ice shelves.
 
-Second, The cost function of PINNs involves two terms, the data loss $\mathcal{L}_d$ 
+Second, the cost function of PINNs involves two terms: the data loss $\mathcal{L}_d$ 
 and the equation loss $\mathcal{L}_e$. For viscosity inference, the data loss 
 $\mathcal{L}_d$ quantifies the mismatch between the observed data and neural network 
 approximation $\mathrm{NN}_d$ via mean squared error, while the equation loss (or 
 boundary condition loss) is defined as the mean squared error between the right and 
 left-hand side of the equations (or boundary conditions). With the normalized data and
 equations, the data loss and equation loss are also normalized. The pre-factor of data 
-loss is often set to be 1. The value for the prefactor of the equation loss 
-and the boundary condition loss are optimized to minimizing the training error and are 
+loss is often set to 1. The value for the prefactor of the equation loss 
+and the boundary condition loss are optimized to minimize the training error and are 
 verified to be universal for studying different ice shelves.
 
 Third, effective viscosity $\mu$ is a physical quantity that must be positive 

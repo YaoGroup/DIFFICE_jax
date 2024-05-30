@@ -214,8 +214,6 @@ The process of preparing the dataset from the raw data is documented in the `Dat
 subfolder, which help users create datasets for ice shelves not currently available 
 in the package.
 
-The raw data used for the pinnIceShelf package are downloaded from NASA MEaSUREs Phase-Based Antarctica Ice Velocity Map, Version 1 (NSIDC-0754) for ice velocity and from NASA MEaSUREs BedMachine Antarctica, Version 2 (NSIDC-0756) for ice thickness. These raw datasets are not provided in the package. Instead, the datasets available in the package (all in the 'Data' subfolder) are truncated from the raw data and saved separately for each ice shelf. Additional information, such as the position of the ice-shelf calving front, required for PINN training is also included in the dataset. The process of preparing the dataset from the raw data is documented in the Data subfolder, which helps users create datasets for ice shelves not currently available in the package.
-
 <!Question: existing library for convention method, (2) name of the libary. 
 (3) what is the figure to add in the paper.!>
 

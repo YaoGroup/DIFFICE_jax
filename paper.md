@@ -181,7 +181,7 @@ the network output via automatic differentiation. This is extremely useful, for 
 when computing the effective strain rate, which involves the spatial derivative of the 
 ice velocity. Fourth, neural network training tends to capture the main variations 
 (low-frequency information) in the data, preventing disturbances from high-frequency errors
-or noise often present in the data. Therefore, no regularization techniques are needed 
+or noise often present in the data. Therefore, no regularization techniques are required
 for PINN training.
 
 # Accessibility

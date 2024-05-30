@@ -201,7 +201,7 @@ of anisotropic viscosity, well-documented examples using real observational data
 selected ice shelves are provided in their corresponding subfolders to help users 
 employ or further generalize the methods.
 
-The raw data used in the `pinnIceShelf` package are downloaded from NASA MEaSUREs
+The raw data used for the `pinnIceShelf` package are downloaded from NASA MEaSUREs
 Phase-Based Antarctica Ice Velocity Map, Version 1 
 [(NSIDC-0754)](https://nsidc.org/data/nsidc-0754/versions/1), for ice velocity and
 from NASA MEaSUREs BedMachine Antarctica, Version 2

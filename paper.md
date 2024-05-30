@@ -184,7 +184,7 @@ ice velocity. Fourth, neural network training tends to capture the main variatio
 or noise often present in the data. Therefore, no regularization techniques are required
 for PINN training.
 
-# Accessibility
+# Availability
 
 To make the approach of inferring ice-shelf viscosity via PINNs more convincing, 
 understandable, and accessible to users, we provide a tutorial example that infers 
@@ -200,6 +200,18 @@ For the last two advanced features: (5) the extended-PINNs approach and (6) the 
 of anisotropic viscosity, well-documented examples using real observational data for 
 selected ice shelves are provided in their corresponding subfolders to help users 
 employ or further generalize the methods.
+
+The raw data used in the `pinnIceShelf' package are downloaded from NASA MEaSUREs
+Phase-Based Antarctica Ice Velocity Map, Version 1 
+[(NSIDC-0754)](https://nsidc.org/data/nsidc-0754/versions/1), for ice velocity and
+from NASA MEaSUREs BedMachine Antarctica, Version 2
+[(NSIDC-0756)](https://nsidc.org/data/nsidc-0756/versions/2), for ice thickness, which,
+however, are not provided in the package. The datasets available in the package (all in 
+the 'Data' subfolder) are truncated from the raw data and saved separately for 
+each ice shelf. Extra information, such as the position of ice-shelf calving front, that
+are required for the PINN training is also provided in the dataset. The preparation of
+the dataset from the raw data are documented in the `Data` subfolder, which help users
+create the dataset for the ice shelf that is not currently available in the package.
 
 <!Question: existing library for convention method, (2) name of the libary. 
 (3) what is the figure to add in the paper.!>
@@ -249,7 +261,7 @@ Figure sizes can be customized by adding an optional second parameter:
 
 # Acknowledgements
 
-We acknowledge contributions from Brigitta Sipocz, Syrtis Major, and Semyeong
+We acknowledge contributions from Charlie Cowen-Breen, Ray, and Semyeong
 Oh, and support from Kathryn Johnston during the genesis of this project.
 
 # References

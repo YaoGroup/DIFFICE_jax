@@ -186,19 +186,6 @@ for PINN training.
 
 # Accessibility
 
-To make the approach of inferring ice-shelf viscosity via PINNs more convincible, 
-understandable and accessible to users in general, we provide a tutorial example that
-infers the ice viscosity from the synthetic data of ice velocity and thickness. Both
-datasets are created by solving the isotropic SSA equations and mass conservation 
-equation with a given viscosity profile numerically via COMSOL Multiphysics. The COMSOL 
-file is provided in the `Tutorial` subfolder. Users can freely generate the new synthetic
-data by changing the given viscosity profile and test whether the PINN algorithm can 
-infer the correct viscosity profile as given from the synthetic data. We note that the
-tutorial example only contains the first four features of `pinnIceShelf`. For the last 
-two advanced features: (5) extended-PINNs approach and (6) inversion of anisotropic 
-viscosity, well-documented examples for selected ice shelves are provided in their 
-corresponding subfolders to help users employ or further generalize the methods.
-
 To make the approach of inferring ice-shelf viscosity via PINNs more convincing, 
 understandable, and accessible to users, we provide a tutorial example that infers 
 ice viscosity from synthetic data of ice velocity and thickness. Both datasets are 

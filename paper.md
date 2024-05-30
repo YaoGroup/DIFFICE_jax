@@ -196,9 +196,10 @@ data by changing the given viscosity profile and test whether the PINN algorithm
 can accurately infer the correct viscosity profile from the synthetic data.
 
 We note that the tutorial example includes only the first four features of pinnIceShelf. 
-For the last two advanced features—(5) the extended-PINNs approach and (6) the inversion
-of anisotropic viscosity—well-documented examples for selected ice shelves are provided 
-in their corresponding subfolders to help users employ or further generalize the methods.
+For the last two advanced features: (5) the extended-PINNs approach and (6) the inversion
+of anisotropic viscosity, well-documented examples using real observational data for 
+selected ice shelves are provided in their corresponding subfolders to help users 
+employ or further generalize the methods.
 
 <!Question: existing library for convention method, (2) name of the libary. 
 (3) what is the figure to add in the paper.!>

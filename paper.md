@@ -199,6 +199,20 @@ two advanced features: (5) extended-PINNs approach and (6) inversion of anisotro
 viscosity, well-documented examples for selected ice shelves are provided in their 
 corresponding subfolders to help users employ or further generalize the methods.
 
+To make the approach of inferring ice-shelf viscosity via PINNs more convincing, 
+understandable, and accessible to users, we provide a tutorial example that infers 
+ice viscosity from synthetic data of ice velocity and thickness. Both datasets are 
+created by solving the isotropic SSA equations and the mass conservation equation 
+with a given viscosity profile numerically via COMSOL Multiphysics. The COMSOL file
+is provided in the `Tutorial` subfolder. Users can freely generate new synthetic 
+data by changing the given viscosity profile and test whether the PINN algorithm 
+can accurately infer the correct viscosity profile from the synthetic data.
+
+We note that the tutorial example includes only the first four features of pinnIceShelf. 
+For the last two advanced features—(5) the extended-PINNs approach and (6) the inversion
+of anisotropic viscosity—well-documented examples for selected ice shelves are provided 
+in their corresponding subfolders to help users employ or further generalize the methods.
+
 <!Question: existing library for convention method, (2) name of the libary. 
 (3) what is the figure to add in the paper.!>
 
@@ -235,17 +249,6 @@ $$\begin{array}{l}
 
 where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the local unit normal vector towards outwards to the calving front.
 
-# Citations
-
-Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
-=
-For a quick reference, the following citation commands can be used:
-- `@author:2001`  ->  "Author et al. (2001)"
-- `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
 
 # Figures
 

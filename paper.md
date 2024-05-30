@@ -270,10 +270,22 @@ velocity and thickness, respectively, at different normalized locations ${\bf \h
 the training. Then, the equation loss  $\mathcal{L}_e$ reads
 
 $$ \mathcal{L_e} = \frac{\gamma_e}{N_e}\left(\sum_{i=1}^{N_e} [f_1({\bf \hat{x_e}})]^2 + 
-\sum_{i=1}^{N_e} [f_2({\bf \hat{x_e}})]^2 \right) + \frac{\gamma_b}{N_b}\left(\sum_{i=1}^{N_b} [g_1({\bf \hat{x_b}})]^2 + \sum_{i=1}^{N_b} [g_2({\bf \hat{x_b}})]^2 \right)
+	\sum_{i=1}^{N_e} [f_2({\bf \hat{x_e}})]^2 \right) 
+ 	+ \frac{\gamma_b}{N_b}\left(\sum_{i=1}^{N_b} [g_1({\bf \hat{x_b}})]^2 + \sum_{i=1}^{N_b} [g_2({\bf \hat{x_b}})]^2 \right)$$
 
 
-where $f_1$ and $f_2$ represent the residue of the normalized SSA equations \eqref{eq:dlx}-\eqref{eq:dly}, and $g_1$ and $g_2$ are residues of the normalized dynamic boundary conditions \eqref{eq:bdx}-\eqref{eq:bdy}. ${\bf \hat{x}_e}$ and ${\bf \hat{x}_b}$ are the normalized locations of the collocations points to evaluate the residue of equations and boundary conditions, respectively. $N_e$ and $N_b$ are their total numbers. Here, the residue of a equation indicates the left-hand side minus of the right-hand side of the equation. $\gamma_e$ and $\gamma_b$ are the loss weights for the equation and boundary conditions, which are the hyper-parameter set by the users to adjust the contribution of this two loss terms in the cost function. To ensure the uniqueness of the trained network, we set $\gamma_b = 1$ around 10 times higher than $\gamma_e = 0.1$. In that case, PINNs will prefer the solution that satisfies the boundary conditions, which guarantees the network converges to a unique solution as long as the equation residue reduces.
+where $f_1$ and $f_2$ represent the residue of the normalized isotropic SSA equations, 
+and $g_1$ and $g_2$ are residues of the normalized dynamic boundary conditions. 
+${\bf \hat{x}_e}$ and ${\bf \hat{x}_b}$ are the normalized locations of collocations
+points to evaluate the residue of equations and boundary conditions, respectively. 
+$N_e$ and $N_b$ are their total numbers. Here, the residue of a equation indicates 
+the left-hand side minus of the right-hand side of the equation. $\gamma_e$ and 
+$\gamma_b$ are the loss weights for the equation and boundary conditions, which are 
+the hyper-parameter set by the users to adjust the contribution of this two loss terms
+in the cost function. To ensure the success of viscosity inversion, we set 
+$\gamma_b = 1$ around 10 times higher than $\gamma_e = 0.1$. In that case, PINNs will 
+prefer the solution that satisfies the boundary conditions, which guarantees the network
+converges to a unique solution as long as the equation residue reduces.
 
 
 

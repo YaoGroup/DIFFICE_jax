@@ -162,45 +162,27 @@ viscosity. The derivation of the anisotropic SSA equations, associated boundary 
 and the additional loss terms in the cost functions to ensure the well-posedness of the 
 inversion are described in detail in the `Anisotropic` subfolder in the GitHub repository.
 
-The combination of the above six features ensure PINNs to be a reliable tools for 
-inferring ice viscosity. Besides ease of use as mentioned above, PINNs
-have other advantages over the classical control method for solving inverse problems. 
-First, the training of PINNs are effective even when given irregularly sampled data, 
-such as the velocity (450 m resolution) and thickness data (500 m resolution) do not 
-lie on the same grid. Second, the outputs of classical numerical-based methods are 
-discretized points, which take an enormous amount of memory to store when the resolution
-is high. On the other hand, the outputs of PINNs are continuous functions parameterized
-by a fixed number of weights and biases, which require relatively little memory to store
-even when higher resolution is demanded. Third, because of the continous function 
-representation, after the networks are trained to approach the target function, we can 
-compute the exact derivative of the network output via automatic differentation, while
-computing the derivative of discretized points from the classical numerical method always
-contains truncation error. This is etremely useful when computing effective strain rate, 
-which is composed of the spatial derivative of the ice velocity. Fourth, neural network
-training tends to capture the main variation (low-frequency information) of the data, 
-preventing the disturbance of the high-frequency error or noise that are often involved in
-the data. Thus, no regulazation techniques need to be applied for the PINN training.
-
-
 The combination of the above six features ensures that PINNs are reliable tools for 
 inferring ice viscosity. In addition to their ease of use, as mentioned above, PINNs
-offer several advantages over the classical control method for solving inverse problems.
+offer several \textit{advantages} over the classical control method for solving inverse 
+problems.
 
 First, the training of PINNs is effective even with irregularly sampled data, such as 
-velocity data at a 450 m resolution [@Mouginot2019velo] and thickness data 
-[@Morlighem2020thick] at a 500 m resolution that do not lie on the same grid. Second, 
+velocity data at a 450 m resolution [@Mouginot2019velo] and thickness data at a 500 m 
+resolution [@Morlighem2020thick] that do not lie on the same grid. Second, 
 while the outputs of classical numerical-based methods are discretized points that require
 enormous amounts of memory to store at high resolution, the outputs of PINNs are continuous
 functions parameterized by a fixed number of weights and biases, requiring relatively little
-memory even where higher resolutions is demanded. Third, because of the continuous function
-representation, once the networks are trained to approximate the target function, we can 
-compute the exact derivative of the network output via automatic differentiation. In contrast,
-computing derivatives from discretized points in classical numerical methods always contains 
-truncation error. This is extremely useful, for example, when computing the effective strain 
-rate, which involves the spatial derivative of the ice velocity. Fourth, neural network 
-training tends to capture the main variations (low-frequency information) in the data, 
-preventing disturbances from high-frequency errors or noise often present in the data. 
-Therefore, no regularization techniques are needed for PINN training.
+memory even where higher resolutions is demanded. Third, computing derivatives of discretized
+points from either observed data or numerical-based methods is challenging and often induce 
+extra error. In contrast, once the network, as a continuous function representation, is 
+trained to approximate the target function, we can compute the \textit{exact} derivative of 
+the network output via automatic differentiation. This is extremely useful, for example, 
+when computing the effective strain rate, which involves the spatial derivative of the 
+ice velocity. Fourth, neural network training tends to capture the main variations 
+(low-frequency information) in the data, preventing disturbances from high-frequency errors
+or noise often present in the data. Therefore, no regularization techniques are needed 
+for PINN training.
 
 # Accessibility
 

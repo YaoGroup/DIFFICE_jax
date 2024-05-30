@@ -140,28 +140,27 @@ where the spatial profile of the network error or equation residue is larger. Th
 residual-based resampling scheme is embedded in the `pinnIceShelf` package as a default
 training setting.
 
-Fifth, large ice shelves, such as Ross, contains local structural provinces，causing the 
-physical quantities there with dense local variations. These local variation are difficult 
-to be captured by one single neural network due to the spectral biases of networks 
-[@rahaman2019spectral]. To ensure the PINNs to capture the spatial variation of viscosity, 
-The `pinnIceShelf` package adopts the approach of extended physics-informed neural networks
-(XPINNs) [@jagtap2020extended] for studying large ice shelves, which separates the training
-domains into several sub-regions and arrange different networks for them. In this approach,
-each network is trained to learn a specified small sub-region of the large ice shelf, 
-allowing it to capture the local variation with high precision. We note that XPINNs require
-extra pre-processing of the observational data and extra contraint or penalty terms in the 
-cost function to guarantee the sucess of training. Detailed requirements are documented in
-the `XPINNs` subfolder under the Github repository.
+Fifth, large ice shelves, such as Ross, contain local structural provinces where physical
+quantities often have dense local variations. These local variations are difficult to capture
+with a single neural network due to the spectral biases of networks [@rahaman2019spectral].
+To address this challenge and ensure that PINNs capture those spatial variation precisely, 
+the pinnIceShelf package adopts the approach of extended physics-informed neural networks 
+(XPINNs) [@jagtap2020extended] for studying large ice shelves. This method divides the 
+training domains into several sub-regions, with different networks assigned to each. In 
+this approach, each network is trained to learn a specific sub-region of the large ice shelf,
+allowing it to capture local variations with high precision. We note that XPINNs require 
+extra pre-processing of the observational data and additional constraints or penalty terms
+in the cost function to ensure successful training. Detailed requirements are documented 
+in the `XPINNs` subfolder in the GitHub repository.
 
-Sixth, prior studies showed that the inference of isotropic viscosity of ice shelves
-could be over-constraint by the remote-sensing data and the isotropic SSA equations, 
-causing the inverse problem to be ill-posed and have no viable solution. A reason
-that was found to justify the over-constraint issue is that ice-shelf viscosity is 
-in fact anisotropic. The `pinnIceShelf` repository provides a closed algorithm with 
-well-posed settings for inferring anisotropic viscosity. The derviation of the 
-anisotropic SSA equations with the associated boundary conditions, and the additional 
-loss terms in the cost functions for the well-posedness of the inversion are detailedly 
-described in the `Anisotropic` subfolder under the Github repository. 
+Sixth, prior studies have shown that inferring the isotropic viscosity of ice shelves 
+can be over-constrained by remote-sensing data and the isotropic SSA equations, leading 
+to an ill-posed inverse problem with no viable solution. One reason for this over-constraint
+issue is that ice-shelf viscosity is actually anisotropic. The `pinnIceShelf` package
+provides a comprehensive algorithm with well-posed settings for inferring anisotropic 
+viscosity. The derivation of the anisotropic SSA equations, associated boundary conditions,
+and the additional loss terms in the cost functions to ensure the well-posedness of the 
+inversion are described in detail in the `Anisotropic` subfolder in the GitHub repository.
 
 The combination of the above six features ensure PINNs to be a reliable tools for 
 inferring ice viscosity. Besides ease of use as mentioned above, PINNs

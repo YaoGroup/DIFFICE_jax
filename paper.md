@@ -128,18 +128,17 @@ network created for $\mu$. This setting ensures the positive-definiteness of the
 viscosity and enhance the training to capture both the local and global profile of 
 viscosity with high accuracy over large spatial domain.
 
-Fourth, PINN training with observed data could often cheat as the observed data always 
-contains error and noise. Here, cheating refers to the case where the networks overfit 
-the data provided in the training at the cost of generating larger error somewhere else,
-which leads to a small training loss but a large validation error. A basic way to resolve 
-this issue is to randomly re-sample both data points and the collocation points every 
-certain iteration during the training. This, to certain extents, can reduce the chance 
-of cheating to occur. Here, collocation points refer to the points used to compute 
-equation residue. Moreover, a better way to prevent cheating, which can also enahnce 
-training efficiency, is to re-samping the data and collocation points with higher 
-concentration at the position where the spatial profile of the network error with data
-or the equation residue is larger. This residual-based resampling scheme is embedded in
-`pinnIceShelf` as a default training option.
+Fourth, PINN training with observed data can often result in cheating due to errors 
+and noise in the data. Here, cheating refers to the situation where the network overfits
+the training data, leading to a small training loss but a large validation error elsewhere. 
+A basic way to mitigate this issue is to randomly re-sample both data points and 
+collocation points at regular intervals during training. This can reduce the likelihood 
+of overfitting. Collocation points refer to the points used to compute the equation residue. 
+Additionally, a more effective approach to prevent overfitting and enhance training 
+efficiency is to re-sample data and collocation points with higher concentration in areas 
+where the spatial profile of the network error or equation residue is larger. This 
+residual-based resampling scheme is embedded in the `pinnIceShelf` package as a default
+training setting.
 
 Fifth, large ice shelves, such as Ross, contains local structural provinces，causing the 
 physical quantities there with dense local variations. These local variation are difficult 

@@ -290,12 +290,8 @@ equation residue reduces.
 
 # Figures
 
-Figures can be included like this:
-![Caption for example figure.\label{fig:example}](figure.png)
-and referenced from text using \autoref{fig:example}.
+![Inferred viscosity for four different Antarctica Ice Shelves. \label{fig:example}](viscosity.png)
 
-Figure sizes can be customized by adding an optional second parameter:
-![Caption for example figure.](figure.png){ width=20% }
 
 # Acknowledgements
 

@@ -181,6 +181,27 @@ training tends to capture the main variation (low-frequency information) of the 
 preventing the disturbance of the high-frequency error or noise that are often involved in
 the data. Thus, no regulazation techniques need to be applied for the PINN training.
 
+
+The combination of the above six features ensures that PINNs are reliable tools for 
+inferring ice viscosity. In addition to their ease of use, as mentioned above, PINNs
+offer several advantages over the classical control method for solving inverse problems.
+
+First, the training of PINNs is effective even with irregularly sampled data, such as 
+velocity data at a 450 m resolution [@Mouginot2019velo] and thickness data 
+[@Morlighem2020thick] at a 500 m resolution that do not lie on the same grid. Second, 
+while the outputs of classical numerical-based methods are discretized points that require
+enormous amounts of memory to store at high resolution, the outputs of PINNs are continuous
+functions parameterized by a fixed number of weights and biases, requiring relatively little
+memory even where higher resolutions is demanded. Third, because of the continuous function
+representation, once the networks are trained to approximate the target function, we can 
+compute the exact derivative of the network output via automatic differentiation. In contrast,
+computing derivatives from discretized points in classical numerical methods always contains 
+truncation error. This is extremely useful, for example, when computing the effective strain 
+rate, which involves the spatial derivative of the ice velocity. Fourth, neural network 
+training tends to capture the main variations (low-frequency information) in the data, 
+preventing disturbances from high-frequency errors or noise often present in the data. 
+Therefore, no regularization techniques are needed for PINN training.
+
 # Accessibility
 
 To make the approach of inferring ice-shelf viscosity via PINNs more convincible, 

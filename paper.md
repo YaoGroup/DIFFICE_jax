@@ -300,7 +300,7 @@ Figure sizes can be customized by adding an optional second parameter:
 # Acknowledgements
 
 We thank Charlie Cowen-Breen for the discussion on PINNs optimization, and
-Ming-Ruey Chou and Robert Clapper for the Python Programming and Github preparation.
+Ming-Ruey Chou and Robert Clapper for Python Programming and Github preparation.
 We acknowledge the Office of the Dean for Research at Princeton University for partial 
 funding support via the Dean for Research Fund for New Ideas in the Natural Sciences. 
 C.-Y.L acknowledge the National Science Foundation for funding via Grant No. DMS-2245228, 

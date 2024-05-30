@@ -280,12 +280,11 @@ ${\bf \hat{x}_e}$ and ${\bf \hat{x}_b}$ are the normalized locations of collocat
 points to evaluate the residue of equations and boundary conditions, respectively. 
 $N_e$ and $N_b$ are their total numbers. Here, the residue of a equation indicates 
 the left-hand side minus of the right-hand side of the equation. $\gamma_e$ and 
-$\gamma_b$ are the loss weights for the equation and boundary conditions, which are 
-the hyper-parameter set by the users to adjust the contribution of this two loss terms
-in the cost function. To ensure the success of viscosity inversion, we set 
-$\gamma_b = 1$ around 10 times higher than $\gamma_e = 0.1$. In that case, PINNs will 
-prefer the solution that satisfies the boundary conditions, which guarantees the network
-converges to a unique solution as long as the equation residue reduces.
+$\gamma_b$ are the loss weights for the equation and boundary conditions. With systematic
+test, we set $\gamma_b = 1$ around 10 times higher than $\gamma_e = 0.1$ for the success 
+of training,. In that case, PINNs will prefer the solution that satisfies the boundary 
+conditions, which guarantees the network converges to a unique solution as long as the
+equation residue reduces.
 
 
 

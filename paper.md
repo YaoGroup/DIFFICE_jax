@@ -104,9 +104,10 @@ observational data of ice velocity and thickness differ by several order of magn
 in their original units. Therefore, both their values (output) and spatial positions 
 (input) need to be normalized before training. After normalizing the data, the new SSA
 equations and associated boundary conditions, expressed in terms of the normalized 
-quantities need to be re-derived, and each term should have a magnitude of $O(1)$. The
-`pinnIceShelf` package provides the algorithm that can automatically normalize the data
-and equations for all different ice shelves.
+quantities need to be re-derived. Each term in the new equation should have a magnitude 
+of $O(1)$. The`pinnIceShelf` package provides the algorithm that can automatically 
+normalize the observational data and generate the associated normalized SSA equations
+for different ice shelves.
 
 Second, the cost function of PINNs involves two terms: the data loss $\mathcal{L}_d$ 
 and the equation loss $\mathcal{L}_e$. For viscosity inference, the data loss 

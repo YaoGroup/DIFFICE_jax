@@ -42,7 +42,7 @@ The `DIFFISH.jax` package is designed to make the inversion of ice-shelf viscosi
 
 Critical features of `DIFFISH.jax` that go beyond regular PINNs and are essential for viscosity inference includes: (1) data and equation normalization; (2) optimal setting of equation weight; (3) design of networks with positive-definiteness; (4) Residual-based re-sampling of collocation points during training; (5) Extended-PINNs (XPINNs) for studying large-scale ice shelves; (6) Inversion of anisotropic viscosity. The necessity of these features to ensure the success of viscosity inference is explained below.
 
-(1) Data and equation normalization:
+**(1) Data and equation normalization:**
 Proper training of neural networks requires both input and output of the network
 to be normalized, typically within the range of $[-1, 1]$. However, the values of 
 observational data of ice velocity and thickness differ by several order of magnitude

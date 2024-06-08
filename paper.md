@@ -1,8 +1,10 @@
 ---
-title: 'Deep-learning-based differentiable solver for data assimilation and inverse modeling of ice shelves'
+title: 'Deep-learning-based differentiable solver for data assimilation and inverse modeling of ice shelves in JAX'
 tags:
   - Python
   - physics-informed deep learning
+  - Differentiable solver
+  - JAX
   - geophysics
   - ice-shelf dynamics
 authors:
@@ -12,12 +14,12 @@ authors:
     corresponding: true # (This is how to denote the corresponding author)
   - name: Ching-Yao Lai
     orcid: 0000-0002-6552-7546
-    affiliation: 2
+    affiliation: 1
 affiliations:
  - name: Department of Mathematics, New York University, USA
-   index: 1
- - name: Department of Geophysics, Stanford University, USA
    index: 2
+ - name: Department of Geophysics, Stanford University, USA
+   index: 1
 date: 14 May 2024
 bibliography: paper.bib
 ---

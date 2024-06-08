@@ -27,34 +27,14 @@ bibliography: paper.bib
 
 # Summary
 
-`DIFFISH.jax` is a differentiable ice-shelf model written in JAX that can be used for data assimilation of ice dynamics. The prediction of ice dynamics relies on knowledge of its viscosity structure, which can not be directly measured at the Antarctic scale. Mis-representing viscsoity in ice-dynamics simulation can lead to imprecise forecasts of ice sheet's mass loss into the oceans and its consequent impact on global sea-level rise. With the continent-wide remote-sensing data available over the past decades, the viscosity of the ice shelves can be inferred by solving an inverse problem. We present `DIFFISH.jax`: Deep-learning-based DIFFerentiable solver for data assimilation and inverse modeling of Ice SHelves in JAX", a Python package that convert descretized remote-sensing data into meshless and differentible functions, and infer the viscosity profile via PDE-constrained optimization. The inversion algorithm is based on physics-informed Neural Networks (PINNs) [@Raissi2019] and implemented in JAX [@jax2018github]. The `DIFFISH.jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collaction points resampling, non-dimensionalization of the data adnd equations, extended PINN, viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides tutorial examples for users at different levels to help master the method.
+`DIFFISH.jax` is a differentiable solver for ice-shelf dynamics written in JAX that can be used for data assimilation. It solves the depth-integrated Stokes equation for ice shelves and can be adopted for ice sheets. The prediction of ice dynamics relies on knowledge of its viscosity structure, which can not be directly measured at the Antarctic scale. Mis-representing viscsoity in ice-dynamics simulation can lead to imprecise forecasts of ice sheet's mass loss into the oceans and its consequent impact on global sea-level rise. With the continent-wide remote-sensing data available over the past decades, the viscosity of the ice shelves can be inferred by solving an inverse problem. We present `DIFFISH.jax`: Deep-learning-based DIFFerentiable solver for data assimilation and inverse modeling of Ice SHelves in JAX", a Python package that convert descretized remote-sensing data into meshless and differentible functions, and infer the viscosity profile via PDE-constrained optimization. The inversion algorithm is based on physics-informed Neural Networks (PINNs) [@Raissi2019] and implemented in JAX [@jax2018github]. The `DIFFISH.jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collaction points resampling, non-dimensionalization of the data adnd equations, extended PINN, viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides tutorial examples for users at different levels to help master the method.
 
 
 # Statement of need
 
-One of the main research focus of cryoshphere, or broader field of geophyscs
-is to uncover the hidden physical properties of various geophysical flows 
-on Earth, such as Antarctica Ice Shelves. Ice shelves are the floating extensions 
-of grounded ice sheet, and play a critical role in slowing ice discharging 
-into the ocean, thereby mitigating the global sea level rise. A crtical physical
-properties of Ice Shelves that governs their initial discharging from the ground
-to their final breakup into the ocean is the effective ice viscosity, which is also 
-essential for understanding the flow law of ice shelves. However, the large length 
-scales and long time scales of ice-shelf flow make the in-situ measurement
-of the viscosity significantly challenging anc costly. Alternatively, with
-high-resolution data available for both ice velocity $(u, v)$ and thickness $h$ 
-across Antarctica, effective viscosity can be inferred as an inverse
-problem by solving the Shallow-Shelf Approximation (SSA) equations, which governs
-the ice-shelf dynamics.
+One of the unsolved questions in the cryosphere, or the broader field of geophysics, is how to uncover the hidden physical properties of various geophysical flows on Earth, such as glacial ice. Ice shelves are the floating extensions of grounded ice sheet that play a critical role in slowing ice discharging into the ocean, mitigating the global sea level rise. A crtical physical properties required to predict ice dynamics is the effective ice viscosity. However, continent-wide in-situ measurement of the viscosity is challenging if not impossible. With high-resolution data available for both ice velocity $(u, v)$ and thickness $h$ across Antarctica, effective viscosity $mu$ can be inferred via solving an inverse problem constrained by the governing equation of ice-shelf dynamics derived from the depth-integrated Stokes equations, i.e. the Shallow-Shelf Approximation (SSA) equations.
 
-Due to the potential high-level error or noise in the observational data, inverse 
-problems are more difficult to solve than an forward problem. In cyrosphere, 
-conventional method for inverse problems includes control method [@MacAyeal1993], 
-or called adjoint method, which is, however, quite challenging to implement or 
-generalize for various problems, especially for beginners with less knowledge in 
-applied mathematics or numerical methods. Additionally, a newly-developed 
-deep-learning based method, named physics-informed neural networks (PINNs), are shown 
-to be efficient in solving inverse problem. Unlike the ajoint method, PINNs do not 
+Due to the noises in the observational data, inverse problems are more difficult to solve than an forward problem. In cyrosphere, conventional method for inverse problems includes control method [@MacAyeal1993], or called adjoint method, which requires subtle regularization techniques to tackle the problem of error propagation from the data noise. The deep-learning based method, it has been demonstrated that the physics-informed neural networks (PINNs), can perform physics-based data de-noising while solving the inverse problem to infer ice rheology []. Unlike the ajoint method, PINNs do not 
 require the introduction of extra ajoint equations and associated adjoint boundary
 conditions, which are usually difficult to derive for complicated problems. 
 Moreover, the inherent properties of neural networks tends to denoise high-frequency 

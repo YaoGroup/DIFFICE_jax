@@ -286,9 +286,6 @@ We thank Charlie Cowen-Breen for the discussion on PINNs optimization, and
 Ming-Ruey Chou and Robert Clapper for Python Programming and Github preparation.
 We acknowledge the Office of the Dean for Research at Princeton University for partial 
 funding support via the Dean for Research Fund for New Ideas in the Natural Sciences. 
-C.-Y.L acknowledge the National Science Foundation for funding via Grant No. DMS-2245228, 
-and NASA for partial support via Cryosphere Award 80NSSC21K1003. We also gratefully 
-acknowledges financial support from the Schmidt Data X Fund at Princeton University made 
-possible through a major gift from the Schmidt Futures Foundation. 
+C.-Y.L acknowledge the National Science Foundation for funding via Grant No. DMS-2245228.
 
 # References

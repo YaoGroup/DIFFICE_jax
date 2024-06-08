@@ -3,9 +3,10 @@ title: 'Deep-learning-based differentiable solver for data assimilation and inve
 tags:
   - Python
   - physics-informed deep learning
-  - Differentiable solver
+  - differentiable solver
   - JAX
   - geophysics
+  - data assimilation 
   - ice-shelf dynamics
 authors:
   - name: Yongji Wang
@@ -26,22 +27,7 @@ bibliography: paper.bib
 
 # Summary
 
-A major contributor to rising sea levels is ice loss from Antarctica due to the 
-collapse of ice shelves. However, the fundamental mechanical properties, such 
-as viscosity and flow law of ice shelves, have been highly debated for 
-over half a century. Mis-representing these properties can lead to imprecise 
-forecasts of ice mass loss into the oceans and its consequent impact on global 
-sea-level rise. With the continent-wide remote-sensing data available over the
-past decades, the viscosity and flow law of the entire ice shelves can be inferred
-from these data as an inverse problem. We present `pinnIceShelf` as a Python package
-that can conduct data assimilation to convert descretized remote-sensing data into
-meshless and differentible functions, and further infer the viscosity profile
-from them. The inversion algorithm is based on physics-informed Neural 
-Networks (PINNs) [@Raissi2019] and implemented in JAX [@jax2018github]. The 
-`pinnIceShelf` package involves advanced features in addition to regular PINNs
-algorithms, which are essential for solving inversion problem correctly. The package
-is designed to be user-friendly and accessible for beginners. The Github respository
-also provides tutorial examples for users at different levels to help master the method.
+`DIFFISH.jax` is a differential ice-shelf model written in JAX that can be used for data assimilation of ice dynamics. The prediction of ice dynamics relies on knowledge of its viscosity structure, which can not be directly measured at the Antarctic scale. Mis-representing viscsoity in ice-dynamics simulation can lead to imprecise forecasts of ice sheet's mass loss into the oceans and its consequent impact on global sea-level rise. With the continent-wide remote-sensing data available over the past decades, the viscosity of the ice shelves can be inferred by solving an inverse problem. We present `DIFFISH.jax`: Deep-learning-based DIFFerentiable solver for data assimilation and inverse modeling of Ice SHelves in JAX", a Python package that convert descretized remote-sensing data into meshless and differentible functions, and infer the viscosity profile via PDE-constrained optimization. The inversion algorithm is based on physics-informed Neural Networks (PINNs) [@Raissi2019] and implemented in JAX [@jax2018github]. The `DIFFISH.jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collaction points resampling, non-dimensionalization of the data adnd equations, extended PINN, viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides tutorial examples for users at different levels to help master the method.
 
 
 # Statement of need
@@ -80,10 +66,10 @@ However, to successfully infer effective viscosity from the SSA equations and
 remote-sensing data, regular PINNs codes or algorithms available online might be 
 inadequate. Additional settings for neural networks, optimization methods, and 
 pre-processing of both the SSA equations and observational data are all essential
-for the success of viscosity inversion via PINNs. The `pinnIceShelf` package 
+for the success of viscosity inversion via PINNs. The `DIFFISH.jax` package 
 incorperates the optimal settings of PINNs in all these aspects. These settings are
 either universally applicable for training different ice shelves or can be determined 
-automatically based on the data of given ice shelf. Overall, The `pinnIceShelf`
+automatically based on the data of given ice shelf. Overall, The `DIFFISH.jax`
 package is designed to make the inversion of ice-shelf viscosity more accessible for
 beginners with less knowledge or experience on PINNs. On the other end, the package
 provides comprehensive details of the key algorithms involved, including comments and
@@ -91,7 +77,7 @@ examples, that can help users conduct cutting-edge research in the field.
 
 # Features and advantages
 
-Critical features of `pinnIceShelf` that go beyond regular PINNs and are essential for
+Critical features of `DIFFISH.jax` that go beyond regular PINNs and are essential for
 viscosity inference includes: (1) data and equation normalization; (2) optimal setting of 
 equation weight; (3) design of networks with positive-definiteness; (4) Residual-based
 re-sampling of points during training; (5) Extended-PINNs (XPINNs) for studying large
@@ -105,7 +91,7 @@ in their original units. Therefore, both their values (output) and spatial posit
 (input) need to be normalized before training. After normalizing the data, the new SSA
 equations and associated boundary conditions, expressed in terms of the normalized 
 quantities need to be re-derived. Each term in the new equation should have a magnitude 
-of $O(1)$. The`pinnIceShelf` package provides the algorithm that can automatically 
+of $O(1)$. The`DIFFISH.jax` package provides the algorithm that can automatically 
 normalize the observational data and generate the associated normalized SSA equations
 for different ice shelves.
 
@@ -138,14 +124,14 @@ of overfitting. Collocation points refer to the points used to compute the equat
 Additionally, a more effective approach to prevent overfitting and enhance training 
 efficiency is to re-sample data and collocation points with higher concentration in areas 
 where the spatial profile of the network error or equation residue is larger. This 
-residual-based resampling scheme is embedded in the `pinnIceShelf` package as a default
+residual-based resampling scheme is embedded in the `DIFFISH.jax` package as a default
 training setting.
 
 Fifth, large ice shelves, such as Ross, contain local structural provinces where physical
 quantities often have dense local variations. These local variations are difficult to capture
 with a single neural network due to the spectral biases of networks [@rahaman2019spectral].
 To address this challenge and ensure that PINNs capture those spatial variation precisely, 
-the pinnIceShelf package adopts the approach of extended physics-informed neural networks 
+the DIFFISH.jax package adopts the approach of extended physics-informed neural networks 
 (XPINNs) [@jagtap2020extended] for studying large ice shelves. This method divides the 
 training domains into several sub-regions, with different networks assigned to each. In 
 this approach, each network is trained to learn a specific sub-region of the large ice shelf,
@@ -157,7 +143,7 @@ in the `XPINNs` subfolder in the GitHub repository.
 Sixth, prior studies have shown that inferring the isotropic viscosity of ice shelves 
 can be over-constrained by remote-sensing data and the isotropic SSA equations, leading 
 to an ill-posed inverse problem with no viable solution. One reason for this over-constraint
-issue is that ice-shelf viscosity is actually anisotropic. The `pinnIceShelf` package
+issue is that ice-shelf viscosity is actually anisotropic. The `DIFFISH.jax` package
 provides a comprehensive algorithm with well-posed settings for inferring anisotropic 
 viscosity. The derivation of the anisotropic SSA equations, associated boundary conditions,
 and the additional loss terms in the cost functions to ensure the well-posedness of the 
@@ -196,13 +182,13 @@ is provided in the `Tutorial` subfolder. Users can freely generate new synthetic
 data by changing the given viscosity profile and test whether the PINN algorithm 
 can accurately infer the correct viscosity profile from the synthetic data.
 
-We note that the tutorial example includes only the first four features of pinnIceShelf. 
+We note that the tutorial example includes only the first four features of DIFFISH.jax. 
 For the last two advanced features: (5) the extended-PINNs approach and (6) the inversion
 of anisotropic viscosity, well-documented examples using real observational data for 
 selected ice shelves are provided in their corresponding subfolders to help users 
 employ or further generalize the methods.
 
-The raw data used for the `pinnIceShelf` package are downloaded from NASA MEaSUREs
+The raw data used for the `DIFFISH.jax` package are downloaded from NASA MEaSUREs
 Phase-Based Antarctica Ice Velocity Map, Version 1 
 [(NSIDC-0754)](https://nsidc.org/data/nsidc-0754/versions/1), for ice velocity and
 from NASA MEaSUREs BedMachine Antarctica, Version 2

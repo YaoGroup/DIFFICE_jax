@@ -40,8 +40,8 @@ The `DIFFISH.jax` package is designed to make the inversion of ice-shelf viscosi
 
 # Features and advantages
 
-Critical features of `DIFFISH.jax` that go beyond regular PINNs and are essential for viscosity inference includes: 
-(1) data and equation normalization; 
+Critical features of `DIFFISH.jax` that go beyond regular PINNs and are essential for viscosity inference includes: \\
+(1) data and equation normalization; \\
 (2) optimal setting of equation weight; (3) design of networks with positive-definiteness; (4) Residual-based
 re-sampling of points during training; (5) Extended-PINNs (XPINNs) for studying large
 ice shelves; (6) Inversion of anisotropic viscosity. The necessity of these features to 

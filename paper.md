@@ -24,9 +24,7 @@ bibliography: paper.bib
 
 # Summary
 
-Sea-level rise is one of the most serious implications of climate change (IPCC) 
-and will impact the lives of hundreds of millions of people. A dominant 
-contributor to rising sea levels is ice loss from Antarctica due to the 
+A major contributor to rising sea levels is ice loss from Antarctica due to the 
 collapse of ice shelves. However, the fundamental mechanical properties, such 
 as viscosity and flow law of ice shelves, have been highly debated for 
 over half a century. Mis-representing these properties can lead to imprecise 

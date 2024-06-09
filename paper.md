@@ -32,7 +32,7 @@ bibliography: paper.bib
 
 # Statement of need
 
-One of the unsolved questions in the cryosphere, or the broader field of geophysics, is how to uncover the hidden physical properties of various geophysical flows on Earth, such as glacial ice. Ice shelves are the floating extensions of grounded ice sheet that play a critical role in slowing ice discharging into the ocean, mitigating the global sea level rise. A crtical physical properties required to predict ice dynamics is the effective ice viscosity. However, continent-wide in-situ measurement of the viscosity is challenging if not impossible. With high-resolution remote-sensing data available for both ice velocity $(u, v)$ and thickness $h$ across Antarctica, effective viscosity $\mu$ can be inferred via solving an inverse problem constrained by the governing equation of ice-shelf dynamics derived from the depth-integrated Stokes equations, i.e. the Shallow-Shelf Approximation (SSA) equations.
+One of the unsolved questions in the cryosphere, or the broader field of geophysics, is how to uncover the hidden physical properties of various geophysical flows on Earth, such as glacial ice. Ice shelves are the floating extensions of grounded ice sheet that play a critical role in slowing ice discharging into the ocean, mitigating the global sea level rise. A crtical physical properties required to predict ice dynamics is the effective ice viscosity. However, continent-wide in-situ measurement of the viscosity is challenging if not impossible. With high-resolution remote-sensing data available for both ice velocity $(u, v)$ and thickness $h$ across Antarctica, effective viscosity $\mu$ can be inferred via solving an inverse problem constrained by the governing equation of ice-shelf dynamics derived from the depth-integrated Stokes equations, i.e. the Shallow-Shelf Approximation (SSA) equations [@MacAyeal1989].
 
 Due to the noises in the observational data, inverse problems are more difficult to solve than an forward problem. In cyrosphere, conventional method for inverse problems includes the control method [@MacAyeal1993], or called the adjoint method, which requires regularization techniques to tackle the problem of error propagation from the data noise. The deep-learning based method, it has been demonstrated that the physics-informed neural networks (PINNs), can perform physics-based data de-noising while solving the inverse problem to infer ice rheology [@wang2022discovering, @iwasaki2023one] to achieve accurrate inversion, without the need to add prior knowlegde of the viscosity or regularization terms in the loss function. The inherent properties of neural networks (NN) tends to denoise high-frequency error and noise involved in the data. Unlike the ajoint method, PINNs do not require the introduction of extra ajoint equations and associated adjoint boundary conditions, which are usually time-consuming to derive for problems involving multiple coupled PDEs.
 
@@ -40,7 +40,7 @@ The `DIFFISH.jax` package is designed to make the inversion of ice-shelf viscosi
 
 # Summary of algorithm features and advantages
 
-Critical features of `DIFFISH.jax` that go beyond off-the-shelf PINNs, and the necessity of these features to ensure the success of viscosity inference is explained below:
+Critical features of `DIFFISH.jax` that go beyond off-the-shelf PINNs, and the necessity of these features to ensure the success and robustness of viscosity inference is explained below:
 
 **(1) Data and equation normalization/non-dimensionalization:**
 Proper training of NNs requires both input and output of the NN to be normalized, typically within the range of $[-1, 1]$. However, the values of observational data of ice velocity and thickness differ by several order of magnitude in their original units. Therefore, both their values (output) and spatial positions (input) need to be normalized before training. After normalizing the data, the new governing equations and associated boundary conditions, expressed in terms of the normalized quantities need to be re-derived. Each term in the new equation should have a magnitude of $O(1)$. The`DIFFISH.jax` package provides the algorithm that can automatically normalize (non-dimensionalize) the observational data and generate the associated normalized SSA equations for different ice shelves.
@@ -65,8 +65,6 @@ Large ice shelves, such as Ross, poses a multiscale challenge for capturing both
 
 **(6) Inversion of anisotropic viscosity:**
 Prior studies have shown that inversion of the isotropic viscosity can be over-constrained by remote-sensing data and the isotropic SSA equations, potentially leading to an ill-posed inverse problem with no viable solution. One way to address this over-constraint issue is to consider anisotropic viscosity. We find that the inversion with our modified SSA with anisotropic viscoisty can further reduce both the data and equation loss, indicating that the anisotropic equations are more consistent with the observations. The `DIFFISH.jax` package provides a comprehensive algorithm with well-posed settings for inferring anisotropic viscosity. The derivation of the anisotropic SSA equations, associated boundary conditions, and the additional loss terms in the cost functions to ensure the well-posedness of the inversion are described in detail in the `Anisotropic` subfolder in the GitHub repository. This is the first example of anisotropic-viscoisty inversion for ice shelves.
-
-The combination of the above six features ensures that PINNs ensures robustness of ice-viscosity inversion. 
 
 In addition to their ease of use, as mentioned above, `DIFFISH.jax` offer several \textit{advantages}. First, the training of PINNs is effective even with irregularly sampled data, such as velocity data at a 450 m resolution [@Mouginot2019velo] and thickness data at a 500 m resolution [@Morlighem2020thick] that do not lie on the same grid. Second, while the outputs of classical numerical-based methods are discretized points that require enormous amounts of memory to store at high resolution, the outputs of PINNs are continuous functions parameterized by a fixed number of weights and biases, requiring relatively little memory even where higher resolutions is demanded [wang2024multi]. Third, computing derivatives of discretized points from either observed data or numerical-based methods is challenging and often induce extra error. In contrast, once the NN, as a continuous function representation, is trained to approximate the target function, we can compute the \textit{exact} derivative of the NN output via automatic differentiation (AD). Fourth, PINN does not require an initial guess of $\mu$ to be included as prior in the cost function, as often used in the adjoint method for ice-hardness inversion. Finally, NN training tends to capture the main variations (low-frequency information) in the data, preventing disturbances from high-frequency errors or noise often present in the data. Therefore, no regularization techniques are required for PINN training.
 
@@ -96,11 +94,8 @@ The raw data used for the `DIFFISH.jax` package are downloaded from NASA MEaSURE
 
 # Mathematical formulation
 
-Ice shelf is a viscous gradient current that has slender-body shape. Due to the absence 
-of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
-is approximate to a two-dimensional flow, independent of the vertical direction. 
-Assuming isotropic property, the ice-shelf dynamics is governed by the 2-D
-Shallow-Shelf Approximation (SSA) equations, which read:
+Ice shelf is a viscous gradient current. Due to the absence of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
+is approximate to a two-dimensional flow, independent of the vertical direction. Assuming isotropic property, the ice-shelf dynamics is governed by the 2-dimensional Shallow-Shelf Approximation (SSA) equations [@MacAyeal1989], which read:
 
 $$\begin{array}{l}
 \displaystyle \frac{\partial} {\partial x}\left(4 \mu h \frac{\partial  u}{\partial x} + 2\mu h \frac{\partial  v}{\partial y}  \right) 
@@ -111,12 +106,7 @@ $$\begin{array}{l}
 = \rho g \left(1-\frac{\rho}{\rho_w}\right)h\frac{\partial h}{\partial y}
 \end{array}$$
 
-where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is 
-the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density 
-of the ice shelf and ocean water, respectively. $g$ is the gravity. The associated 
-boundary conditions required for the equations is the *dynamic boundary condition* at
-the calving front of the ice shelf, which indicates the balance of the extensional 
-stress of ice shelves with ocean hydrostatic pressure. It gives,
+where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity. The associated boundary conditions required for the equations is the *dynamic boundary condition* at the calving front of the ice shelf, which indicates the balance of the extensional stress of ice shelves with ocean hydrostatic pressure:
 
 $$\begin{array}{l}
 \displaystyle 2\mu \left(2\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) n_x 
@@ -127,10 +117,7 @@ $$\begin{array}{l}
  	= \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y
 \end{array} \quad \text{at} \  (x, y) \in {\partial \Omega_c} $$
 
-where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, 
-and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front. Both of the 
-equations and boundary conditions needs to be involved in the PINN training for inferring 
-isotropic ice viscosity. Thus, the cost function of the PINN training is expressed by
+where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front. Both of the equations and boundary conditions needs to be involved in the PINN training for inferring isotropic ice viscosity. Thus, the cost function of the PINN training is expressed by
 
 $$\mathcal{L} = \mathcal{L}_d + \mathcal{L}_e$$
 
@@ -139,28 +126,14 @@ where the data loss $\mathcal{L}_d$ reads
 $$ \mathcal{L_d} = \frac{1}{N_d} \left( \sum_{i=1}^{N_d} [\hat{u_d} - u({\bf x_d})]^2 
 	+ \sum_{i=1}^{N_d} [\hat{v_d} - v({\bf x_d})]^2 + \sum_{i=1}^{N_d} [\hat{v_d} - v({\bf x_d})]^2 \right) $$
 
-where $\hat{u}_d$, $\hat{v}_d$ and $\hat{h}_d$ are the normalized data of ice-shelf 
-velocity and thickness, respectively, at different normalized locations ${\bf \hat{x}_d}
-=(\hat{x}_d, \hat{y}_d)$. $N_d$ is the total number of points used for each iteration of
-the training. Then, the equation loss  $\mathcal{L}_e$ reads
+where $\hat{u}_d$, $\hat{v}_d$ and $\hat{h}_d$ are the normalized data of ice-shelf velocity and thickness, respectively, at different normalized locations ${\bf \hat{x}_d}=(\hat{x}_d, \hat{y}_d)$. $N_d$ is the total number of points used for each iteration of the training. Then, the equation loss  $\mathcal{L}_e$ reads
 
 $$ \mathcal{L_e} = \frac{\gamma_e}{N_e}\left(\sum_{i=1}^{N_e} [f_1({\bf \hat{x_e}})]^2 + 
 	\sum_{i=1}^{N_e} [f_2({\bf \hat{x_e}})]^2 \right) 
  	+ \frac{\gamma_b}{N_b}\left(\sum_{i=1}^{N_b} [g_1({\bf \hat{x_b}})]^2 + \sum_{i=1}^{N_b} [g_2({\bf \hat{x_b}})]^2 \right)$$
 
 
-where $f_1$ and $f_2$ represent the residue of the normalized isotropic SSA equations, 
-and $g_1$ and $g_2$ are residues of the normalized dynamic boundary conditions. 
-${\bf \hat{x}_e}$ and ${\bf \hat{x}_b}$ are the normalized locations of collocations
-points to evaluate the residue of equations and boundary conditions, respectively. 
-$N_e$ and $N_b$ are their total numbers. Here, the residue of a equation indicates 
-the left-hand side minus of the right-hand side of the equation. $\gamma_e$ and 
-$\gamma_b$ are the loss weights for the equation and boundary conditions. With systematic
-test, we set $\gamma_b = 1$ around 10 times higher than $\gamma_e = 0.1$ for the success 
-of training,. In that case, PINNs will prefer the solution that satisfies the boundary 
-conditions, which guarantees the NN converges to a unique solution as long as the
-equation residue reduces.
-
+where $f_1$ and $f_2$ represent the residues of the normalized isotropic SSA equations, and $g_1$ and $g_2$ are residues of the normalized dynamic boundary conditions. ${\bf \hat{x}_e}$ and ${\bf \hat{x}_b}$ are the normalized locations of collocations points to evaluate the residues of equations and boundary conditions, respectively. $N_e$ and $N_b$ are their total numbers. Here, the equation residue is the left-hand side minus of the right-hand side of the equation. $\gamma_e$ and $\gamma_b$ are the weighting pre-factors for the equation and boundary loss. With systematic test, we set $\gamma_b = 1$ around 10 times higher than $\gamma_e = 0.1$ for the success of training; PINNs priortize the solution that satisfies the boundary conditions, which guarantees the NN converges to a unique solution as long as the equation residue reduces.
 
 
 # Figures

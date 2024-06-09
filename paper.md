@@ -38,18 +38,17 @@ Due to the noises in the observational data, inverse problems are more difficult
 
 The `DIFFISH.jax` package is designed to make the inversion of ice-shelf viscosity via PINNs more accessible for beginners. Off-the-shelf PINNs codes are inadequate for accurately inferring effective viscosity $\mu$ from the governing equations and real-world data. Additional settings for neural networks (NN), optimization methods, and pre-processing of both the SSA equations and observational data are all essential for the success of viscosity inversion via PINNs. The `DIFFISH.jax` package incorperates the optimal settings of PINNs in all these aspects. These settings are either universally applicable for training different ice shelves or can be determined automatically based on the data of given ice shelf. The package provides comprehensive details of the key algorithms involved, including comments and examples, enabling users to bypass substantial hyper-parameter tuning and conduct cutting-edge research in the field.
 
-# Features and advantages
+# Summary of algorithm features and advantages
 
 Critical features of `DIFFISH.jax` that go beyond off-the-shelf PINNs, and the necessity of these features to ensure the success of viscosity inference is explained below:
 
 **(1) Data and equation normalization/non-dimensionalization:**
-Proper training of NNs requires both input and output of the NN to be normalized, typically within the range of $[-1, 1]$. However, the values of observational data of ice velocity and thickness differ by several order of magnitude in their original units. Therefore, both their values (output) and spatial positions (input) need to be normalized before training. After normalizing the data, the new governing
-equations and associated boundary conditions, expressed in terms of the normalized quantities need to be re-derived. Each term in the new equation should have a magnitude of $O(1)$. The`DIFFISH.jax` package provides the algorithm that can automatically normalize (non-dimensionalize) the observational data and generate the associated normalized SSA equations for different ice shelves.
+Proper training of NNs requires both input and output of the NN to be normalized, typically within the range of $[-1, 1]$. However, the values of observational data of ice velocity and thickness differ by several order of magnitude in their original units. Therefore, both their values (output) and spatial positions (input) need to be normalized before training. After normalizing the data, the new governing equations and associated boundary conditions, expressed in terms of the normalized quantities need to be re-derived. Each term in the new equation should have a magnitude of $O(1)$. The`DIFFISH.jax` package provides the algorithm that can automatically normalize (non-dimensionalize) the observational data and generate the associated normalized SSA equations for different ice shelves.
 
-**(2) optimal setting of equation weight:** 
-The cost function of PINNs involves two terms: the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. For viscosity inference, the data loss $\mathcal{L}_d$ quantifies the mismatch between the observed data and corresponding NN prediction $\mathrm{NN}_d$ via mean squared error, while the equation loss (or boundary condition loss) is defined as the mean squared error between the right and left-hand side of the equations (or boundary conditions). With the normalized data and equations, the data loss and equation loss are also normalized. The weighting pre-factor of data loss is set to 1. The weighting pre-factor of the equation loss and the boundary condition loss are optimized to minimize the training error and are verified to be universal for studying different ice shelves.
+**(2) Optimal setting of equation weight:** 
+The cost function of PINNs involves two terms: the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. For viscosity inference, the data loss $\mathcal{L}_d$ quantifies the mismatch between the observed data and corresponding NN prediction $\mathrm{NN}_d$ via mean squared error, while the equation loss (or boundary condition loss) is defined as the mean squared error between the right and left-hand side of the equations (or boundary conditions). With the normalized data and equations, the data loss and equation loss are also normalized. The weighting pre-factors of the data and equation loss ($\gamma_b$ and $\gamma_e$ defined in the section below) are set to 1 and 0.1, respectively, optimized to minimize the training error and are verified to be universal for studying different ice shelves.
 
-**(3) design of NNs to enforce positive-definiteness:**
+**(3) Design of NNs to enforce positive-definiteness:**
 The effective viscosity $\mu$ must be positive everywhere. In addition, evidence shows that the spatial variation of $\mu$ within the ice shelf could cover several order of magnitude. We introduce the viscosity expression as 
 
 $$\mu = \exp(\mathrm{NN_\mu}),$$ 
@@ -62,7 +61,7 @@ PINN training with observational data can often result in the cheating effects [
 A basic way to mitigate this issue is to randomly re-sample both data points and collocation points at regular intervals during training [@wang2022discovering]. This can reduce the likelihood of overfitting. Collocation points refer to the points used to compute the equation residue. Additionally, a more effective approach to prevent overfitting and enhance training efficiency is to re-sample data and collocation points with higher concentration in areas where the spatial profile of the NN error or equation residue is larger. This residual-based resampling scheme is embedded in the `DIFFISH.jax` package as a default training setting.
 
 **(5) Extended-PINNs (XPINNs) for studying large ice shelve:**
-Large ice shelves, such as Ross, poses a multiscale challenge for capturing both local-scale and large-scale spatial variation of $u,v,h,\mu$. These local variations are difficult to capture with a single NN due to the spectral biases of NNs [@rahaman2019spectral,@xu2020frequency]. To address this challenge and ensure that PINNs capture those spatial variation precisely, the DIFFISH.jax package adopts the approach of extended PINNs (XPINNs) [@jagtap2020extended] for studying large ice shelves. This method divides the training domains into several sub-regions, with different NNs assigned to each. In this approach, each NN is trained to learn a specific sub-region of the large ice shelf, allowing it to capture local variations with high precision. We note that XPINNs require extra pre-processing of the observational data and additional constraints or penalty terms in the cost function to ensure successful training. Detailed requirements are documented in the `XPINNs` subfolder in the GitHub repository.
+Large ice shelves, such as Ross, poses a multiscale challenge for capturing both local-scale and large-scale spatial variation of $u,v,h,\mu$. These local variations are difficult to capture with a single NN due to the spectral biases of NNs [@rahaman2019spectral,@xu2020frequency]. To address this challenge and ensure that PINNs capture those spatial variation precisely, the `DIFFISH.jax` package adopts the approach of extended PINNs (XPINNs) [@jagtap2020extended] for studying large ice shelves. This method divides the training domains into several sub-regions, with different NNs assigned to each. In this approach, each NN is trained to learn a specific sub-region of the large ice shelf, allowing it to capture local variations with high precision. We note that XPINNs require extra pre-processing of the observational data and additional constraints or penalty terms in the cost function to ensure successful training. Detailed requirements are documented in the `XPINNs` subfolder in the GitHub repository.
 
 **(6) Inversion of anisotropic viscosity:**
 Prior studies have shown that inversion of the isotropic viscosity can be over-constrained by remote-sensing data and the isotropic SSA equations, potentially leading to an ill-posed inverse problem with no viable solution. One way to address this over-constraint issue is to consider anisotropic viscosity. We find that the inversion with our modified SSA with anisotropic viscoisty can further reduce both the data and equation loss, indicating that the anisotropic equations are more consistent with the observations. The `DIFFISH.jax` package provides a comprehensive algorithm with well-posed settings for inferring anisotropic viscosity. The derivation of the anisotropic SSA equations, associated boundary conditions, and the additional loss terms in the cost functions to ensure the well-posedness of the inversion are described in detail in the `Anisotropic` subfolder in the GitHub repository. This is the first example of anisotropic-viscoisty inversion for ice shelves.
@@ -71,31 +70,25 @@ The combination of the above six features ensures that PINNs ensures robustness 
 
 In addition to their ease of use, as mentioned above, `DIFFISH.jax` offer several \textit{advantages}. First, the training of PINNs is effective even with irregularly sampled data, such as velocity data at a 450 m resolution [@Mouginot2019velo] and thickness data at a 500 m resolution [@Morlighem2020thick] that do not lie on the same grid. Second, while the outputs of classical numerical-based methods are discretized points that require enormous amounts of memory to store at high resolution, the outputs of PINNs are continuous functions parameterized by a fixed number of weights and biases, requiring relatively little memory even where higher resolutions is demanded [wang2024multi]. Third, computing derivatives of discretized points from either observed data or numerical-based methods is challenging and often induce extra error. In contrast, once the NN, as a continuous function representation, is trained to approximate the target function, we can compute the \textit{exact} derivative of the NN output via automatic differentiation (AD). Fourth, PINN does not require an initial guess of $\mu$ to be included as prior in the cost function, as often used in the adjoint method for ice-hardness inversion. Finally, NN training tends to capture the main variations (low-frequency information) in the data, preventing disturbances from high-frequency errors or noise often present in the data. Therefore, no regularization techniques are required for PINN training.
 
-# Availability
+# Examples
 
-To make the approach of inferring ice-shelf viscosity via PINNs more convincing, 
-understandable, and accessible to users, we provide a tutorial example that infers 
-ice viscosity from synthetic data of ice velocity and thickness. Both datasets are 
-created by solving the isotropic SSA equations and the mass conservation equation 
-with a given viscosity profile numerically via COMSOL Multiphysics. The COMSOL file
-is provided in the `Tutorial` subfolder. Users can freely generate new synthetic 
-data by changing the given viscosity profile and test whether the PINN algorithm 
-can accurately infer the correct viscosity profile from the synthetic data.
+We provide a tutorial example that infers ice viscosity from synthetic data of ice velocity and thickness. Both datasets are created by solving the isotropic SSA equations and the mass conservation equation with a given viscosity profile numerically via COMSOL Multiphysics. The COMSOL file
+is provided in the `Tutorial` subfolder. Users can freely generate new synthetic data by changing the given viscosity profile and test whether the PINN algorithm can accurately infer the correct viscosity profile from the synthetic data.
 
-We note that the tutorial example includes only the first four features of DIFFISH.jax. 
-For the last two advanced features: (5) the extended-PINNs approach and (6) the inversion
-of anisotropic viscosity, well-documented examples using real observational data for 
-selected ice shelves are provided in their corresponding subfolders to help users 
-employ or further generalize the methods.
+We note that the tutorial example includes only the first four features of `DIFFISH.jax`. 
+For the last two advanced features: (5) the extended-PINNs approach and (6) the inversion of anisotropic viscosity, well-documented examples using real observational data for the following ice shelves are provided in their corresponding subfolders to help users employ or further generalize the methods.
 
-The raw data used for the `DIFFISH.jax` package are downloaded from NASA MEaSUREs
-Phase-Based Antarctica Ice Velocity Map, Version 1 
-[(NSIDC-0754)](https://nsidc.org/data/nsidc-0754/versions/1), for ice velocity and
-from NASA MEaSUREs BedMachine Antarctica, Version 2
-[(NSIDC-0756)](https://nsidc.org/data/nsidc-0756/versions/2), for ice thickness. 
-These raw datasets are not provided in the package. Instead, the datasets available in 
-the package (all in the 'Data' subfolder) are truncated from the raw data and saved 
-separately for each ice shelf. Additional information, such as the position of the 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Amery ice shelf | Content Cell  |
+| Content Cell  | Content Cell  |
+Amery + LarsenC feature (5)
+Ross and Ronne-Filchner: feature (5)
+
+## Training data
+The raw data used for the `DIFFISH.jax` package are downloaded from NASA MEaSUREs Phase-Based Antarctica Ice Velocity Map, Version 1 
+[(NSIDC-0754)](https://nsidc.org/data/nsidc-0754/versions/1), for ice velocity and from NASA MEaSUREs BedMachine Antarctica, Version 2
+[(NSIDC-0756)](https://nsidc.org/data/nsidc-0756/versions/2), for ice thickness. These raw datasets are not provided in the package. Instead, the datasets available in the package (all in the 'Data' subfolder) are truncated from the raw data and saved separately for each ice shelf. Additional information, such as the position of the 
 ice-shelf calving front, required for the PINN training is also included in the dataset. 
 The process of preparing the dataset from the raw data is documented in the `Data` 
 subfolder, which help users create datasets for ice shelves not currently available 
@@ -106,7 +99,7 @@ in the package.
 
 
 
-# Mathematics
+# Mathematical formulation
 
 Ice shelf is a viscous gradient current that has slender-body shape. Due to the absence 
 of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 

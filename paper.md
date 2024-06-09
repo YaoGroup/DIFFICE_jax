@@ -83,7 +83,7 @@ For the last two advanced features: (5) the extended-PINNs approach and (6) the 
 | Ross ice shelf  | (1), (2), (3), (4), (5), (6)   |
 | Ronne-Filchner ice shelf  | (1), (2), (3), (4), (5), (6)  |
 
-## Training data
+### Training data
 The raw data used for the `DIFFISH.jax` package are downloaded from NASA MEaSUREs Phase-Based Antarctica Ice Velocity Map, Version 1 
 [(NSIDC-0754)](https://nsidc.org/data/nsidc-0754/versions/1), for ice velocity and from NASA MEaSUREs BedMachine Antarctica, Version 2
 [(NSIDC-0756)](https://nsidc.org/data/nsidc-0756/versions/2), for ice thickness. These raw datasets are not provided in the package. Instead, the datasets available in the package (all in the 'Data' subfolder) are truncated from the raw data and saved separately for each ice shelf. Additional information, such as the position of the ice-shelf calving front, required for the PINN training is also included in the dataset. The process of preparing the dataset from the raw data is documented in the `Data` subfolder, which help users create datasets for ice shelves not currently available in the package.

@@ -76,27 +76,22 @@ We provide a tutorial example that infers ice viscosity from synthetic data of i
 is provided in the `Tutorial` subfolder. Users can freely generate new synthetic data by changing the given viscosity profile and test whether the PINN algorithm can accurately infer the correct viscosity profile from the synthetic data.
 
 We note that the tutorial example includes only the first four features of `DIFFISH.jax`. 
-For the last two advanced features: (5) the extended-PINNs approach and (6) the inversion of anisotropic viscosity, well-documented examples using real observational data for the following ice shelves are provided in their corresponding subfolders to help users employ or further generalize the methods.
+For the last two advanced features: (5) the extended-PINNs approach and (6) the inversion of anisotropic viscosity, we provide well-documented examples for the ice shelves listed in the table below. Details ca be found in their corresponding subfolders.
 
-| First Header  | Second Header |
+| Ice shelf  | Feature # |
 | ------------- | ------------- |
-| Amery ice shelf | Content Cell  |
-| Content Cell  | Content Cell  |
-Amery + LarsenC feature (5)
-Ross and Ronne-Filchner: feature (5)
+| Amery ice shelf | (1), (2), (3), (4), (6)  |
+| Larsen C ice shelf  | (1), (2), (3), (4), (6)  |
+| Ross ice shelf  | (1), (2), (3), (4), (5), (6)   |
+| Ronne-Filchner ice shelf  | (1), (2), (3), (4), (5), (6)  |
 
 ## Training data
 The raw data used for the `DIFFISH.jax` package are downloaded from NASA MEaSUREs Phase-Based Antarctica Ice Velocity Map, Version 1 
 [(NSIDC-0754)](https://nsidc.org/data/nsidc-0754/versions/1), for ice velocity and from NASA MEaSUREs BedMachine Antarctica, Version 2
-[(NSIDC-0756)](https://nsidc.org/data/nsidc-0756/versions/2), for ice thickness. These raw datasets are not provided in the package. Instead, the datasets available in the package (all in the 'Data' subfolder) are truncated from the raw data and saved separately for each ice shelf. Additional information, such as the position of the 
-ice-shelf calving front, required for the PINN training is also included in the dataset. 
-The process of preparing the dataset from the raw data is documented in the `Data` 
-subfolder, which help users create datasets for ice shelves not currently available 
-in the package.
+[(NSIDC-0756)](https://nsidc.org/data/nsidc-0756/versions/2), for ice thickness. These raw datasets are not provided in the package. Instead, the datasets available in the package (all in the 'Data' subfolder) are truncated from the raw data and saved separately for each ice shelf. Additional information, such as the position of the ice-shelf calving front, required for the PINN training is also included in the dataset. The process of preparing the dataset from the raw data is documented in the `Data` subfolder, which help users create datasets for ice shelves not currently available in the package.
 
 <!Question: existing library for convention method, (2) name of the libary. 
 (3) what is the figure to add in the paper.!>
-
 
 
 # Mathematical formulation

@@ -80,6 +80,7 @@ For the last two advanced features: (5) the extended-PINNs approach and (6) the 
 
 | Ice shelf  | Feature # |
 | ------------- | ------------- |
+| Synthetic ice shelf | (1), (2), (3), (4) |
 | Amery ice shelf | (1), (2), (3), (4), (6)  |
 | Larsen C ice shelf  | (1), (2), (3), (4), (6)  |
 | Ross ice shelf  | (1), (2), (3), (4), (5), (6)   |

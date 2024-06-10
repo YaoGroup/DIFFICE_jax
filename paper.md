@@ -16,7 +16,6 @@ authors:
   - name: Ching-Yao Lai
     orcid: 0000-0002-6552-7546
     affiliation: 1
-    corresponding: true #
 affiliations:
  - name: Department of Geophysics, Stanford University, USA
    index: 1

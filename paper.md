@@ -17,10 +17,10 @@ authors:
     orcid: 0000-0002-6552-7546
     affiliation: 1
 affiliations:
- - name: Department of Mathematics, New York University, USA
-   index: 2
  - name: Department of Geophysics, Stanford University, USA
    index: 1
+ - name: Department of Mathematics, New York University, USA
+   index: 2
 date: 14 May 2024
 bibliography: paper.bib
 ---

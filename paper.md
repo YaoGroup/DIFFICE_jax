@@ -75,8 +75,7 @@ In addition to their ease of use, as mentioned above, `DIFFISH.jax` offer severa
 We provide a tutorial example that infers ice viscosity from synthetic data of ice velocity and thickness. Both datasets are created by solving the isotropic SSA equations and the mass conservation equation with a given viscosity profile numerically via COMSOL Multiphysics. The COMSOL file
 is provided in the `Tutorial` subfolder. Users can freely generate new synthetic data by changing the given viscosity profile and test whether the PINN algorithm can accurately infer the correct viscosity profile from the synthetic data.
 
-We note that the tutorial example includes only the first four features of `DIFFISH.jax`. 
-For the last two advanced features: (5) the extended-PINNs approach and (6) the inversion of anisotropic viscosity, we provide well-documented examples for the ice shelves listed in the table below. Details ca be found in their corresponding subfolders.
+The ice-shelf viscosity inversion examples and the corresponding implemented features are listed in the table below. Well-documented codes can be found in their corresponding subfolders.
 
 | Ice shelf  | Feature # |
 | ------------- | ------------- |

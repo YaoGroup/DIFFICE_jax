@@ -28,6 +28,8 @@ def iceshelf_data(filename, step):
     uall = data['uq']   # unit [m/s] ice velocity
     vall = data['vq']   # unit [m/s] ice velocity
     hall = data['hq']   # unit [m] ice thickness
+    mu_g = data['mq']   # unit [Pa.s] given viscosity
+    
     # record the full size of the input data
     fullsize = xall.shape
 
@@ -103,6 +105,6 @@ def iceshelf_data(filename, step):
     # sequence of output matrix column is u,v,h
     U_star = jnp.hstack((u_n, v_n, h_n))
 
-    return X_star, U_star, X_ct, nnct, data_info
+    return X_star, U_star, X_ct, nnct, data_info, mu_g
 
 

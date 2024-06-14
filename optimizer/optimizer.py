@@ -34,7 +34,7 @@ def adam_optimizer(key, lossf, params, dataf, epoch, lr=1e-3):
         # minimize the loss function using Adam
         params, loss_info, opt_state = adam_minimizer(lossf, params, data, opt_Adam, opt_state)
         # print the loss for every 100 iteration
-        if (step+1) % 100 == 0:
+        if (step+1) % 20 == 0:
             # print the results
             print(f"Step: {step+1} | Loss: {loss_info[0]:.4e} | Loss_d: {loss_info[1]:.4e} |"
             f" Loss_e: {loss_info[2]:.4e} | Loss_b: {loss_info[3]:.4e}", file=sys.stderr)

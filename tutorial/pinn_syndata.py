@@ -128,7 +128,6 @@ results = predict(func_all, data_all)
 
 # generate the last loss
 loss_all = jnp.array(loss1)
-
 # save the loss info into results
 results['loss'] = loss_all
 

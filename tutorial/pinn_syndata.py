@@ -132,7 +132,8 @@ loss_all = jnp.array(loss1)
 # save the loss info into results
 results['loss'] = loss_all
 
-#%% data saving
+
+#%% Saving the results
 
 # convert all the results into numpy format before saving
 output = tree_map(lambda x: np.array(x), results)

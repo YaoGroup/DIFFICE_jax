@@ -1,5 +1,6 @@
 import jax.numpy as jnp
 from jax.tree_util import tree_map
+from jax import lax
 
 def dataArrange(var, idxval, dsize):
     nanmat = jnp.empty(dsize)

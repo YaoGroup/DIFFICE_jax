@@ -41,8 +41,8 @@ n_unit = 30
 lw = [0.05, 0.1]
 
 # number of sampling points
-n_smp = 4000
-n_col = 4000
+n_smp = 6000
+n_col = 5000
 n_cbd = 600
 n_pt = jnp.array([n_smp, n_col, n_cbd], dtype='int32')
 n_pt2 = n_pt * 2   # double the points for L-BFGS

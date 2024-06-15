@@ -29,3 +29,9 @@ respectively. For the tutorial example in this folder, we consider the floating 
 confined rectangular domain. The domain size and the associated boundary conditions of the ice flow are listed
 in the figure below. Combining the equations and boundary conditions, the 
 
+
+<p align="center">
+    <img src="COMSOL/IceShelf2D_bd.png" alt="Example Image" width="80%">
+</p>
+
+

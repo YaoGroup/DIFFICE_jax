@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/pinn_syndata.ipynb)
+
 # Tutorial example for viscosity inversion
 
 This folder provide a tutorial example to infer viscosity from synthentic data of 

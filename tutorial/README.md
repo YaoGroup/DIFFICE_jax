@@ -109,7 +109,7 @@ inversion, and compare them directly with the synthetic data and the given visco
 
 The figure below shows the trained results of PINNs for the synthetic data provided in this folder. The 
 trained networks for ice velocity and thickness match well with the synthetic data, and the inferred 
-viscosity shows a good agreement with the given viscosity profile with the relative error less than 1%.
+viscosity shows a good agreement with the given viscosity profile with a relative error less than 1%.
 This trained results were obtained after **100k** iterations of **Adams**, followed by another **100K** 
 iterations of **L-BFGS**.
 

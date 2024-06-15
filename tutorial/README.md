@@ -9,9 +9,9 @@ inversion are provided in this folder. All codes are well-documented for easy an
 In addition, we provided the ipynb file that allows the user to directly run the code online (on Colab).
 
 ## Problem setup
-The synthetic data is generated considering a case of floating ice moving in a given domain. The
-velocity and thickness of the ice is obtained by solving the Shallow-shelf Approximation 
-equation and steady mass conservation equations numerically, which reads
+Considering the case of floating ice moving in a given domain, synthetic data refers to
+velocity and thickness data of the ice computed by solving the Shallow-shelf Approximation 
+equation and steady mass conservation equations numerically with a given viscosity, which reads
 
 $$\begin{array}{l}
 \displaystyle \frac{\partial} {\partial x}\left(4 \mu h \frac{\partial  u}{\partial x} + 2\mu h \frac{\partial  v}{\partial y}  \right) 
@@ -27,9 +27,9 @@ $$ \qquad \frac{\partial u} {\partial x} + \frac{\partial v} {\partial y} = 0 \q
 where $(u, v)$, $h$ and $\mu$ are the velocity vector, thickness and viscosity of the floating ice, 
 respectively. For the tutorial example in this folder, we consider the floating ice moving in a 
 confined rectangular domain. The domain size and the boundary conditions of the ice flow are provided
-in the figure below.
+in the figure below. Combining the equations and boundary conditions, the 
 
-![Inferred viscosity for four different Antarctica Ice Shelves. \label{fig:example}](COMSOL/IceShelf2D_bd.png)
+![Boundary conditions for generating synthetic data. \label{fig:bdcond}](COMSOL/IceShelf2D_bd.png)
 
 
 

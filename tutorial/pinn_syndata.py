@@ -12,7 +12,7 @@ import pickle
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 
-from data.prepare_data import data_sample_create
+from data.sampling import data_sample_create
 from equation.ssa_eqn_iso import vectgrad, gov_eqn, front_eqn
 from model.initialization import init_MLP
 from model.networks import solu_create

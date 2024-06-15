@@ -1,12 +1,37 @@
-import sys
 import jax.numpy as jnp
 from jax.tree_util import tree_map
-from pathlib import Path
 
-project_root = Path(__file__).parent.parent
-sys.path.append(str(project_root))
+def dataArrange(var, idxval, dsize):
+    nanmat = jnp.empty(dsize)
+    nanmat = nanmat.at[:].set(jnp.nan)
+    var_1d = nanmat.flatten()[:, None]
+    var_1d = var_1d.at[idxval].set(var)
+    var_2d = jnp.reshape(var_1d, dsize)
+    return var_2d
 
-from data.prepare_data import dataArrange, extract_scale
+def extract_scale(scale_info):
+    # define the global parameter
+    rho = 917
+    rho_w = 1030
+    gd = 9.8 * (1 - rho / rho_w)  # gravitational acceleration
+    # load the scale information
+    dmean, drange = scale_info
+    lx0, ly0, u0, v0 = drange[0:4]
+    lxm, lym, um, vm = dmean[0:4]
+    h0 = dmean[4]
+    # find the maximum velocity and length scale
+    u0m = lax.max(u0, v0)
+    l0m = lax.max(lx0, ly0)
+    # calculate the scale of viscosity and strain rate
+    mu0 = rho * gd * h0 * (l0m / u0m)
+    str0 = u0m/l0m
+    term0 = rho * gd * h0 ** 2 / l0m
+    # group characteristic scales for all different variables
+    scale = dict(lx0=lx0, ly0=ly0, u0=u0, v0=v0, h0=h0,
+                 lxm=lxm, lym=lym, um=um, vm=vm,
+                 mu0=mu0, str0=str0, term0=term0)
+    return scale
+
 
 def predict(func_all, data_all):
     idxval, dsize = data_all[4][-2:]

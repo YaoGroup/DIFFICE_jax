@@ -9,7 +9,7 @@ inversion are provided in this folder. All codes are well-documented for easy un
 In addition, we provided the ipynb file that allows the user to run the code in the Google 
 Colab online.
 
-## Problem setup
+## Forward problem setup
 Considering the case of floating ice moving in a given domain, synthetic data refers to the
 ice velocity and thickness data obtained by solving the Shallow-shelf Approximation 
 equation and steady mass conservation equations numerically with a given viscosity, which reads
@@ -36,14 +36,17 @@ actual ice-shelf flow, we set the velocity scale to be $u_0 = 1$ $\mathrm{km/yr}
     <img src="COMSOL/IceShelf2D_bd.png" alt="Example Image" width="100%">
 </p>
 
-Besides the governing equations and the boundary condition, a known viscosity profile $\mu(x,y)$ 
-is required to generate the synthetic dataof ice velocity and thickness. For the tutorial example,
-the viscosity profile is given by
+Besides the governing equations and the boundary condition, a **known** viscosity profile $\mu(x,y)$ 
+is required to generate the synthetic data of ice velocity and thickness. For the tutorial example,
+the viscosity profile is given as
 
 
 $$ \begin{equation}
-  \mu = \mu_0 \left[1-\frac{1}{2} \cos \left(2\pi \frac{y}{L_y}\right)\right] \left(\frac{2}{3} + \frac{x}{3L_x}\right)
+  \mu(x,y) = \mu_0 \left[1-\frac{1}{2} \cos \left(2\pi \frac{y}{L_y}\right)\right] \left(\frac{2}{3} + \frac{x}{3L_x}\right)
 \end{equation} $$
 
 where we set the viscosity scale to be $\mu_0 = 5 \times 10^{13}$ (Pa $\cdot$ s) to match the 
-magnitude of actual ice-shelf viscosity.
+magnitude of actual ice-shelf viscosity. Now, we have all the information to generate the 
+synthetic data by solving the govnering equation numerically. For the sake of simplicity, we 
+solve the equations using the **COMSOL multiphysics**, which provides a good user interface to set
+the forward problem and conduct the calculation. 

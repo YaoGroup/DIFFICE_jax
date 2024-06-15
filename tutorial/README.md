@@ -26,9 +26,10 @@ $$ \qquad \frac{\partial u} {\partial x} + \frac{\partial v} {\partial y} = 0 \q
 
 where $(u, v)$, $h$ and $\mu$ are the velocity vector, thickness and viscosity of the floating ice, 
 respectively. For the tutorial example in this folder, we consider the floating ice moving in a 
-confined rectangular domain. The domain size and the boundary condition of the ice flow are provided
+confined rectangular domain. The domain size and the boundary conditions of the ice flow are provided
 in the figure below.
-![Inferred viscosity for four different Antarctica Ice Shelves. \label{fig:example}](COMSOL/IceShekf2D_bd.png)
+
+![Inferred viscosity for four different Antarctica Ice Shelves. \label{fig:example}](COMSOL/IceShelf2D_bd.png)
 
 
 

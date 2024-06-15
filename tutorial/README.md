@@ -23,14 +23,16 @@ $$\begin{array}{l}
 = \rho g \left(1-\frac{\rho}{\rho_w}\right)h\frac{\partial h}{\partial y} \qquad \text{(SSA)} \cr
 \end{array}$$
 
-$$ \qquad \nabla \cdot (hu) = \frac{\partial (hu)} {\partial x} + \frac{\partial (hv)} {\partial y} = 0 \qquad \qquad \text{(Steady mass conserv.)} $$
+$$ \qquad \nabla \cdot (hu) = \frac{\partial (hu)} {\partial x} + \frac{\partial (hv)} {\partial y} = \dot{a} - \dot{b} \qquad \qquad \text{(Steady mass conserv.)} $$
 
 where $(u, v)$, $h$ and $\mu$ are the velocity vector, thickness and viscosity of the floating 
-ice, respectively. For the tutorial example provided in this folder, we consider the floating 
-ice moving in a confined rectangular channel. The domain size and the associated boundary
-conditions for the ice flow are listed in the figure below. To make the example close to the 
-actual ice-shelf flow, we set the velocity scale to be $u_0 = 1$ $\mathrm{km/yr}$ $= 3.17 \times 
-10^{-5}$ $\mathrm{m/s}$ and the thickness scale to be $h_0 = 500$ $\mathrm{m}$
+ice, respectively. $\dot{a}$ and $\dot{b}$ are the snow accumulation rate and basel melting rate,
+respectively. For the tutorial example provided in this folder, we consider the floating 
+ice moving in a confined rectangular channel. For simplicity, we assume that both $\dot{a}$ and $\dot{b}$
+are equal to 0. The domain size and the associated boundary conditions for the ice flow are listed 
+in the figure below. To make the example close to the actual ice-shelf flow, we set the velocity 
+scale to be $u_0 = 1$ $\mathrm{km/yr}$ $= 3.17 \times 10^{-5}$ $\mathrm{m/s}$ and the thickness 
+scale to be $h_0 = 500$ $\mathrm{m}$.
 
 <p align="center">
     <img src="COMSOL/IceShelf2D_bd.png" alt="boundary conditions" width="100%">

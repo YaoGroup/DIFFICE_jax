@@ -85,9 +85,11 @@ NN_loss.lref = NN_loss(trained_params, data)[0]
 
 #%% training the networks
 
-# set the training iteration
-epoch1 = 10000
-epoch2 = 10000
+# set the number of training iteration
+epoch1 = 100000    
+epoch2 = 100000
+# (above are the number required for high accuracy,
+#  users are free to modify it based on your need)
 
 """Training using Adam"""
 

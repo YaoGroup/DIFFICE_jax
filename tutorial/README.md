@@ -76,3 +76,10 @@ figure; surf(Xq, Yq, uq);  % surface plot of the velocity component u
 shading interp;
 ```
 
+### `load_syndata.py`
+
+A python script that normalize the synthetic data loaded from the MATLAB format (`.mat`). The script
+will automatically find the characterisitc scale of each variable in the synthetic data, including 
+spatial coordiates $(x,y)$, velocity $(u, v)$ and thickness $h$, and normalize these variables to be
+within the range of $[-1, 1]$. The script also re-organize and reshape the data to meet the requirement
+for the PINN training.

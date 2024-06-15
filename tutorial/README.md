@@ -10,9 +10,9 @@ In addition, we provided the ipynb file that allows the user to run the code in 
 Colab online.
 
 ## Forward problem setup
-Considering the case of floating ice moving in a given domain, synthetic data refers to the
-ice velocity and thickness data obtained by solving the Shallow-shelf Approximation 
-equation and steady mass conservation equations numerically with a given viscosity, which reads
+Considering the floating ice moving in a given domain, the synthetic data of ice
+velocity and thickness data can be calculated by solving the Shallow-shelf Approximation (SSA)
+equations and steady mass conservation equation numerically with a given viscosity, which read
 
 $$\begin{array}{l}
 \displaystyle \frac{\partial} {\partial x}\left(4 \mu h \frac{\partial  u}{\partial x} + 2\mu h \frac{\partial  v}{\partial y}  \right) 
@@ -48,5 +48,31 @@ $$ \begin{equation}
 where we set the viscosity scale to be $\mu_0 = 5 \times 10^{13}$ (Pa $\cdot$ s) to match the 
 magnitude of actual ice-shelf viscosity. Now, we have all the information to generate the 
 synthetic data by solving the govnering equation numerically. For the sake of simplicity, we 
-solve the equations using the **COMSOL multiphysics**, which provides a good user interface to set
-the forward problem and conduct the calculation. 
+solve the equations using the **COMSOL multiphysics**, which provides a good user interface to 
+set the forward problem and conduct the calculation. 
+
+## Code description
+### `IceShelf2D_forward.mph`  in the `COMSOL` folder
+
+The COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
+conditions and given viscosity as described above. Users need to have the basic COMSOL software 
+(no extra Module required) with version >= 5.6 to open the file. Users are free to change the 
+domain size, geometry, boundary conditions, and given viscosity profile in the COMSOL file to 
+create different synthetic data. The provided COMSOL file can export the synthetic data in a `.txt` 
+format by default. The `SynData_exp1.txt` is the data file exported from the current COMSOL file.
+
+
+### `txt2mat.m`
+
+A MATLAB script that converts the raw data file (`.txt`) exported from COMSOL into MATLAB data 
+format (`.mat`). The synthetic data are organized in the way that is required to be loaded into
+the python code for PINN training. The `SynData_exp1.mat` is the MATLAB data file converted from
+the current `SynData_exp1.txt` raw data file in the `COMSOL` folder. We note that ehe MATLAB data 
+format (`.mat`) is convenient for the user to observe the synthetic data in MATLAB via the commend
+
+```matlab
+load('SynData_exp1.mat')
+figure; surf(Xq, Yq, uq);  % surface plot of the velocity component u
+shading interp;
+```
+

@@ -26,7 +26,7 @@ $$ \qquad \frac{\partial u} {\partial x} + \frac{\partial v} {\partial y} = 0 \q
 
 where $(u, v)$, $h$ and $\mu$ are the velocity vector, thickness and viscosity of the floating ice, 
 respectively. For the tutorial example in this folder, we consider the floating ice moving in a 
-confined rectangular domain. The domain size and the boundary conditions of the ice flow are provided
+confined rectangular domain. The domain size and the associated boundary conditions of the ice flow are listed
 in the figure below. Combining the equations and boundary conditions, the 
 
 ![Boundary conditions for generating synthetic data. \label{fig:bdcond}](COMSOL/IceShelf2D_bd.png)

@@ -33,7 +33,7 @@ actual ice-shelf flow, we set the velocity scale to be $u_0 = 1$ $\mathrm{km/yr}
 10^{-5}$ $\mathrm{m/s}$ and the thickness scale to be $h_0 = 500$ $\mathrm{m}$
 
 <p align="center">
-    <img src="COMSOL/IceShelf2D_bd.png" alt="Example Image" width="100%">
+    <img src="COMSOL/IceShelf2D_bd.png" alt="boundary conditions" width="100%">
 </p>
 
 Besides the governing equations and the boundary condition, a **known** viscosity profile $\mu(x,y)$ 
@@ -106,8 +106,12 @@ inversion, and compare them directly with the synthetic data and the given visco
 
 ## Results
 
-Below are the trained results of PINNs for the synthetic data provided in this folder. The trained network for
-ice velocity and thickness match well with the synthetic data and the inferred viscosity shows a good agreement
-with the given viscosity profile with the relative error lower than 1%. This trained results is obtained after 
-100k iterations of Adams, followed by another 100K iterations of L-BFGS.
+The figure below shows the trained results of PINNs for the synthetic data provided in this folder. The 
+trained networks for ice velocity and thickness match well with the synthetic data and the inferred 
+viscosity shows a good agreement with the given viscosity profile with the relative error lower than 1%.
+This trained results is obtained after 100k iterations of Adams, followed by another 100K iterations of
+L-BFGS.
 
+<p align="center">
+    <img src="results_syndata.png" alt="results" width="90%">
+</p>

@@ -76,10 +76,38 @@ figure; surf(Xq, Yq, uq);  % surface plot of the velocity component u
 shading interp;
 ```
 
+
 ### `load_syndata.py`
 
-A python script that normalize the synthetic data loaded from the MATLAB format (`.mat`). The script
+A python script that normalizes the synthetic data loaded from the MATLAB format (`.mat`). The script
 will automatically find the characterisitc scale of each variable in the synthetic data, including 
-spatial coordiates $(x,y)$, velocity $(u, v)$ and thickness $h$, and normalize these variables to be
-within the range of $[-1, 1]$. The script also re-organize and reshape the data to meet the requirement
-for the PINN training.
+spatial coordiates $(x,y)$, velocity $(u, v)$ and thickness $h$, and normalize them to be within
+$[-1, 1]$. The script also re-organizes and reshapes the data to meet the requirement for the PINN
+training. 
+
+
+### `pinn_syndata.py`
+
+The main python script that conducts the PINN training to infer ice viscosity from the synthetic data.
+The script is used to run on a local machine. The user should select the synthetic data file and set 
+the hyper-parameters for the training. After the training, the script will automatically save the trained
+network weights and biases in the `.pkl' format, and the prediction of solution and equation residue at
+high-resolution grids in the `.mat' format. Both files will be stored in the `Results` subfolder. The 
+current setting of hyper-parameters allows the viscosity inversion from the example data `SynData_exp1.mat`
+to reach high accuracy.
+
+
+### `pinn_syndata.ipynb`
+The Colab notebook, similar to the script `pinn_syndata.py` that can conduct the PINN training to infer ice 
+viscosity from the synthetic data. The user can run the notebook directly in Google Colab online without any 
+need to install python environments and library on a local machine. Different from the script `pinn_syndata.py`,
+after the training, the notebook plots the trained networks for the data assimilation and viscosity 
+inversion, and compare them directly with the synthetic data and the given viscosity profile.
+
+## Results
+
+Below are the trained results of PINNs for the synthetic data provided in this folder. The trained network for
+ice velocity and thickness match well with the synthetic data and the inferred viscosity shows a good agreement
+with the given viscosity profile with the relative error lower than 1%. This trained results is obtained after 
+100k iterations of Adams, followed by another 100K iterations of L-BFGS.
+

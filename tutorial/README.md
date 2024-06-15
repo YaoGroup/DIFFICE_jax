@@ -9,8 +9,8 @@ inversion are provided in this folder. All codes are well-documented for easy an
 In addition, we provided the ipynb file that allows the user to directly run the code online (on Colab).
 
 ## Problem setup
-Considering the case of floating ice moving in a given domain, synthetic data refers to
-velocity and thickness data of the ice computed by solving the Shallow-shelf Approximation 
+Considering the case of floating ice moving in a given domain, synthetic data refers to the
+ice velocity and thickness data obtained by solving the Shallow-shelf Approximation 
 equation and steady mass conservation equations numerically with a given viscosity, which reads
 
 $$\begin{array}{l}

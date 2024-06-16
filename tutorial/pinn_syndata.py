@@ -100,9 +100,10 @@ start_time = time.time()
 # training with Adam
 trained_params, loss1 = adam_optimizer(keys_adam[0], NN_loss, trained_params, dataf, epoch1, lr=lr)
 
-# data_l = dataf_l(key_lbfgs)
-# # training with L-bfgs
-# trained_params, loss2 = lbfgs_optimizer(NN_loss, trained_params, data_l, epoch2)
+# sample the data for L-BFGS training
+data_l = dataf_l(key_lbfgs)
+# training with L-bfgs
+trained_params, loss2 = lbfgs_optimizer(NN_loss, trained_params, data_l, epoch2)
 
 elapsed = time.time() - start_time
 print('Training time: %.4f' % elapsed)
@@ -129,7 +130,7 @@ func_all = (f_u, f_gu, f_eqn)
 results = predict(func_all, data_all)
 
 # generate the last loss
-loss_all = jnp.array(loss1)
+loss_all = jnp.array(loss1 + loss2)
 # save the loss info into results
 results['loss'] = loss_all
 

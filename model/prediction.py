@@ -110,6 +110,6 @@ def predict(func_all, data_all):
             "h_x": hx_p, "h_y": hy_p, "str": strate,
             "e11": e11, "e12": e12, "e13": e13,
             "e21": e21, "e22": e22, "e23": e23,
-            "e1": e1, "e2": e2}
+            "e1": e1, "e2": e2, "scale": varscl}
 
     return results

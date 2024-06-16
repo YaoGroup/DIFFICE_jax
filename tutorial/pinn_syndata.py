@@ -49,7 +49,7 @@ n_pt2 = n_pt * 2   # double the points for L-BFGS
 
 # create the dataset filename
 DataFile = 'SynData_exp1.mat'
-OutputName = f'SynData_SGD_idx{seed: .0f}'
+OutputName = f'SynData_SGD_seed={seed:.0f}'
 # check whether sub-folder exists
 outdir = rootdir.joinpath('Results')
 isExist = os.path.exists(outdir)

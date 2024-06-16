@@ -91,8 +91,6 @@ epoch2 = 100000
 # (above are the number required for high accuracy,
 #  users are free to modify it based on your need)
 
-"""Training using Adam"""
-
 # set the learning rate for Adam
 lr = 1e-3
 # training the neural network

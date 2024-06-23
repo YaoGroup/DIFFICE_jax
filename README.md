@@ -1,5 +1,5 @@
 # DIFFICE_jax
-Deep-learning-based differentiable solver for data assimilation and inverse modeling of ice shelves in JAX.
+Neural network-based differentiable solver for data assimilation and inverse modeling of ice shelves in JAX.
 
 Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu).
 

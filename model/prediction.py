@@ -74,7 +74,7 @@ def predict(func_all, data_all):
     y = dataArrange(y_star, idxval, dsize) * varscl['ly0'] + varscl['lym']
     u_data = dataArrange(u_star, idxval, dsize) * varscl['u0'] + varscl['um']
     v_data = dataArrange(v_star, idxval, dsize) * varscl['v0'] + varscl['vm']
-    h_data = dataArrange(h_star, idxval, dsize) * varscl['v0']
+    h_data = dataArrange(h_star, idxval, dsize) * varscl['h0']
 
     # convert to 2D NN prediction
     u_p = dataArrange(uvhm[:, 0:1], idxout, dsout) * varscl['u0'] + varscl['um']

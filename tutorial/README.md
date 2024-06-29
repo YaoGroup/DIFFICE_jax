@@ -53,7 +53,7 @@ solve the equations using **COMSOL Multiphysics**, which, we believe, provides a
 user interface to set up the forward problem and conduct the calculation. 
 
 ## Code description
-### `IceShelf2D_forward.mph`  in the `COMSOL` folder
+### `IceShelf2D_forward.mph`  (in the `COMSOL` folder)
 
 The COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
 conditions and given viscosity as described above. Users need to have the basic COMSOL software 
@@ -63,7 +63,7 @@ create different synthetic data. The provided COMSOL file can export the synthet
 format by default. The `SynData_exp1.txt` is the data file exported from the current COMSOL file.
 
 
-### `txt2mat.m`
+### `txt2mat.m`  (in the `COMSOL` folder)
 
 A MATLAB script that converts the raw data file (`.txt`) exported from COMSOL into MATLAB data 
 format (`.mat`). The synthetic data are organized in the way that is required to be loaded into
@@ -73,7 +73,7 @@ format (`.mat`) is convenient for the user to observe the synthetic data in MATL
 
 ```matlab
 load('SynData_exp1.mat')
-figure; surf(Xq, Yq, uq);  % surface plot of the velocity component u
+figure; surf(xd, yd, ud);  % surface plot of the velocity component u
 shading interp;
 ```
 

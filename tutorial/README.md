@@ -75,6 +75,9 @@ format (`.mat`) is convenient for the user to observe the synthetic data in MATL
 load('SynData_exp1.mat')
 figure; surf(xd, yd, ud);  % surface plot of the velocity component u
 shading interp;
+
+figure; surf(xd_h, yd_h, hd);  % surface plot of the thickness h (at different grids)
+shading interp;
 ```
 
 

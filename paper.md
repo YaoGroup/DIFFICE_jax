@@ -140,7 +140,7 @@ where $f_1$ and $f_2$ represent the residues of the normalized isotropic SSA equ
 
 # Figures
 
-![Inferred viscosity for four different Antarctica Ice Shelves. \label{fig:example}](viscosity.png)
+![Inferred viscosity for four different Antarctica Ice Shelves. \label{fig:example}](PINN_setup.png)
 
 
 # Acknowledgements

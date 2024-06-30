@@ -140,7 +140,7 @@ where $f_1$ and $f_2$ represent the residues of the normalized isotropic SSA equ
 
 # Figures
 
-![Inferred viscosity for four different Antarctica Ice Shelves. \label{fig:example}](PINN_setup.png)
+![**PINN setup**. (**a**) The structure and workflow of physics-informed neural networks (PINNs) for inferring ice viscosity $\mu$ from (**b**) the remote-sensing data (ice velocity $u,v$ \cite{Mouginot2019velo} and thickness $h$ \cite{Morlighem2020thick}) and governing equations $(f_1,f_2,f_3,$ and $f_4=0)$. The loss function $\mathcal{L}$ contains two terms, the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. (**c**) Prediction of trained neural network for velocity $(u, v)$ and thickness $h$, which shows high agreement with the remote-sensing data with relatively error around 1-3%. The inferred viscosity well satisfies the equation with small residue values, indicating the accuracy of the inferred viscosity.   \label{fig:PINN}](PINN_setup.png)
 
 
 # Acknowledgements

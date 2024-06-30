@@ -4,7 +4,7 @@ import jax.numpy as jnp
 import numpy as np
 from jax import random, lax
 import time
-from scipy.io import savemat
+from scipy.io import savemat, loadmat
 from pathlib import Path
 import pickle
 
@@ -57,7 +57,7 @@ shelfname = 'Amery'
 
 # create the dataset filename
 filename = 'data_pinns_' + shelfname + '.mat'
-filepath = project_root.joinpath('data').joinpath(filename)
+filepath = str(project_root.joinpath('data').joinpath(filename))
 
 # create the output file name
 outputName = shelfname + f'_pinns_aniso_seed={seed:.0f}'
@@ -68,8 +68,10 @@ isExist = os.path.exists(outdir)
 if not isExist:
     os.mkdir(outdir)
 
+# load the datafile
+rawdata = loadmat(filepath)
 # obtain the data for training
-data_all = normalize_data(filepath)
+data_all = normalize_data(rawdata)
 scale = data_all[4][0:2]
 
 

@@ -5,7 +5,7 @@ import numpy as np
 from jax.tree_util import tree_map
 from jax import random, lax
 import time
-from scipy.io import savemat
+from scipy.io import savemat, loadmat
 from pathlib import Path
 import pickle
 
@@ -60,7 +60,7 @@ shelfname = 'RnFlch'
 
 # create the dataset filename
 filename = 'data_xpinns_' + shelfname + '.mat'
-filepath = project_root.joinpath('data').joinpath(filename)
+filepath = str(project_root.joinpath('data').joinpath(filename))
 
 # create the output file name
 outputName = shelfname + f'_xpinns_aniso_seed={seed:.0f}'
@@ -71,8 +71,10 @@ isExist = os.path.exists(outdir)
 if not isExist:
     os.mkdir(outdir)
 
+# load the datafile
+rawdata = loadmat(filepath)
 # obtain the data for training
-data_all, idxgall, posi_all, idxcrop_all = normalize_data(filepath)
+data_all, idxgall, posi_all, idxcrop_all = normalize_data(rawdata)
 scale = tree_map(lambda x: data_all[x][4][0:2], idxgall)
 
 

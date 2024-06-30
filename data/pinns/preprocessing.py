@@ -6,16 +6,13 @@ organize the data into a form that is required for the PINN training
 
 import numpy as np
 import jax.numpy as jnp
-from scipy.io import loadmat
 
 
-def normalize_data(filepath):
+def normalize_data(data):
     '''
-    :param filepath: path of the data file
+    :param data: original dataset
     :return X_smp, U_smp, X_ct, n_ct, data_info
     '''
-    # load the data file
-    data = loadmat(filepath)
 
     # extract the velocity data
     xraw = data['xd']   # unit [m] position
@@ -32,7 +29,6 @@ def normalize_data(filepath):
     xct = data['xct']    # unit [m] position
     yct = data['yct']    # unit [m] position
     nnct = data['nnct']  # unit vector
-
 
     #%%
 
@@ -108,7 +104,7 @@ def normalize_data(filepath):
     # gathering all the data information
     data_info = [data_mean, data_range, data_norm, data_raw, idxval_all, dsize_all]
 
-    #%% generate the sampling points and collocation points
+    #%% data grouping
 
     # group the input and output into matrix
     X_star = [jnp.hstack((x_n, y_n)), jnp.hstack((xh_n, yh_n))]
@@ -117,5 +113,3 @@ def normalize_data(filepath):
     U_star = [jnp.hstack((u_n, v_n)), h_n]
 
     return X_star, U_star, X_ct, nnct, data_info
-
-

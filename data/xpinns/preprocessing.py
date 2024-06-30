@@ -7,12 +7,7 @@ organize the data into a form that is required for the PINN training
 
 import numpy as np
 import jax.numpy as jnp
-from scipy.io import loadmat
-from pathlib import Path
 from jax.tree_util import tree_map
-
-# find the root directory
-rootdir = Path(__file__).parent
 
 
 # function to load the data for each sub-regions
@@ -141,9 +136,7 @@ def normalize_each(data, idx, ng):
 
 
 # function to load the data for all sub-regions
-def normalize_data(filepath):
-    # load data and unify the unit
-    data = loadmat(filepath)
+def normalize_data(data):
     # count the number of sub-regions
     ng = len(data['xd'][0])
     # create an index list for different sub-regions
@@ -161,8 +154,8 @@ def normalize_data(filepath):
     posi_all = [Xe, Ye, Xe_h, Ye_h]
 
     # obtain the location of each subregion in the entire ice-shelf matrix
-    idxcrop = data['idxcrop']     # for velocity
-    idxcrop_h = data['idxcrop_h'] # for thickness
+    idxcrop = data['idxcrop']      # for velocity
+    idxcrop_h = data['idxcrop_h']  # for thickness
     # convert the idxcrop to a array (for simple calculation later)
     idxcrop = jnp.array(idxcrop.tolist()).reshape(ng, 4)
     idxcrop_h = jnp.array(idxcrop_h.tolist()).reshape(ng, 4)

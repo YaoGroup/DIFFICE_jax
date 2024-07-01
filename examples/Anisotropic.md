@@ -22,7 +22,13 @@ $$\begin{eqnarray}
 
 Similarly, the dynamic boundary conditions at the calving front with respect to the anisotropic viscosity components ($\mu_h$, $\mu_v$) becomes
 
-$$\begin{eqnarray}
-	2\left({\mu_h}\frac{\partial u}{\partial x} + {\mu_v} \left[ \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_x + {\mu_h} \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_y = \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_x   \\ 
-	{\mu_h} \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_x  + 2 \left({\mu_h} \frac{\partial v}{\partial y} + {\mu_v} \left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_y  =  \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y 
-\end{eqnarray}$$
+$$\begin{array}{l}
+\displaystyle 2\left({\mu_h}\frac{\partial u}{\partial x} + {\mu_v} \left[ \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_x 
+	+ \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_y 
+ 	= \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_x  \cr
+\displaystyle  \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_x  
+	+ 2 \left({\mu_h} \frac{\partial v}{\partial y} + {\mu_v} \left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_y 
+ 	= \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y
+\end{array} \quad \text{at} \  (x, y) \in {\partial \Omega_c} $$
+
+where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front.

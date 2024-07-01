@@ -1,2 +1,2 @@
-# Inversion of anisotropic viscosity via PINNs
+# Anisotropic viscosity inversion via PINNs
 

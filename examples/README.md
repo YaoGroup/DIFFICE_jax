@@ -16,8 +16,8 @@ provided in the `colab` subfolder or by clicking
 ## `train_pinns_aniso.py`
 
 A python script that assimilate remote-sensing data and infer the effective ice viscosity under **anisotropic**
-assumption via **regular PINNs**. The code are computationally-efficient and accurate enough to study ice shelves
-of size close or smaller than Amery or Larce C Ice Shelves. An companion Colab Notebook of this script is 
+assumption via **regular PINNs**. Differne from the isotropic viscosity inference, this code will infer two 
+viscosity components, one in the horizontal and the other in vertical direction.  An companion Colab Notebook of this script is 
 provided in the `colab` subfolder or by clicking
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/examples/colab/train_pinns_aniso.ipynb)
 

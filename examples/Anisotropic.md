@@ -54,7 +54,9 @@ $$ \begin{equation}
 \end{equation} $$
 
 where $\mathcal{L_d}$ and $\mathcal{L_e}$ are the data loss and equation loss, respectively, which have the same expression
-as for inferring isotropic viscosity ([see here](https://github.com/YaoGroup/DIFFICE_jax/edit/main/paper.md))
-We note that the value of $\gamma_g$ should be set to be much smaller than the weight $\gamma_e$ and $\gamma_b$ for the equation loss. Otherwise, the contribution of the
-regularization loss in the lost function overwhelms that of the equation loss, causing PINNs to first satisfy the
-regularization loss, rather than those that can minimize the equation loss. An extreme case of setting $\gamma_g \gg \gamma_e$ is equivalent to inferring isotropic viscosity, which gives $\mu_h = \mu_v
+as for inferring isotropic viscosity ([see here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md)). $\gamma_e$ 
+and $\gamma_b$ are the weighting pre-factors for the equation and boundary condition loss. Here, we note that the weight 
+$\gamma_g$ for the regularization loss should be set to be much smaller than the weight $\gamma_e$ and $\gamma_b$. Otherwise, 
+the contribution of the regularization loss overwhelms that of the equation loss in the loss function, causing PINNs to first
+satisfy the regularization loss, rather than minimize the equation loss. This will gives the result of $\mu_h = \mu_v, which 
+is equavilent to inferring isotropic viscosity.

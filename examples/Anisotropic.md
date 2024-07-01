@@ -1,2 +1,2 @@
-# Mathematical formulation of Anisotropic viscosity inversion
+# Inversion of anisotropic viscosity via PINNs
 

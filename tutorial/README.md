@@ -55,7 +55,7 @@ user interface to set up the forward problem and conduct the calculation.
 ## Code description
 ### `IceShelf2D_forward.mph`  (in the `COMSOL` folder)
 
-The COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
+A COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
 conditions and given viscosity as described above. Users need to have the basic COMSOL software 
 (no extra Module required) with version >= 5.6 to open the file. Users are free to change the 
 domain size, geometry, boundary conditions, and given viscosity profile in the COMSOL file to 
@@ -90,7 +90,7 @@ $[-1, 1]$. The script also re-organizes and reshapes the data to meet the requir
 training. 
 
 
-### `pinn_syndata.py`
+### `train_syndata.py`
 
 The main python script that conducts the PINN training to infer ice viscosity from the synthetic data.
 The script is used to run on a local machine. The user should select the synthetic data file and set 
@@ -101,7 +101,7 @@ current setting of hyper-parameters allows the viscosity inversion from the exam
 to reach high accuracy.
 
 
-### `pinn_syndata.ipynb`
+### `train_syndata.ipynb`
 The Colab notebook, similar to the script `pinn_syndata.py` that can conduct the PINN training to infer ice 
 viscosity from the synthetic data. The user can run the notebook directly in Google Colab online without any 
 need to install python environments and library on a local machine. Different from the script `pinn_syndata.py`,

@@ -35,4 +35,8 @@ An companion Colab Notebook of this script is provided in the `colab` subfolder 
 ## `train_xpinns_aniso.py`
 
 A python script that assimilate remote-sensing data and infer the effective ice viscosity under **anisotropic**
-assumption via **extended-PINNs (XPINNs)**. This code are required to study several largest ice shelves around the
+assumption via **extended-PINNs (XPINNs)**. Different from isotropic viscosity inversion, this code infers two viscosity 
+components, one in the horizontal and the other in the vertical direction.  An companion Colab Notebook of this script is 
+provided in the `colab` subfolder or by clicking
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/examples/colab/train_xpinns_aniso.ipynb)
+x

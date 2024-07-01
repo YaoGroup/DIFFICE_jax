@@ -31,4 +31,4 @@ $$\begin{array}{l}
  	= \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y
 \end{array} \quad \text{at} \  (x, y) \in {\partial \Omega_c} $$
 
-where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front.
+where $\partial \Omega_c$ indicates the position of ice-shelf calving front, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front.

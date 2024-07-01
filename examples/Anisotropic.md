@@ -41,8 +41,10 @@ condition we add is that we prefer the solutions of $\mu_h$ and $\mu_v$ are clos
 closeness violates the SSA equations given the data of ice-shelf velocity and thickness. Practically, we can add an 
 regularization term, which measures the mean squared error between the network prediction of $\mu_h$ and $\mu_v$ in 
 the loss function of the PINN training, namely
+
 $$ \begin{equation}
     \mathcal{L}_{reg} = \frac{1}{N_c} \sum_{i=1}^{N_c} [\mu_h({\bf x_c}) - \mu_v({\bf x_c})]^2
 \end{equation} $$
+
 where ${\bf x_c}=(x_c, y_c)$ are the collocation points used to evaluate the value of $\mu_h$ and $\mu_v$ within the 
 domain and $N_c$ is the total number of collocation points.

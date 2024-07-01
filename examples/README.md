@@ -2,7 +2,12 @@
 
 This folder provides four example codes that use `DIFFICE_jax` package to assimilate remote-sensing velocity
 and thickness data and infer effective ice viscosity under either **isotropic** or **anisotropic** assumption
-via regular PINNs or extended-PINNs (XPINNs).
+via regular PINNs or extended-PINNs (XPINNs). The mathematical description for the inversion of isotropic and 
+anisotropic viscosity, and the setting of PINNs and XPINNs training are provided in the link below.
+
+Regular PINN training: [https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md)
+
+
 
 ## `train_pinns_iso.py`
 

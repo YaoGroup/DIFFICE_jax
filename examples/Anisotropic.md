@@ -11,7 +11,7 @@ with vertical deformation is likely to be most different from horizontal deforma
 anisotropic viscosity would only have two independent components, horizontal viscosity $\mu_h$ and vertical
 viscosity $\mu_v$. 
 
-Then, the modified shallow-shelf approximation in terms of the anisotropic viscosity tensor \eqref{eq:muhv} can be derived (see Appendix \ref{sec:aniso}) to be
+Then, the modified shallow-shelf approximation in terms of the anisotropic viscosity tensor \eqref{eq:muhv} can be derived to be
 
 $$\begin{eqnarray}
 	 \frac{\partial} {\partial x}\left(2 {\mu_h} h \frac{\partial  u}{\partial x} + 2 {\mu_v} h \left[\frac{\partial  u}{\partial x}  + \frac{\partial  v}{\partial y} \right]  \right) 

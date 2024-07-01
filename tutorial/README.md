@@ -95,7 +95,7 @@ training.
 The main python script that conducts the PINN training to infer ice viscosity from the synthetic data.
 The script is used to run on a local machine. The user should select the synthetic data file and set 
 the hyper-parameters for the training. After the training, the script will automatically save the trained
-network weights and biases in the `.pkl' format, and the prediction of solution and equation residue at
+network weights and biases in the `.pkl` format, and the prediction of solution and equation residue at
 high-resolution grids in the `.mat' format. Both files will be stored in the `Results` subfolder. The 
 current setting of hyper-parameters allows the viscosity inversion from the example data `SynData_exp1.mat`
 to reach high accuracy.

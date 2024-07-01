@@ -31,4 +31,18 @@ $$\begin{array}{l}
  	= \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y
 \end{array} \quad \text{at} \  (x, y) \in {\partial \Omega_c} $$
 
-where $\partial \Omega_c$ indicates the position of ice-shelf calving front, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front.
+where $\partial \Omega_c$ indicates the position of ice-shelf calving front, and $(n_x, n_y)$ is the unit normal 
+vector towards outwards to the calving front.
+
+It is important to note that the above governing equation and boundary conditions remain insufficient to guarantee 
+the unique inversion of the two viscosity components ($\mu_h$, $\mu_v$). A regularization condition is, thus, required 
+to ensure the uniqueness for inferring the anisotropic viscosity components ($\mu_h$, $\mu_v$). That regularization
+condition we add is that we prefer the solutions of $\mu_h$ and $\mu_v$ are close to each other unless their 
+closeness violates the SSA equations given the data of ice-shelf velocity and thickness. Practically, we can add an 
+regularization term, which measures the mean squared error between the network prediction of $\mu_h$ and $\mu_v$ in 
+the loss function of the PINN training, namely
+$$ \begin{equation}
+    \mathcal{L}_{reg} = \frac{1}{N_c} \sum_{i=1}^{N_c} [\mu_h({\bf x_c}) - \mu_v({\bf x_c})]^2
+\end{equation} $$
+where ${\bf x_c}=(x_c, y_c)$ are the collocation points used to evaluate the value of $\mu_h$ and $\mu_v$ within the 
+domain and $N_c$ is the total number of collocation points.

@@ -42,9 +42,19 @@ closeness violates the SSA equations given the data of ice-shelf velocity and th
 regularization term, which measures the mean squared error between the network prediction of $\mu_h$ and $\mu_v$ in 
 the loss function of the PINN training, namely
 
+$$\mathcal{L_{reg}} = \frac{\gamma_g}{N_c} {\sum^{N_c}_{i=1}} [\mu_h({\bf x_i}) - \mu_v({\bf x_i})]^2  $$
+
+where ${\bf x_i}=(x_i, y_i)$ are the collocation points used to evaluate the value of $\mu_h$ and $\mu_v$ within the 
+domain and $N_c$ is the total number of collocation points. Here, $\gamma_g$ is the hyper-parameter that represents 
+the weight of the regularization loss in the loss function. Then, the total loss function for inferring anisotropic 
+viscosity can be written as
+
 $$ \begin{equation}
-    \mathcal{L}_{reg} = \frac{1}{N_c} \sum_{i=1}^{N_c} [\mu_h({\bf x_c}) - \mu_v({\bf x_c})]^2
+    \mathcal{L} = \mathcal{L_d} + \mathcal{L_e} (\gamma_e, \gamma_b) + \mathcal{L}_{reg}(\gamma_g)
 \end{equation} $$
 
-where ${\bf x_c}=(x_c, y_c)$ are the collocation points used to evaluate the value of $\mu_h$ and $\mu_v$ within the 
-domain and $N_c$ is the total number of collocation points.
+where $\mathcal{L_d}$ and $\mathcal{L_e}$ are the data loss and equation loss, respectively, which have the same expression
+as for inferring isotropic viscosity ([see here](https://github.com/YaoGroup/DIFFICE_jax/edit/main/paper.md))
+We note that the value of $\gamma_g$ should be set to be much smaller than the weight $\gamma_e$ and $\gamma_b$ for the equation loss. Otherwise, the contribution of the
+regularization loss in the lost function overwhelms that of the equation loss, causing PINNs to first satisfy the
+regularization loss, rather than those that can minimize the equation loss. An extreme case of setting $\gamma_g \gg \gamma_e$ is equivalent to inferring isotropic viscosity, which gives $\mu_h = \mu_v

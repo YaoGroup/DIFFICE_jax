@@ -119,7 +119,7 @@ $$\begin{array}{l}
  	= \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y
 \end{array} \quad \text{at} \  (x, y) \in {\partial \Omega_c} $$
 
-where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front. Both of the equations and boundary conditions needs to be involved in the PINN training for inferring isotropic ice viscosity. Thus, the cost function of the PINN training is expressed by
+where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front. Both of the equations and boundary conditions needs to be involved in the PINN training for inferring isotropic ice viscosity. Thus, the loss function of the PINN training is expressed by
 
 $$\mathcal{L} = \mathcal{L}_d + \mathcal{L}_e$$
 

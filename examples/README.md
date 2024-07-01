@@ -22,12 +22,17 @@ provided in the `colab` subfolder or by clicking
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/examples/colab/train_pinns_aniso.ipynb)
 
 
-## `train_xpinns_aniso.py`
+## `train_xpinns_iso.py`
 
-A python script that assimilate remote-sensing data and infer the effective ice viscosity under **anisotropic**
-assumption via **extended-PINNs (XPINNs)**. This code are required to several largest ice shelves around the
+A python script that assimilate remote-sensing data and infer the effective ice viscosity under **isotropic**
+assumption via **extended-PINNs (XPINNs)**. This code are required to study several largest ice shelves around the
 Antarctica, such as Ross and Ronne-Filchner Ice Shelves, which involve many local structural regions with dense 
 spatial variation that are difficult to be captured by one single neural network due to the spectral biases.
 An companion Colab Notebook of this script is provided in the `colab` subfolder or by clicking
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/examples/colab/train_xpinns_aniso.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/examples/colab/train_xpinns_iso.ipynb)
 
+
+## `train_xpinns_aniso.py`
+
+A python script that assimilate remote-sensing data and infer the effective ice viscosity under **anisotropic**
+assumption via **extended-PINNs (XPINNs)**. This code are required to study several largest ice shelves around the

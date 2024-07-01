@@ -20,9 +20,9 @@ $$\begin{eqnarray}
   +\frac{\partial} {\partial x} \left({\mu_h} h \left[\frac{\partial  u}{\partial y}  + \frac{\partial  v}{\partial x} \right]  \right)  = \rho g \left(1-{\frac{\rho}{\rho_w}}\right)h\frac{\partial h}{\partial y}\ .   \qquad 
 \end{eqnarray}$$
 
-Similarly, the corresponding dynamic boundary conditions at the calving front with respect to the anisotropic viscosity components ($\mu_h$, $\mu_v$) becomes (see Appendix \ref{sec:aniso})
+Similarly, the dynamic boundary conditions at the calving front with respect to the anisotropic viscosity components ($\mu_h$, $\mu_v$) becomes
 
 $$\begin{eqnarray}
-	2\left({\mu_h}\frac{\partial u}{\partial x} + \colb{\mu_v} \left[ \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_x + \colr{\mu_h} \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_y = \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_x   \\ 
-	{\mu_h} \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_x  + 2 \left(\colr{\mu_h} \frac{\partial v}{\partial y} + \colb{\mu_v} \left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_y  =  \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y 
+	2\left({\mu_h}\frac{\partial u}{\partial x} + {\mu_v} \left[ \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_x + {\mu_h} \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_y = \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_x   \\ 
+	{\mu_h} \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) n_x  + 2 \left({\mu_h} \frac{\partial v}{\partial y} + {\mu_v} \left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_y  =  \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y 
 \end{eqnarray}$$

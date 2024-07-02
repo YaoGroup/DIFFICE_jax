@@ -14,3 +14,17 @@ for the PINN training, respectively
 
 ## Code description
 ### `Initialization.py`
+
+Intializing the weights and biases for all the neural networks required for the problem.
+We use Xavier initialization scheme, so that the weight between each two layers follows 
+the truncated normal distribution with zero mean and variance equal to $2/(n_{l-1}+n_{l})$,
+where $n_{l}$ and $n_{l+1}$ indicates the number of units in the previous and next layers.
+The biases are initialized with all zero.
+
+
+### `networks.py`
+
+For regular PINN training, two networks are created. One network has three outputs for two 
+velocity components and thickness. The other network has either one output for isotropic
+viscosity, or two outputs for two anisotropic viscosity components. In comparison, XPINNs
+generate two network 

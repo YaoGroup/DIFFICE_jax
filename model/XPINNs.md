@@ -1,1 +1,1 @@
-Infering effective ice viscosity via extended-PINNs (XPINNs)
+# Extended physics-informed neural networks (XPINNs) for inferring effective viscosity of large ice shelves.

@@ -7,11 +7,11 @@ of codes are provided in this folder. The `pinns` folder involves the code is fo
 the **regular PINN** training, and the `xpinns` folder is for the **extended-PINN
 (XPINN)** training. 
 
-The mathematical formation for the regular PINN training is provided in [this link], 
+The mathematical formation for the regular PINN training is provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md), 
 and the description of the XPINNs setting is given in [this link]. Either `pinns` 
 or `xpinns` folder involves four python scripts that specify four key components
 for the PINN training, respectively. The correct calling of functions within these four
-script are provided in the example code in the `examples` folder of this repository.
+script are provided in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) in the `examples` folder of this repository.
 
 ## Code description
 ### `initialization.py`

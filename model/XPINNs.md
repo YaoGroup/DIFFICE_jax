@@ -19,3 +19,19 @@ inferred quantities from PINNs.
 <p align="center">
     <img src="xpinns.png" alt="results" width="90%">
 </p>
+
+## Loss function for XPINNs
+
+To ensure that the neural networks prediction of two consecutive sub-regions remain continuous at their interface, 
+Several continuity loss terms needs to be added in the loss function. The first continuity loss term is given as
+
+$$ \begin{eqnarray}
+    \mathcal{L_{c0}} &=& \sum_{j=1}^{N_s} \frac{1}{N_{\Omega_j}} \left[\sum_{i=1}^{N_{\Omega_j}} [u_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - u_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})]^2 + \sum_{i=1}^{N_{\Omega_j}} [v_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - v_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})]^2 + \right. \\
+    & & \left.\sum_{i=1}^{N_{\Omega_j}} [h_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - h_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})]^2 + \sum_{i=1}^{N_{\Omega_j}} [\mu_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - \mu_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})]^2 \right]
+\end{eqnarray} $$
+
+where ${\bf \hat{x_{\Omega_j}}}=(\hat{x_{\Omega_j}},\ \hat{y_{\Omega_j}})$ are the normalized locations for the 
+collocation points on the $j$-th interface $\Omega_j$ between two adjacent networks and $N_{\Omega_j}$ is their total
+number. $q_{j}^{(+)}$ and $q_{j}^{(-)}$ represent the neural network predictions in the two sub-regions that intersect
+at the $j$-th interface $\Omega_j$, where $q$ stands for $u$, $v$, $h$ or $\mu$. $N_s$ is the total number of the 
+interfaces between two adjacent networks. 

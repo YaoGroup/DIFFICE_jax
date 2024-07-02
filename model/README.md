@@ -8,11 +8,11 @@ the **regular PINN** training, and the `xpinns` folder is for the **extended-PIN
 (XPINN)** training. 
 
 The mathematical formation for the regular PINN training is provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md), 
-and the description of the XPINNs setting is given in [this link]. Both the `pinns` and `xpinns`
-folders contain four Python scripts, each specifying a key component for PINN training. Detailed
-instructions for correctly calling the functions in these scripts can be found in the 
-[example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) within the `examples`
-folder of this repository.
+and the description of the XPINNs setting is given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/model/XPINNs.md).
+Both the `pinns` and `xpinns` folders contain four Python scripts, each specifying a key 
+component for PINN training. Detailed instructions for correctly calling the functions in these 
+scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
+within the `examples` folder of this repository.
 
 
 ## Code description
@@ -43,7 +43,7 @@ Involving essential functions to generate the total loss function for PINN train
 remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
 of the loss function for inferring isotropic viscosity via regular PINNs is provided [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md). 
 The description for inferring anisotorpic viscosity is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md). 
-The loss function for the XPINN training is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md). 
+The loss function for the XPINN training is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/model/XPINNs.md). 
 We note that users should call different functions in the `loss.py` script to generate the loss functions
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
 

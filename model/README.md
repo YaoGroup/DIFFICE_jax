@@ -14,6 +14,7 @@ instructions for correctly calling the functions in these scripts can be found i
 [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) within the `examples`
 folder of this repository.
 
+
 ## Code description
 ### `initialization.py`
 

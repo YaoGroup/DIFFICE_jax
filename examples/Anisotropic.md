@@ -58,5 +58,5 @@ as for inferring isotropic viscosity ([see here](https://github.com/YaoGroup/DIF
 and $\gamma_b$ are the weighting pre-factors for the equation and boundary condition loss. Here, we note that the weight 
 $\gamma_g$ for the regularization loss should be set to be much smaller than the weight $\gamma_e$ and $\gamma_b$. Otherwise, 
 the contribution of the regularization loss overwhelms that of the equation loss in the loss function, causing PINNs to first
-satisfy the regularization loss, rather than minimize the equation loss. This will gives the result of $\mu_h = \mu_v, which 
+satisfy the regularization loss, rather than minimize the equation loss. This will gives the result of $\mu_h = \mu_v$, which 
 is equavilent to inferring isotropic viscosity.

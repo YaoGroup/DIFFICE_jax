@@ -25,13 +25,14 @@ units in the previous and next layers. The biases are initialized with all zero.
 
 ### `networks.py`
 
-Involving essential functions to generate the neural network model for each physical variable
-involved in the problem. For regular PINN training, two networks are created. One network 
-has three outputs, representing two velocity components and thickness. The other network has 
-either one output for isotropic viscosity, or two outputs for two anisotropic viscosity 
-components. In comparison, **XPINNs** generate two networks for each of the sub-region. Each
-network are fully-connected multiple-layer preceptrons (MLP) using `tanh` as default activation
-function.
+Involving essential functions to generate the neural network model for each physical variable 
+involved in the problem. For regular PINN training, two networks are created. One network has 
+three outputs, representing two velocity components and thickness. The other network has either 
+one output for isotropic viscosity or two outputs for anisotropic viscosity components.  In
+comparison, **XPINNs** generate two networks for each of the sub-region. Each network is a
+fully-connected multiple-layer preceptrons (MLP) using `tanh` as default activation function. 
+When creating the networks, users need to specify whether the networks are created for isotropic 
+and anistropic viscosity inference, as these two cases requires different number of outputs.
 
 
 ### `loss.py`

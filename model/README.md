@@ -29,8 +29,8 @@ involved in the problem. For regular PINN training, two networks are created. On
 has three outputs, representing two velocity components and thickness. The other network has 
 either one output for isotropic viscosity, or two outputs for two anisotropic viscosity 
 components. In comparison, **XPINNs** generate two networks for each of the sub-region. Each
-network are fully-connected multiple-layer preceptrons (MLP) using tanh activation function
-as default. 
+network are fully-connected multiple-layer preceptrons (MLP) using `tanh` as default activation
+function.
 
 
 ### `loss.py`

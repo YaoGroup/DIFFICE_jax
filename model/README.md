@@ -46,3 +46,13 @@ The description for inferring anisotorpic viscosity is given [here](https://gith
 The loss function for the XPINN training is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md). 
 We note that users should call different functions in the `loss.py` script to generate the loss functions
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
+
+
+### `prediction.py`
+
+Involving functions to predict the neural network output at the high-resolution grids for evaluation or 
+visualization. The default setting of the function is to predict the data at the same resolution grid of
+the remote-sensing velocity data (450m resolution). Users can modify the function to predict the network
+output on other higher-resolution grids. In addition, the prediction function for **XPINNs**
+will automatically stitch the network outputs from different sub-regions into a single large domain that 
+covers all the sub-regions.

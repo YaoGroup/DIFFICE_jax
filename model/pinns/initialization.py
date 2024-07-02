@@ -11,7 +11,7 @@ def init_single_net(parent_key, layer_widths):
         xavier_stddev = jnp.sqrt(2 / (in_dim + out_dim))
         params.append(
             [random.truncated_normal(weight_key, -2, 2, shape=(in_dim, out_dim)) * xavier_stddev,
-             random.truncated_normal(bias_key, -2, 2, shape=(out_dim,)) * xavier_stddev]
+             random.truncated_normal(bias_key, -2, 2, shape=(out_dim,)) * 0]
         )
     return params
 

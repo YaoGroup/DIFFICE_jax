@@ -30,7 +30,7 @@ involved in the problem. For regular PINN training, two networks are created. On
 three outputs, representing two velocity components and thickness. The other network has either 
 one output for isotropic viscosity or two outputs for anisotropic viscosity components.  In
 comparison, **XPINNs** generate two networks for each of the sub-region. Each network is a
-fully-connected multiple-layer preceptrons (MLP) using `tanh` as default activation function. 
+fully-connected multiple-layer preceptrons (MLP) using `tanh` as the default activation function. 
 When creating the networks, users need to specify whether the networks are created for isotropic 
 and anistropic viscosity inference, as these two cases requires different number of outputs.
 
@@ -39,6 +39,8 @@ and anistropic viscosity inference, as these two cases requires different number
 
 Involving essential functions to generate the total loss function for PINN training on assimilating
 remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
-of the loss function for inferring isotropic viscosity via regular PINNs is provided here. The
-description for inferring anisotorpic viscosity is given here. 
-The loss function for XPINNs is given here
+of the loss function for inferring isotropic viscosity via regular PINNs is provided [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md). 
+The description for inferring anisotorpic viscosity is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md). 
+The loss function for the XPINN training is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md). 
+We note that users should call different functions in the `loss.py` script to generate the loss functions
+for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)

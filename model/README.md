@@ -15,17 +15,25 @@ for the PINN training, respectively
 ## Code description
 ### `initialization.py`
 
-Intializing the weights and biases for all the neural networks required for the problem.
-We use Xavier initialization scheme, so that the weight between each two layers follows 
-the truncated normal distribution with zero mean and variance equal to $2/(n_{l-1}+n_{l})$,
-where $n_{l}$ and $n_{l+1}$ indicates the number of units in the previous and next layers.
-The biases are initialized with all zero.
+Involving python functions to intialize weights and biases for all neural networks required 
+for the problem. The code use Xavier initialization scheme, so that the weights between each 
+two layers are generated following a truncated normal distribution with zero mean and the 
+variance equal to $2/(n_{l-1}+n_{l})$, where $n_{l}$ and $n_{l+1}$ indicates the number of
+units in the previous and next layers. The biases are initialized with all zero.
 
 
 ### `networks.py`
 
-Generating the neural network model for each physical variables involved in the problem.
-For regular PINN training, two networks are created. One network has three outputs for two 
-velocity components and thickness. The other network has either one output for isotropic
-viscosity, or two outputs for two anisotropic viscosity components. In comparison, **XPINNs**
-generate two networks for each of the sub-region.
+Involving python functions to generate the neural network model for each physical variable
+involved in the problem. For regular PINN training, two networks are created. One network 
+has three outputs, representing two velocity components and thickness. The other network has 
+either one output for isotropic viscosity, or two outputs for two anisotropic viscosity 
+components. In comparison, **XPINNs** generate two networks for each of the sub-region. Each
+network are fully-connected multiple-layer preceptrons (MLP) using tanh activation function
+as default. 
+
+
+### `loss.py`
+
+Generate the total loss function for PINN training on assimilating remote-sensing data of ice
+shelves and inferring their effective viscosity. 

@@ -15,3 +15,7 @@ Compared to regular PINN training, the key difference of XPINN training is to im
 interface (blue line in the figure) between consecutive sub-regions that ensure the neural network predictions to be
 continuous and smooth across the sub-regions. The continuity condition is also essential for the uniqueness of the 
 inferred quantities from PINNs.
+
+<p align="center">
+    <img src="xpinns.png" alt="results" width="90%">
+</p>

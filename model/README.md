@@ -10,12 +10,13 @@ the **regular PINN** training, and the `xpinns` folder is for the **extended-PIN
 The mathematical formation for the regular PINN training is provided in [this link], 
 and the description of the XPINNs setting is given in [this link]. Either `pinns` 
 or `xpinns` folder involves four python scripts that specify four key components
-for the PINN training, respectively
+for the PINN training, respectively. The correct calling of functions within these four
+script are provided in the example code in the `examples` folder of this repository.
 
 ## Code description
 ### `initialization.py`
 
-Involving python functions to intialize weights and biases for all neural networks required 
+Involving essential functions to intialize weights and biases for all neural networks required 
 for the problem. The code use Xavier initialization scheme, so that the weights between each 
 two layers are generated following a truncated normal distribution with zero mean and the 
 variance equal to $2/(n_{l-1}+n_{l})$, where $n_{l}$ and $n_{l+1}$ indicates the number of
@@ -24,7 +25,7 @@ units in the previous and next layers. The biases are initialized with all zero.
 
 ### `networks.py`
 
-Involving python functions to generate the neural network model for each physical variable
+Involving essential functions to generate the neural network model for each physical variable
 involved in the problem. For regular PINN training, two networks are created. One network 
 has three outputs, representing two velocity components and thickness. The other network has 
 either one output for isotropic viscosity, or two outputs for two anisotropic viscosity 
@@ -35,5 +36,8 @@ function.
 
 ### `loss.py`
 
-Generate the total loss function for PINN training on assimilating remote-sensing data of ice
-shelves and inferring their effective viscosity. 
+Involving essential functions to generate the total loss function for PINN training on assimilating
+remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
+of the loss function for inferring isotropic viscosity via regular PINNs is provided here. The
+description for inferring anisotorpic viscosity is given here. 
+The loss function for XPINNs is given here

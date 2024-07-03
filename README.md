@@ -8,6 +8,9 @@ Please direct questions about this code and documentation to Yongji Wang (yongji
 
 ## Installation
 
+Instructions are for installation into a virtual Python Environment. Please ensure that Python 3.x has been installed in your 
+local machine or the remote compute machine, such as HPC cluster or Google Cloud Platform (GCP). We recommend the Python of 
+version later than 3.9.0. 
 
 ## Citation
 BibTex:

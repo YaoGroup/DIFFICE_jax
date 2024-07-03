@@ -51,15 +51,16 @@ all of them should be saved in a `cell` type. Additionally, we note that all the
 `ud` and `vd`) should have the exact same shape, and the same applies to the thickness-related quantities (`xd_h`, `yd_h`
 and `h_d`). The calving front-related quantities should also have the same length. 
 
+Apart from the above quantities, below are the additional quantities particularly required for the **XPINN** training
 
 |Variables | meaning | XPINNs|
 | ------------- | ------------- | ------------ |
-| `x_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
-| `y_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
-| `Xe` | x-position of velocity  whole-domain| N/A | 2D matrix|
-| `Ye` | y-position of the whole domain| N/A | 2D matrix|
-| `idxcrop` | vertex position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
-| `idxcrop_h` | vertex position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
+| `x_md` | x-position of two subregion interface |cell[nx1 array]|
+| `y_md` | x-position of two subregion interface |cell[nx1 array]|
+| `Xe` | x-position of velocity  whole-domain | 2D matrix|
+| `Ye` | y-position of the whole domain | 2D matrix|
+| `idxcrop` | vertex position of subregion matrix in the whole domain | cell[4x1 array]|
+| `idxcrop_h` | vertex position of subregion matrix in the whole domain | cell[4x1 array]|
 
  <br />
 

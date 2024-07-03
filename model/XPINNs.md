@@ -71,7 +71,7 @@ $$ \begin{equation}
 
 Because the continuity of neural network prediction across the interface is important to ensure the uniqueness of the 
 solutions, the importance of these loss terms in the cost function should be the same as the data loss $\mathcal{L}_{d}$. 
-Thus, the loss weight for the continuity loss term $\mathcal{L}$ is set to be 1 by default. Therefore, the total loss 
+Thus, the loss weight for the continuity loss term $\mathcal{L}$ is set to be 1 by default. Therefore, the total cost 
 function of XPINNs for inferring **isotropic** viscosity reads,
 
 $$ \begin{equation}

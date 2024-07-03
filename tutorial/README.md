@@ -66,10 +66,11 @@ format by default. The `SynData_exp1.txt` is the data file exported from the cur
 ### `txt2mat.m`  (in the `COMSOL` folder)
 
 A MATLAB script that converts the raw data file (`.txt`) exported from COMSOL into MATLAB data 
-format (`.mat`). The synthetic data are organized in the way that is required to be loaded into
-the python code for PINN training. The `SynData_exp1.mat` is the MATLAB data file converted from
-the current `SynData_exp1.txt` raw data file in the `COMSOL` folder. We note that ehe MATLAB data 
-format (`.mat`) is convenient for the user to observe the synthetic data in MATLAB via the commend
+format (`.mat`). The synthetic data in `.mat` format are also organized in the way that allow them
+to be loaded into the Python code for the PINN training. The current `SynData_exp1.mat` in the `COMSOL`
+folder is the MATLAB data file converted from the `SynData_exp1.txt` raw data file. Additionally,
+we recognize that the MATLAB data format (`.mat`) is convenient for users to observe the synthetic
+data in MATLAB using simple commands.
 
 ```matlab
 load('SynData_exp1.mat')

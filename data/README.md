@@ -19,11 +19,11 @@ regular PINN training,  and the `xpinns` folder is for the extended-PINN (XPINN)
 
 ### `preprocessing.py`
 
-A python script that normalizes the synthetic data loaded from the MATLAB format (`.mat`). The script
-will automatically find the characterisitc scale of each variable in the synthetic data, including 
-spatial coordiates $(x,y)$, velocity $(u, v)$ and thickness $h$, and normalize them to be within
-$[-1, 1]$. The script also re-organizes and reshapes the data to meet the requirement for the PINN
-training. 
+Involving essential functions to normalize the raw data loaded from the MATLAB format (`.mat`). The 
+function in the script will automatically detect the characterisitc scale of each variable in the 
+dataset, including the spatial coordiates $(x,y)$, velocity $(u, v)$ and thickness $h$, and use them to 
+normalize those variables to be within the range of $[-1, 1]$. The script also re-organizes and reshapes
+the data that is required by the code in the `model` folder for the PINN training
 
 
 ### `sampling.py`

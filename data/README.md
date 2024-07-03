@@ -40,7 +40,15 @@ for both **PINNs** and **XPINNs** training are listed in the table below:
 | `xd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
 | `yd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
 | `hd` | thickness data | 2D matrix | cell[2D matrix]|
-
+| `xct` | x-position of calving front | nx1 array | cell[nx1 array]|
+| `yct` | y-position of calving front | nx1 array | cell[nx1 array]|
+| `nnct` | unit normal vector of calving front | nx2 array | cell[nx2 array]|
+| `x_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
+| `y_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
+| `Xe` | x-position of the whole domain| N/A | 2D matrix|
+| `Ye` | y-position of the whole domain| N/A | 2D matrix|
+| `idxcrop` | 4 corn position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
+| `idxcrop_h` | 4 corn position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
 
  <br />
 

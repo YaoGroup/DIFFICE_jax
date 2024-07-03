@@ -10,9 +10,14 @@ with a 450m resolution. The thickness data is downloaded from NASA MEaSUREs BedM
 Additionally, this folder provides the core codes that conduct the necessary preprocessing of the raw data,
 including the normalization, reshaping and random sampling, which are all required to ensure a successful PINN
 training. Two versions of codes are provided in this folder. The `pinns` folder involves the code is for the
-regular PINN training,  and the `xpinns` folder is for the extended-PINN (XPINN) training.
+**regular PINN** training,  and the `xpinns` folder is for the **extended-PINN (XPINN**) training.
 
 ## Data Format
+
+To be successfully loaded by the PINN code in this package, the raw data of each ice shelf needs to be organized 
+and named in a particular way as shown in the example dataset in this folder. Users need to strictly follow the
+same way if you want to create datasets for other ice shelves. The datasets for **PINN** and **XPINN** training 
+shares certain similarity, but also contain differences that users need to pay attention to.
 
 
 ## Code description

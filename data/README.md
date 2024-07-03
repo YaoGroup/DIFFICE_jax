@@ -55,12 +55,19 @@ Apart from the above quantities, below are the additional quantities particularl
 
 |Variables | meaning | XPINNs|
 | ------------- | ------------- | ------------ |
-| `x_md` | x-position of two subregion interface |cell[nx1 array]|
-| `y_md` | x-position of two subregion interface |cell[nx1 array]|
-| `Xe` | x-position of velocity  whole-domain | 2D matrix|
-| `Ye` | y-position of the whole domain | 2D matrix|
-| `idxcrop` | vertex position of subregion matrix in the whole domain | cell[4x1 array]|
-| `idxcrop_h` | vertex position of subregion matrix in the whole domain | cell[4x1 array]|
+| `x_md` | x-position of the interface between two sub-regions | cell[nx1 array]|
+| `y_md` | x-position of the interface between two sub-regions | cell[nx1 array]|
+| `Xe` | x-position of velocity data for the whole domain | 2D matrix|
+| `Ye` | y-position of velocity data for the whole domain | 2D matrix|
+| `Xe_h` | x-position of thickness data for the whole domain | 2D matrix|
+| `Ye_h` | y-position of thickness data for the whole domain | 2D matrix|
+| `idxcrop` | vertex position of sub-regional velocity data in the whole domain | cell[4x1 array]|
+| `idxcrop_h` | vertex position of sub-regional thickness data in the whole domain | cell[4x1 array]|
+
+`x_md` and `y_md` are the positions of the interface between each two consecutive sub-regions, which are required to 
+evaluate the [continuity loss](https://github.com/YaoGroup/DIFFICE_jax/blob/main/model/XPINNs.md) for the **XPINN**
+training. The other 6 quantities are the required information to merge the variable of all sub-regions into a 
+large entity matrix, representing the whole domain.
 
  <br />
 

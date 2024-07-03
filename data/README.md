@@ -41,19 +41,19 @@ that are required for the **PINNs** or **XPINNs** training are listed in the tab
 | `xd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
 | `yd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
 | `hd` | thickness data | 2D matrix | cell[2D matrix]|
-
-The quantities listed above should be included in the datasets for both **PINN** and **XPINN** training. The
-only difference is that, for XPINNs, each quantity should have a separate matrix for each sub-region, and
-all of them should be saved in a `cell` type. Additionally, we note that all the velocity-related data (`xd`, `yd`,
-`ud` and `vd`) should have the exact same shape, and the same applies to the thickness-related data (`xd_h`, `yd_h`
-and `h_d`).
-
-
-|Variables | meaning | PINNs  | XPINNs|
-| ------------- | ------------- | ------------ | ------------ |
 | `xct` | x-position of calving front | nx1 array | cell[nx1 array]|
 | `yct` | y-position of calving front | nx1 array | cell[nx1 array]|
 | `nnct` | unit normal vector of calving front | nx2 array | cell[nx2 array]|
+
+The quantities listed above should be included in the datasets for both **PINN** and **XPINN** training. The
+only difference is that, for XPINNs, each quantity should have a separate matrix for each sub-region, and
+all of them should be saved in a `cell` type. Additionally, we note that all the velocity-related quantities (`xd`, `yd`,
+`ud` and `vd`) should have the exact same shape, and the same applies to the thickness-related quantities (`xd_h`, `yd_h`
+and `h_d`). The calving front-related quantities should also have the same length. 
+
+
+|Variables | meaning | XPINNs|
+| ------------- | ------------- | ------------ |
 | `x_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
 | `y_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
 | `Xe` | x-position of velocity  whole-domain| N/A | 2D matrix|

@@ -8,5 +8,5 @@ based on adaptive estimates of lower-order moments.
 [**L-BFGS**](http://users.iems.northwestern.edu/~nocedal/PDFfiles/limited-memory.pdf): Limited-memory BFGS method, a second-order quasi-Newton optimization method for
 solving unconstrained nonlinear optimization problems, using a limited amount of computer memory.
 
-**Stochastic training scheme** is applied to two optimizers, where the code randomizes both data samples and collocation points every certain iteration during training, 
-in order to minimize the cheating effect.
+A **stochastic training scheme** is applied to two optimizers, where the code randomizes both data samples and collocation points at regular interval during training 
+to minimize the cheating effect.

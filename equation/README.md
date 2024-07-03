@@ -1,6 +1,7 @@
 # Equation
 
-The folder includes the codes to computes the equation residue associated with the given neural networks
+The folder includes the codes that computes the residues of the governing equation and boundary condition that
+are involved in the PINN training. 
 
 ### `ssa_eqn_iso,py`
 

@@ -86,11 +86,11 @@ shading interp;
 The main Python script conducts the PINN training to infer ice viscosity from the synthetic data.
 This script is intended to be run on a local machine or a cluster. Users should select the 
 synthetic data file and set the hyper-parameters for the training. After the training is complete,
-the script will automatically save the trained network weights and biases in .pkl format, and the
-predictions of the solution and equation residue at high-resolution grids in .mat format. Both 
-files will be stored in the Results subfolder, which will be automatically generated if it does 
+the script will automatically save the trained network weights and biases in `.pkl` format, and the
+predictions of the solution and equation residue at high-resolution grids in `.mat` format. Both 
+files will be stored in the `Results` subfolder, which will be automatically generated if it does 
 not already exist. The current hyper-parameters set in the script allow the viscosity inversion 
-from the example data SynData_exp1.mat to achieve high accuracy.
+from the example data `SynData_exp1.mat` to achieve high accuracy.
 
 
 ### `train_syndata.ipynb`

@@ -12,6 +12,8 @@ including the normalization, reshaping and random sampling, which are all requir
 training. Two versions of codes are provided in this folder. The `pinns` folder involves the code is for the
 **regular PINN** training,  and the `xpinns` folder is for the **extended-PINN (XPINN**) training.
 
+ <br />
+ 
 ## Data Format
 
 To be successfully loaded by the PINN code in this package, the raw data of each ice shelf needs to be organized 
@@ -19,6 +21,7 @@ and named in a particular way as shown in the example dataset in this folder. Us
 same way if you want to create datasets for other ice shelves. The datasets for **PINN** and **XPINN** training 
 shares certain similarity, but also contain differences that users need to pay attention to.
 
+ <br />
 
 ## Code description
 

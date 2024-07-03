@@ -1,5 +1,9 @@
 # Data
 
+This folder provide several examples of the remote-sensing velocity and thickness data of different 
+ice shelves. The dataset for each ice shelf are directly cropped from the raw data files published online. 
+with the same resolution. No extra processing is conducted on these data. The velocity data is 
+
 ## Data Format
 
 

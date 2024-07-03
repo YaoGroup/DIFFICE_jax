@@ -6,12 +6,12 @@ The folder includes the codes to computes the equation residue associated with t
 
 involving functions to compute the residue of the normalized **isotropuc** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. Both the SSA equations and
-the boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md)
+the boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md) .
 
 ### `ssa_eqn_aniso_zz,py`
 
 involving functions to compute the residue of the normalized **anisotropic** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. The suffix `_zz` indicate the
 equation consider the anisotropic direction in the vertical direction.  The anisotorpic SSA equations and
-the associated boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md)
+the associated boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md) .
 

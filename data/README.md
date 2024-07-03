@@ -23,7 +23,7 @@ Involving essential functions to normalize the raw data loaded from the MATLAB f
 function in the script will automatically detect the characterisitc scale of each variable in the 
 dataset, including the spatial coordiates $(x,y)$, velocity $(u, v)$ and thickness $h$, and use them to 
 normalize those variables to be within the range of $[-1, 1]$. The script also re-organizes and reshapes
-the data that is required by the code in the `model` folder for the PINN training
+the data that is required by the code in the `model` folder to ensure the success of the PINN training.
 
 
 ### `sampling.py`

@@ -14,6 +14,7 @@ component for PINN training. Detailed instructions for correctly calling the fun
 scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
 within the `examples` folder of this repository.
 
+ <br />
 
 ## Code description
 ### `initialization.py`

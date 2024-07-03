@@ -21,15 +21,16 @@ and named in a particular way as shown in the example dataset in this folder. Us
 same way if you want to create datasets for other ice shelves. The datasets for **PINN** and **XPINN** training 
 shares certain similarity, but also contain differences that users need to pay attention to. 
 
-First, the filename of the `.mat` dataset for both **PINNs** and **XPINNs** training should be saved in the format as:
+First, the filename of the `.mat` dataset for both **PINNs** and **XPINNs** training should be made following
+the form:
 
 || PINNs  | XPINNs|
 | ------------- | ------------- | ------------ |
 | Filename: | `data_pinns_#shelfname#.mat` |  `data_xpinns_#shelfname#.mat` |
 
 
-Second, all required quantities with their names, physical meaning and data shapes in the `.mat` dataset used 
-for both **PINNs** and **XPINNs** training are listed in the table below:
+Second, quantities with their names, physical meaning, and data types and shapes in the `.mat` dataset 
+that are required for the **PINNs** or **XPINNs** training are listed in the table below:
 
 |Variables | meaning | PINNs  | XPINNs|
 | ------------- | ------------- | ------------ | ------------ |
@@ -40,15 +41,25 @@ for both **PINNs** and **XPINNs** training are listed in the table below:
 | `xd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
 | `yd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
 | `hd` | thickness data | 2D matrix | cell[2D matrix]|
+
+The quantities listed above should be included in the datasets for both **PINN** and **XPINN** training. The
+only difference is that, for XPINNs, each quantity should have a separate matrix for each sub-region, and
+all of them should be saved in a `cell` type. Additionally, we note that all the velocity-related data (`xd`, `yd`,
+`ud` and `vd`) should have the exact same shape, and the same applies to the thickness-related data (`xd_h`, `yd_h`
+and `h_d`).
+
+
+|Variables | meaning | PINNs  | XPINNs|
+| ------------- | ------------- | ------------ | ------------ |
 | `xct` | x-position of calving front | nx1 array | cell[nx1 array]|
 | `yct` | y-position of calving front | nx1 array | cell[nx1 array]|
 | `nnct` | unit normal vector of calving front | nx2 array | cell[nx2 array]|
 | `x_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
 | `y_md` | x-position of two subregion interface |N/A | cell[nx1 array]|
-| `Xe` | x-position of the whole domain| N/A | 2D matrix|
+| `Xe` | x-position of velocity  whole-domain| N/A | 2D matrix|
 | `Ye` | y-position of the whole domain| N/A | 2D matrix|
-| `idxcrop` | 4 corn position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
-| `idxcrop_h` | 4 corn position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
+| `idxcrop` | vertex position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
+| `idxcrop_h` | vertex position of subregion matrix in the whole domain| N/A | cell[4x1 array]|
 
  <br />
 

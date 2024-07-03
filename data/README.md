@@ -15,7 +15,7 @@ regular PINN training,  and the `xpinns` folder is for the extended-PINN (XPINN)
 ## Data Format
 
 
-## Data Code
+## Code description
 
 ### `load_syndata.py`
 

@@ -1,0 +1,16 @@
+# Equation
+
+The folder includes the codes to computes the equation residue associated with the given neural networks
+
+### `ssa_eqn_iso,py`
+
+involving functions to compute the residue of the normalized **isotropuc** Shallow-Shelf Approximation (SSA) 
+equations and their associated dynamic boundary conditions at the calving front. Both the SSA equations and
+the boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md)
+
+### `ssa_eqn_aniso_zz,py`
+
+involving functions to compute the residue of the normalized **anisotropic** Shallow-Shelf Approximation (SSA) 
+equations and their associated dynamic boundary conditions at the calving front. The suffix `_zz` indicate the
+equation consider the anisotropic direction in the vertical equation. 
+

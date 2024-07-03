@@ -12,5 +12,6 @@ the boundary conditions are given in [this link](https://github.com/YaoGroup/DIF
 
 involving functions to compute the residue of the normalized **anisotropic** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. The suffix `_zz` indicate the
-equation consider the anisotropic direction in the vertical equation. 
+equation consider the anisotropic direction in the vertical direction.  The anisotorpic SSA equations and
+the associated boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md)
 

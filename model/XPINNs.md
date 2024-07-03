@@ -51,19 +51,41 @@ $$ \begin{eqnarray}
     \right],  
 \end{eqnarray} $$
 
-which matches the first derivative of all the physical variables involved in SSA equations at the interfaces. Here, $\nabla = (\partial_x, \partial_y)$ is the gradient operator and $||{\bf v}||$ indicates the norm of the vector ${\bf v}$. To match the second-order derivative of ice velocity $u$ and $v$ at the interfaces, we have
-\begin{eqnarray}\label{eq:eqnlossc2}
-    \mathcal{L}_{c2} = \sum_{j=1}^{N_s} \frac{1}{N_{\Omega_j}} & &\left\{
-    \sum_{i=1}^{N_{\Omega_j}} |\Delta u_{j}^{(+)}({\bf \hat{x}}_{\Omega_j}^{(i)}) - \Delta u_j^{(-)}({\bf \hat{x}}_{\Omega_j}^{(i)})|^2 
-    + \sum_{i=1}^{N_{\Omega_j}} |\Delta v_{j}^{(+)}({\bf \hat{x}}_{\Omega_j}^{(i)}) - \Delta v_j^{(-)}({\bf \hat{x}}_{\Omega_j}^{(i)})|^2
-    \right \}, \quad
-\end{eqnarray}
-Here $\Delta = \partial_{xx} + \partial_{yy}$ is the Laplacian operator. Then, the combined continuity loss term for X-PINNs to infer ice viscosity becomes 
-\begin{equation}
-    \mathcal{L}_c = \mathcal{L}_{c0} + \mathcal{L}_{c1} + \mathcal{L}_{c2}
-\end{equation}
-Because the continuity of neural network prediction across the interface is important to ensure the uniqueness of the solutions, the importance of this loss term in the cost function should be the same as the data loss $\mathcal{L}_{d}$. Thus, the loss weight for the continuity loss term $\mathcal{L}$ is set to be 1 by default. Therefore, the total cost function of X-PINNs for inferring viscosity reads,
-\begin{gather}
-    \mathcal{L} = \mathcal{L}_d + \mathcal{L}_e (\gamma_e, \gamma_b) + \mathcal{L}_c,\quad \textrm{ isotropic}\\
-    \mathcal{L} = \mathcal{L}_d + \mathcal{L}_e (\gamma_e, \gamma_b) + \mathcal{L}_{reg}(\gamma_g)+\mathcal{L}_c,\quad \textrm{ anisotropic}
-\end{gather}
+which matches the first derivative of all the physical variables involved in the SSA equations at the interfaces. Here, 
+$\nabla = (\partial_x, \partial_y)$ is the gradient operator and $||{\bf v}||$ indicates the norm of the vector ${\bf v}$.
+To match the second order derivative of ice velocity $u$ and $v$ at the interfaces, we have
+
+$$ \begin{eqnarray}
+    \mathcal{L_{c2}} = \sum_{j=1}^{N_s} \frac{1}{N_{\Omega_j}} & & \left[
+    \sum_{i=1}^{N_{\Omega_j}} |\Delta u_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - \Delta u_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})|^2 
+    + \sum_{i=1}^{N_{\Omega_j}} |\Delta v_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - \Delta v_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})|^2
+    \right] ,
+\end{eqnarray} $$
+
+Here $\Delta = \partial_{xx} + \partial_{yy}$ is the Laplacian operator. Then, the combined continuity loss term 
+for XPINNs to infer ice viscosity becomes 
+
+$$ \begin{equation}
+    \mathcal{L_c} = \mathcal{L_{c0}} + \mathcal{L_{c1}} + \mathcal{L_{c2}}.
+\end{equation} $$
+
+Because the continuity of neural network prediction across the interface is important to ensure the uniqueness of the 
+solutions, the importance of these loss terms in the loss function should be the same as the data loss $\mathcal{L}_{d}$. 
+Thus, the loss weight for the continuity loss term $\mathcal{L}$ is set to be 1 by default. Therefore, the total loss 
+function of XPINNs for inferring **isotropic** viscosity reads,
+
+$$ \begin{equation}
+    \mathcal{L} = \mathcal{L_d} + \mathcal{L_e} (\gamma_e, \gamma_b) + \mathcal{L_c} ,  \\ 
+\end{equation} $$
+
+and for inferring **anisotropic** viscosity gives,
+
+$$ \begin{equation}
+    \mathcal{L} = \mathcal{L_d} + \mathcal{L_e} (\gamma_e, \gamma_b) + \mathcal{L}_{reg}(\gamma_g)+\mathcal{L}_c
+\end{equation} $$
+
+where $\mathcal{L_d}$ and $\mathcal{L_e}$ are the data loss and equation loss as defined [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md)). 
+$\gamma_e$ and $\gamma_b$ are the weighting pre-factors for the equation and boundary condition loss. An extra
+regularization loss term $\mathcal{L}_{reg}$ is required to infer anisotropic viscosity. The principle of this loss
+terms and the appropriate value of its weight $\gamma_g$ are detailed described in 
+[this page](https://github.com/YaoGroup/DIFFICE_jax/blob/main/examples/Anisotropic.md).

@@ -19,11 +19,27 @@ training. Two versions of codes are provided in this folder. The `pinns` folder 
 To be successfully loaded by the PINN code in this package, the raw data of each ice shelf needs to be organized 
 and named in a particular way as shown in the example dataset in this folder. Users need to strictly follow the
 same way if you want to create datasets for other ice shelves. The datasets for **PINN** and **XPINN** training 
-shares certain similarity, but also contain differences that users need to pay attention to.
+shares certain similarity, but also contain differences that users need to pay attention to. 
 
-For **regular PINN** training, below are the quantities and their associated names that need to be involved in 
-the `.mat` dataset for each ice shelf.
+First, the filename of the `.mat` dataset for both **PINNs** and **XPINNs** training should be saved in the format as:
 
+|| PINNs  | XPINNs|
+| ------------- | ------------- | ------------ |
+| Filename: | `data_pinns_#shelfname#.mat` |  `data_xpinns_#shelfname#.mat` |
+
+
+Second, all required quantities with their names, physical meaning and data shapes in the `.mat` dataset used 
+for both **PINNs** and **XPINNs** training are listed in the table below:
+
+|Variables | meaning | PINNs  | XPINNs|
+| ------------- | ------------- | ------------ | ------------ |
+| `xd` | x-position of **velocity** data | 2D matrix | cell[2D matrix]|
+| `yd` | y-position of **velocity** data | 2D matrix | cell[2D matrix]|
+| `ud` | velocity component along x-direction | 2D matrix | cell[2D matrix]|
+| `vd` | velocity component along y-direction | 2D matrix | cell[2D matrix]|
+| `xd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
+| `yd_h` | x-position of **thickness** data | 2D matrix | cell[2D matrix]|
+| `hd` | thickness data | 2D matrix | cell[2D matrix]|
 
 
  <br />

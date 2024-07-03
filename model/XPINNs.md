@@ -84,7 +84,7 @@ $$ \begin{equation}
     \mathcal{L} = \mathcal{L_d} + \mathcal{L_e} (\gamma_e, \gamma_b) + \mathcal{L}_{reg}(\gamma_g)+\mathcal{L}_c
 \end{equation} $$
 
-where $\mathcal{L_d}$ and $\mathcal{L_e}$ are the data loss and equation loss as defined [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md)). 
+where $\mathcal{L_d}$ and $\mathcal{L_e}$ are the data loss and equation loss as defined [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md). 
 $\gamma_e$ and $\gamma_b$ are the weighting pre-factors for the equation and boundary condition loss. An extra
 regularization loss term $\mathcal{L}_{reg}$ is required to infer anisotropic viscosity. The principle of this loss
 terms and the appropriate value of its weight $\gamma_g$ are detailed described in 

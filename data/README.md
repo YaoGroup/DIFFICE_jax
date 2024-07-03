@@ -28,8 +28,8 @@ the data that is required by the code in the `model` folder to ensure the succes
 
 ### `sampling.py`
 
-A python script that normalizes the synthetic data loaded from the MATLAB format (`.mat`). The script
-will automatically find the characterisitc scale of each variable in the synthetic data, including 
-spatial coordiates $(x,y)$, velocity $(u, v)$ and thickness $h$, and normalize them to be within
-$[-1, 1]$. The script also re-organizes and reshapes the data to meet the requirement for the PINN
-training. 
+Involving essential functions to sample a batch of pre-processed data used for the PINN training. Users
+can specify the number of sampling points for both velocity and thickness data, as well as the collocation 
+points used to compute equation residue and boundary condition residue in each batch. Note that for
+the sampling function in the `xpinns` folder, the number of sampling points specified by users is 
+for each sub-region, not the entire domain.

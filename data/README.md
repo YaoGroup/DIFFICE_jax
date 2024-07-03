@@ -21,6 +21,11 @@ and named in a particular way as shown in the example dataset in this folder. Us
 same way if you want to create datasets for other ice shelves. The datasets for **PINN** and **XPINN** training 
 shares certain similarity, but also contain differences that users need to pay attention to.
 
+For **regular PINN** training, below are the quantities and their associated names that need to be involved in 
+the `.mat` dataset for each ice shelf.
+
+
+
  <br />
 
 ## Code description

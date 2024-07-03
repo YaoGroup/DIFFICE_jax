@@ -20,10 +20,10 @@ inferred quantities from PINNs.
     <img src="xpinns.png" alt="results" width="90%">
 </p>
 
-## Loss function for XPINNs
+## Cost function for XPINNs
 
 To ensure that the neural networks prediction of two consecutive sub-regions remain continuous at their interface, 
-Several continuity loss terms needs to be added in the loss function. The first continuity loss term is given as
+Several continuity loss terms needs to be added in the cost function. The first continuity loss term is given as
 
 $$ \begin{eqnarray}
     \mathcal{L_{c0}} &=& \sum_{j=1}^{N_s} \frac{1}{N_{\Omega_j}} \left[\sum_{i=1}^{N_{\Omega_j}} [u_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - u_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})]^2 + \sum_{i=1}^{N_{\Omega_j}} [v_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - v_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})]^2 + \right. \\
@@ -70,7 +70,7 @@ $$ \begin{equation}
 \end{equation} $$
 
 Because the continuity of neural network prediction across the interface is important to ensure the uniqueness of the 
-solutions, the importance of these loss terms in the loss function should be the same as the data loss $\mathcal{L}_{d}$. 
+solutions, the importance of these loss terms in the cost function should be the same as the data loss $\mathcal{L}_{d}$. 
 Thus, the loss weight for the continuity loss term $\mathcal{L}$ is set to be 1 by default. Therefore, the total loss 
 function of XPINNs for inferring **isotropic** viscosity reads,
 

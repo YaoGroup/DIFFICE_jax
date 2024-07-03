@@ -35,3 +35,35 @@ collocation points on the $j$-th interface $\Omega_j$ between two adjacent netwo
 number. $q_{j}^{(+)}$ and $q_{j}^{(-)}$ represent the neural network predictions in the two sub-regions that intersect
 at the $j$-th interface $\Omega_j$, where $q$ stands for $u$, $v$, $h$ or $\mu$. $N_s$ is the total number of the 
 interfaces between two adjacent networks. 
+
+In addition, the SSA equations involves higher order derivatives of different physical variables. Thus, we require 
+the higher derivatives of those variables (up to the highest order that appears in the equations) also to be continuous
+across the interface. Recalling that the SSA equation involves the second order derivative of the ice velocity $u$ and
+$v$, and the first derivative of the ice thickness $h$ and the viscosity $\mu$, the additional continuity loss terms
+required include
+
+$$ \begin{eqnarray}
+    \mathcal{L_{c1}} = \sum_{j=1}^{N_s} \frac{1}{N_{\Omega_j}} & &\left[
+    \sum_{i=1}^{N_{\Omega_j}} ||\nabla u_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - \nabla u_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})||^2 
+    + \sum_{i=1}^{N_{\Omega_j}} ||\nabla v_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - \nabla v_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})||^2 \right. \\ 
+    & & \left.\sum_{i=1}^{N_{\Omega_j}} || \nabla h_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - \nabla_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})||^2 + 
+    \sum_{i=1}^{N_{\Omega_j}} ||\nabla \mu_{j}^{(+)}({\bf \hat{x_{\Omega_j}}}^{(i)}) - \nabla\mu_j^{(-)}({\bf \hat{x_{\Omega_j}}}^{(i)})||^2 
+    \right],  
+\end{eqnarray} $$
+
+which matches the first derivative of all the physical variables involved in SSA equations at the interfaces. Here, $\nabla = (\partial_x, \partial_y)$ is the gradient operator and $||{\bf v}||$ indicates the norm of the vector ${\bf v}$. To match the second-order derivative of ice velocity $u$ and $v$ at the interfaces, we have
+\begin{eqnarray}\label{eq:eqnlossc2}
+    \mathcal{L}_{c2} = \sum_{j=1}^{N_s} \frac{1}{N_{\Omega_j}} & &\left\{
+    \sum_{i=1}^{N_{\Omega_j}} |\Delta u_{j}^{(+)}({\bf \hat{x}}_{\Omega_j}^{(i)}) - \Delta u_j^{(-)}({\bf \hat{x}}_{\Omega_j}^{(i)})|^2 
+    + \sum_{i=1}^{N_{\Omega_j}} |\Delta v_{j}^{(+)}({\bf \hat{x}}_{\Omega_j}^{(i)}) - \Delta v_j^{(-)}({\bf \hat{x}}_{\Omega_j}^{(i)})|^2
+    \right \}, \quad
+\end{eqnarray}
+Here $\Delta = \partial_{xx} + \partial_{yy}$ is the Laplacian operator. Then, the combined continuity loss term for X-PINNs to infer ice viscosity becomes 
+\begin{equation}
+    \mathcal{L}_c = \mathcal{L}_{c0} + \mathcal{L}_{c1} + \mathcal{L}_{c2}
+\end{equation}
+Because the continuity of neural network prediction across the interface is important to ensure the uniqueness of the solutions, the importance of this loss term in the cost function should be the same as the data loss $\mathcal{L}_{d}$. Thus, the loss weight for the continuity loss term $\mathcal{L}$ is set to be 1 by default. Therefore, the total cost function of X-PINNs for inferring viscosity reads,
+\begin{gather}
+    \mathcal{L} = \mathcal{L}_d + \mathcal{L}_e (\gamma_e, \gamma_b) + \mathcal{L}_c,\quad \textrm{ isotropic}\\
+    \mathcal{L} = \mathcal{L}_d + \mathcal{L}_e (\gamma_e, \gamma_b) + \mathcal{L}_{reg}(\gamma_g)+\mathcal{L}_c,\quad \textrm{ anisotropic}
+\end{gather}

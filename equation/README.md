@@ -1,7 +1,7 @@
 # Equation
 
-The folder includes the codes that computes the residues of the governing equation and boundary condition that
-are involved in the PINN training. 
+The folder includes the codes that compute the residues of governing equations and boundary conditions 
+involved in the PINN training. 
 
 ### `ssa_eqn_iso,py`
 

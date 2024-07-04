@@ -24,7 +24,18 @@ Activate the Virtual Environment (for MacOS/linux)
 source diffice_jax/bin/activate
 ```
 
-Install the JAX library
+Install JAX. The package only works for JAX version 0.4.23 or later.
+
+```python
+# Install JAX on CPU (not recommended, too slow)
+pip install jax[cpu]==0.4.23 -f https://storage.googleapis.com/jax-releases/jax_releases.html
+
+# Install JAX on GPU (recommended if GPUs are available)
+pip install jax==0.4.23 jaxlib==0.4.23+cuda12.cudnn89 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+```
+
+Install other Python Dependencies required for the package
+
 
 Clone the `DIFFICE_jax` package locally from GitHub using
 

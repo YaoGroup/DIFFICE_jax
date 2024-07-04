@@ -6,6 +6,8 @@ A user-friendly neural-network-based DIFFerentiable solver for data assimilation
 
 Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu).
 
+ <br />
+
 ## Installation
 
 Instructions are for installation into a virtual Python Environment. Please ensure that Python 3.x has been installed in your 
@@ -60,6 +62,7 @@ python3 DIFFICE_jax/examples/train_pinns_iso.py
 Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
 ice-shelf examples. They are provided in the `tutorial` and `examples` folders, respectively. 
 
+ <br />
 
 ## Citation
 BibTex:

@@ -1,4 +1,4 @@
-e# DIFFICE_jax
+# DIFFICE_jax
 A user-friendly neural-network-based DIFFerentiable solver for data assimilation and inverse modeling of ICE shelves written in JAX. 
 
 ## Introduction 

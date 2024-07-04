@@ -63,7 +63,7 @@ ice-shelf examples. They are provided in the `tutorial` and `examples` folders, 
  <br />
  
 ## Contributors
-This package is written and maintained by Yongji Wang as part of the research project on discovering the flow law of Antarctica Ice Shelf. Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu).
+This package is written and maintained by Yongji Wang as part of the research project on discovering the flow law of Antarctica Ice Shelf. Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you're interested in contributing the further development of the `DIFFICE_jax` package, we welcome any kinds of help, even if you just find a typo in the code.  
 
 
 ## Citation

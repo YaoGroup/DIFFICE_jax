@@ -57,7 +57,7 @@ python3 DIFFICE_jax/examples/train_pinns_iso.py
 ```   
 ## Colab
 Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
-ice-shelf examples. They are provided in the `tutorial` and `examples` folders, respectively. 
+ice-shelf examples. They are provided in the `tutorial` and `examples` folders for a synthetic ice shelf and real ice shelves, respectively. 
 
  
 ## Contributors

@@ -12,6 +12,30 @@ Instructions are for installation into a virtual Python Environment. Please ensu
 local machine or the remote compute machine, such as HPC cluster or Google Cloud Platform (GCP). We recommend the Python of 
 version later than 3.9.0. 
 
+Create a virtual environment named `diffice_jax`
+
+```python
+python -m venv diffice_jax
+```
+
+Activate the Virtual Environment (for MacOS/linux)
+
+```python
+source diffice_jax/bin/activate
+```
+
+Install the JAX library
+
+Clone the `DIFFICE_jax` package locally from GitHub using
+
+```python
+git clone https://github.com/YaoGroup/DIFFICE_jax.git
+```
+
+
+
+
+
 ## Citation
 BibTex:
 ```

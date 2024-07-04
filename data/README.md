@@ -49,7 +49,7 @@ The quantities listed above should be included in the datasets for both **PINN**
 only difference is that, for XPINNs, each quantity should have a separate matrix for each sub-region, and
 all of them should be saved in a `cell` type. Additionally, we note that all the velocity-related quantities (`xd`, `yd`,
 `ud` and `vd`) should have the exact same shape, and the same applies to the thickness-related quantities (`xd_h`, `yd_h`
-and `h_d`). The calving front-related quantities should also have the same length. 
+and `h_d`). The calving front-related quantities (`xct`, `yct` and `nnct`) should also have the same length. 
 
 Apart from the above quantities, below are the additional quantities particularly required for the **XPINN** training
 

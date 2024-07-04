@@ -17,7 +17,7 @@ within the `examples` folder of this repository.
  <br />
 
 ## Code description
-### `initialization.py`
+### `DIFFICE_jax/model/initialization.py`
 
 Involving essential functions to intialize weights and biases for all neural networks required 
 for the problem. The code use Xavier initialization scheme, so that the weights between each 
@@ -26,7 +26,7 @@ variance equal to $2/(n_{l-1}+n_{l})$, where $n_{l}$ and $n_{l+1}$ indicates the
 units in the previous and next layers. The biases are initialized with all zero.
 
 
-### `networks.py`
+### `DIFFICE_jax/model/networks.py`
 
 Involving essential functions to generate the neural network model for each physical variable 
 involved in the problem. For regular PINN training, two networks are created. One network has 
@@ -34,11 +34,11 @@ three outputs, representing two velocity components and thickness. The other net
 one output for isotropic viscosity or two outputs for anisotropic viscosity components.  In
 comparison, **XPINNs** generate two networks for each of the sub-region. Each network is a
 fully-connected multiple-layer preceptrons (MLP) using `tanh` as the default activation function. 
-When creating the networks, users need to specify whether the networks are created for isotropic 
-and anistropic viscosity inference, as these two cases requires different number of outputs.
+When creating the neural networks, users need to specify whether the neural networks are created for isotropic 
+and anistropic viscosity, as these two cases requires different number of outputs.
 
 
-### `loss.py`
+### `DIFFICE_jax/model/loss.py`
 
 Involving essential functions to generate the total loss function for PINN training on assimilating
 remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
@@ -49,11 +49,11 @@ We note that users should call different functions in the `loss.py` script to ge
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
 
 
-### `prediction.py`
+### `DIFFICE_jax/model/prediction.py`
 
 Involving functions to predict the neural network output at the high-resolution grids for evaluation or 
 visualization. The default setting of the function is to predict the data at the same resolution grid of
-the remote-sensing velocity data (450m resolution). Users can modify the function to predict the network
-output on other higher-resolution grids. In addition, the prediction function for **XPINNs**
+the remote-sensing velocity data (450m resolution). Although users can modify the function to predict the network
+output on other higher-resolution grids. Furthermore, the prediction function for **XPINNs**
 will automatically stitch the network outputs from different sub-regions into a single large domain that 
 covers all the sub-regions.

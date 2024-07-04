@@ -35,18 +35,27 @@ pip install jax==0.4.23 jaxlib==0.4.23+cuda12.cudnn89 -f https://storage.googlea
 ```python
 # required for Adam optimizer
 pip install optax
+
 # required for L-BFGS optimizer
 pip install tfp-nightly
+
 # for output ploting
 pip install matplotlib
 ```
 
 5. Clone the `DIFFICE_jax` package locally from GitHub using
-
 ```python
 git clone https://github.com/YaoGroup/DIFFICE_jax.git
 ```
 
+6. Run the example codes
+```python
+# tutorial example using synthetic data
+python3 DIFFICE_jax/tutorial/train_syndata.py
+
+# example using real data of ice shelves
+python3 DIFFICE_jax/examples/train_pinns_iso.py
+```   
 
 
 

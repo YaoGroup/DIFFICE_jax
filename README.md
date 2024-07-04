@@ -4,8 +4,6 @@ A user-friendly neural-network-based DIFFerentiable solver for data assimilation
 ## Introduction 
 `DIFFICE_jax` is a Python package that solves the depth-integrated Stokes equation for `ice shelves`, and can be adopted for `ice sheets` by modifying the partial differential equations (PDE) in the neural network loss function. It uses PDEs to interpolate descretized remote-sensing data into meshless and differentible functions, and infer ice shelves' viscosity structure via `PDE-constrained optimization` and `automatic differentiation` (AD). The algorithm is based on physics-informed neural networks (`PINNs`) [@Raissi2019] and implemented in JAX [@jax2018github]. The `DIFFICE_jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collocation points resampling, non-dimensionalization of the data adnd equations, extended PINN, viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides tutorial examples for users at different levels to help master the method.
 
-Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu).
-
  <br />
 
 ## Installation
@@ -63,6 +61,10 @@ Apart from the Python scripts to run locally, we also provide **Colab Notebooks*
 ice-shelf examples. They are provided in the `tutorial` and `examples` folders, respectively. 
 
  <br />
+ 
+## Contributors
+This package is written and maintained by Yongji Wang as part of the research project on discovering the flow law of Antarctica Ice Shelf. Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu).
+
 
 ## Citation
 BibTex:

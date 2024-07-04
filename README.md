@@ -1,4 +1,4 @@
-# DIFFICE_jax
+e# DIFFICE_jax
 A user-friendly neural-network-based DIFFerentiable solver for data assimilation and inverse modeling of ICE shelves written in JAX. 
 
 ## Introduction 
@@ -43,7 +43,7 @@ pip install tfp-nightly
 pip install matplotlib
 ```
 
-5. Clone the `DIFFICE_jax` package locally from GitHub using
+5. Clone the `DIFFICE_jax` package locally from GitHub
 ```python
 git clone https://github.com/YaoGroup/DIFFICE_jax.git
 ```
@@ -57,7 +57,7 @@ python3 DIFFICE_jax/tutorial/train_syndata.py
 python3 DIFFICE_jax/examples/train_pinns_iso.py
 ```   
 
-Apart from the Python scripts to run locally, we also provide Colab Notebooks for both the tutorial example and real
+Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
 ice-shelf examples. They are provided in the `tutorial` and `examples` folders, respectively. 
 
 

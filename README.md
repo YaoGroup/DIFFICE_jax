@@ -57,7 +57,7 @@ python3 DIFFICE_jax/tutorial/train_syndata.py
 python3 DIFFICE_jax/examples/train_pinns_iso.py
 ```   
 
-Apart from the Python scripts run locally, we also provide the Colab Notebooks for both tutorial and real
+Apart from the Python scripts run locally, we also provide the Colab Notebooks for both the tutorial example and real
 ice-shelf examples. They are provided in the `tutorial` and `examples` folders, repsectively. 
 
 

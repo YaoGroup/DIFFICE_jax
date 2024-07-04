@@ -53,7 +53,7 @@ solve the equations using **COMSOL Multiphysics**, which, we believe, provides a
 user interface to set up the forward problem and conduct the calculation. 
 
 ## Code description
-### `IceShelf2D_forward.mph`  (in the `COMSOL` folder)
+### `DIFFICE_jax/tutorial/COMSOL/IceShelf2D_forward.mph`  
 
 A COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
 conditions and given viscosity as described above. Users need to have the basic COMSOL software 
@@ -63,7 +63,7 @@ create different synthetic data. The provided COMSOL file can export the synthet
 format by default. The `SynData_exp1.txt` is the data file exported from the current COMSOL file.
 
 
-### `txt2mat.m`  (in the `COMSOL` folder)
+### `DIFFICE_jax/tutorial/COMSOL/txt2mat.m` 
 
 A MATLAB script that converts the raw data file (`.txt`) exported from COMSOL into MATLAB data 
 format (`.mat`). The synthetic data in `.mat` format are also organized in the way that allow them
@@ -82,7 +82,7 @@ shading interp;
 ```
 
 
-### `train_syndata.py`
+### `DIFFICE_jax/tutorial/train_syndata.py`
 
 The main Python script conducts the PINN training to infer ice viscosity from the synthetic data.
 This script is intended to be run on a local machine or a cluster. Users should select the 
@@ -94,7 +94,7 @@ not already exist. The current hyper-parameters set in the script allow the visc
 from the example data `SynData_exp1.mat` to achieve high accuracy.
 
 
-### `train_syndata.ipynb`
+### `DIFFICE_jax/tutorial/train_syndata.ipynb`
 The Colab notebook, similar to the script `pinn_syndata.py` that can conduct the PINN training to infer ice 
 viscosity from the synthetic data. The user can run the notebook directly in Google Colab online without any 
 need to install python environments and library on a local machine. Different from the script `pinn_syndata.py`,

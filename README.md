@@ -57,10 +57,12 @@ python3 DIFFICE_jax/examples/train_pinns_iso.py
 ```   
 ## Google Colab
 Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
-ice-shelf examples. They are provided in the `tutorial` and `examples` folders for a synthetic ice shelf and real ice shelves, respectively. 
+ice-shelf examples. They are provided in the `tutorial` and `examples` folders for a synthetic ice shelf and real ice shelves,
+respectively. 
 
-## Getting start with Tutorial
-We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar with the software by studying the [tutorial](./tutorial) example
+## Getting start with a Tutorial
+We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar
+with the software by reading the document and playing with the examples in the `tutorial` folder. 
  
 ## Contributors
 This package is written by Yongji Wang. Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you're interested in contributing the development of the `DIFFICE_jax` package, feel free to get in touch.  

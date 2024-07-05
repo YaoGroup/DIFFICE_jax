@@ -126,8 +126,8 @@ $$\mathcal{L} = \mathcal{L}_d + \mathcal{L}_e$$
 
 where the data loss $\mathcal{L}_d$ reads
 
-$$ \mathcal{L_d} = \frac{1}{N_d} \left( \sum_{i=1}^{N_d} [\hat{u_d} - u({\bf x_d})]^2 
-	+ \sum_{i=1}^{N_d} [\hat{v_d} - v({\bf x_d})]^2 + \sum_{i=1}^{N_d} [\hat{v_d} - v({\bf x_d})]^2 \right) $$
+$$ \mathcal{L_d} = \frac{1}{N_d} \left( \sum_{i=1}^{N_d} [\hat{u_d} - u({\bf \hat{x_d}})]^2 
+	+ \sum_{i=1}^{N_d} [\hat{v_d} - v({\bf \hat{x_d}})]^2 + \sum_{i=1}^{N_d} [\hat{v_d} - v({\bf \hat{x_d}})]^2 \right) $$
 
 where $\hat{u}_d$, $\hat{v}_d$ and $\hat{h}_d$ are the normalized data of ice-shelf velocity and thickness, respectively, at different normalized locations ${\bf \hat{x}_d}=(\hat{x}_d, \hat{y}_d)$. $N_d$ is the total number of points used for each iteration of the training. Then, the equation loss  $\mathcal{L}_e$ reads
 

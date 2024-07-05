@@ -62,7 +62,11 @@ respectively.
 
 ## Getting start with a Tutorial
 We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar
-with the software by reading the document and playing with the examples in the `tutorial` folder. 
+with the software by reading the document and playing with the examples prepared in the `tutorial` folder. The tutorial example
+allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in a rectangular domain with any given 
+viscosity profile. Users can then use the PINNs code prepared in the folder to infer the given viscosity from the synthetic code.
+We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)
+that allows users to compare the given viscosity with the PINN inferred viscosity to validate the accuracy of PINNs on inverse problem.
  
 ## Contributors
 This package is written by Yongji Wang. Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you're interested in contributing the development of the `DIFFICE_jax` package, feel free to get in touch.  

@@ -63,6 +63,8 @@ ice-shelf examples. They are provided in the `tutorial` and `examples` folders f
 ## Contributors
 This package is written by Yongji Wang. Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you're interested in contributing the development of the `DIFFICE_jax` package, feel free to get in touch.  
 
+## License
+`DIFFICE_jax` is an open-source software. All codes inside are licensed under the MIT License. Check the details in the [LICENSE](./LICENSE) file.
 
 ## Citation
 BibTex:

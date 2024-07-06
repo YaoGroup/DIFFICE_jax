@@ -62,7 +62,7 @@ respectively.
 
 ## Getting start with a Tutorial
 We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar
-with the software by reading the document and playing with the examples prepared in the `tutorial` folder. The tutorial example
+with the software by reading the document and playing with the synthetic example prepared in the `tutorial` folder. The tutorial example
 allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in a rectangular domain with any given 
 viscosity profile. Users can then use the PINNs code prepared in the folder to infer the given viscosity from the synthetic code.
 We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)

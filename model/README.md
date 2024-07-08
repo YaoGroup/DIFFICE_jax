@@ -17,7 +17,8 @@ within the `examples` folder of this repository.
  <br />
 
 ## Code description
-### `DIFFICE_jax/model/initialization.py`
+### `DIFFICE_jax/model/pinns/initialization.py`
+### `DIFFICE_jax/model/xpinns/initialization.py`
 
 Involving essential functions to intialize weights and biases for all neural networks required 
 for the problem. The code use Xavier initialization scheme, so that the weights between each 
@@ -26,7 +27,8 @@ variance equal to $2/(n_{l-1}+n_{l})$, where $n_{l}$ and $n_{l+1}$ indicates the
 units in the previous and next layers. The biases are initialized with all zero.
 
 
-### `DIFFICE_jax/model/networks.py`
+### `DIFFICE_jax/model/pinns/networks.py`
+### `DIFFICE_jax/model/xpinns/networks.py`
 
 Involving essential functions to generate the neural network model for each physical variable 
 involved in the problem. For regular PINN training, two networks are created. One network has 
@@ -38,7 +40,8 @@ When creating the neural networks, users need to specify whether the neural netw
 and anistropic viscosity, as these two cases requires different number of outputs.
 
 
-### `DIFFICE_jax/model/loss.py`
+### `DIFFICE_jax/model/pinns/loss.py`
+### `DIFFICE_jax/model/xpinns/loss.py`
 
 Involving essential functions to generate the total loss function for PINN training on assimilating
 remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
@@ -49,7 +52,8 @@ We note that users should call different functions in the `loss.py` script to ge
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
 
 
-### `DIFFICE_jax/model/prediction.py`
+### `DIFFICE_jax/model/pinns/prediction.py`
+### `DIFFICE_jax/model/xpinns/prediction.py`
 
 Involving functions to predict the neural network output at the high-resolution grids for evaluation or 
 visualization. The default setting of the function is to predict the data at the same resolution grid of

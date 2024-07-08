@@ -2,8 +2,11 @@
 A user-friendly neural-network-based DIFFerentiable solver for data assimilation and inverse modeling of ICE shelves written in JAX. 
 
 ## Introduction 
-`DIFFICE_jax` is a Python package that solves the depth-integrated Stokes equation for `ice shelves`, and can be adopted for `ice sheets` by modifying the partial differential equations (PDE) in the neural network loss function. It uses PDEs to interpolate descretized remote-sensing data into meshless and differentible functions, and infer ice shelves' viscosity structure via `PDE-constrained optimization` and `automatic differentiation` (AD). The algorithm is based on physics-informed neural networks (`PINNs`) [@Raissi2019] and implemented in JAX [@jax2018github]. The `DIFFICE_jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collocation points resampling, non-dimensionalization of the data adnd equations, extended PINN (see [detailed documentation here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/model/XPINNs.md)), viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides tutorial examples for users at different levels to help master the method.
+`DIFFICE_jax` is a Python package that solves the depth-integrated Stokes equation for `ice shelves`, and can be adopted for `ice sheets` by modifying the partial differential equations (PDE) in the neural network loss function. It uses PDEs to interpolate descretized remote-sensing data into meshless and differentible functions, and infer ice shelves' viscosity structure via `PDE-constrained optimization` and `automatic differentiation` (AD). The algorithm is based on physics-informed neural networks (`PINNs`) [@Raissi2019] and implemented in JAX [@jax2018github]. The `DIFFICE_jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collocation points resampling, non-dimensionalization of the data adnd equations, extended PINN (see [XPINN documentation](https://github.com/YaoGroup/DIFFICE_jax/blob/main/model/XPINNs.md)), viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides tutorial examples for users at different levels to help master the method.
 
+<p align="center">
+    <img src="./models/xpinns/xpinns.png" alt="results" width="90%">
+</p>
 
 ## Installation
 
@@ -57,7 +60,7 @@ python3 DIFFICE_jax/examples/train_pinns_iso.py
 ```   
 ## Google Colab
 Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
-ice-shelf examples. They are provided in the `tutorial` and `examples` folders for a synthetic ice shelf and real ice shelves,
+ice-shelf examples. They are provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders for a synthetic ice shelf and real ice shelves,
 respectively. 
 
 ## Getting start with a Tutorial

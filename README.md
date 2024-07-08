@@ -69,7 +69,7 @@ We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/
 that allows users to compare the given viscosity with the PINN inferred viscosity to validate the accuracy of PINNs on inverse problem.
  
 ## Contributors
-This package is written by Yongji Wang. Please direct questions about this code and documentation to Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you're interested in contributing the development of the `DIFFICE_jax` package, feel free to get in touch.  
+This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you have questions about this code and documentation, or are interested in contributing the development of the `DIFFICE_jax` package, feel free to get in touch.  
 
 ## License
 `DIFFICE_jax` is an open-source software. All code within the project is licensed under the MIT License. For more details, please refer to the [LICENSE](./LICENSE) file.

@@ -8,6 +8,10 @@ A user-friendly neural-network-based DIFFerentiable solver for data assimilation
     <img src="model/xpinns/xpinns.png" alt="results" width="90%">
 </p>
 
+<p align="center">
+    <img src="tutorial/figures/syndata_cond.png" alt="boundary conditions" width="100%">
+</p>
+
 ## Installation
 
 Instructions are for installation into a virtual Python Environment. Please ensure that Python 3.x has been installed in your 

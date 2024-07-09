@@ -1,5 +1,5 @@
 ---
-title: 'DIFFICE_jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX'
+title: 'DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX'
 tags:
   - Python
   - physics-informed deep learning
@@ -21,7 +21,7 @@ affiliations:
    index: 1
  - name: Department of Mathematics, New York University, USA
    index: 2
-date: 14 May 2024
+date: 06 July 2024
 bibliography: paper.bib
 ---
 
@@ -71,6 +71,10 @@ Prior studies have shown that inversion of the isotropic viscosity can be over-c
 In addition to their ease of use, as mentioned above, `DIFFICE_jax` offer several advantages. First, the training of PINNs is effective even with irregularly sampled data, such as velocity data at a 450 m resolution [@Mouginot2019velo] and thickness data at a 500 m resolution [@Morlighem2020thick] that do not lie on the same grid. Although Bedmachine thickness data is used here, the code supports direct use of thickness data from radar profiles available only at flight lines, and allows dual inversion [@cheng2024unified] of both thickness and viscosity. Second, while the outputs of classical methods are discretized numerical grid points that require large memory to store at high resolution, the outputs of PINNs (velocity, thickness, and viscosity fields) are continuous functions parameterized by a fixed number of weights and biases, requiring relatively little memory even where higher resolutions is demanded [@wang2024multi]. Similar to any conventional basis functions like the Fourier basis, NNs approximate the velocity, thickness, and viscosity fields with a mesh-free representation. Third, the solver itself is *differentiable*; the gradient of the loss function with respect to the NN parameters are calculated via automatic differentiation (AD). This avoids the tedious efforts of writing the adjoint and is particularly advantageous when exploring new PDEs like the anisotropic equations. Benefits of automatic differentiation (AD) for glaciological inverse problems are also shown in other deep-learning based emulators [@jouvet2022deep; @jouvet2023inversion; @jouvet2023ice]. Fourth, PINN does not require an initial guess of $\mu$ to be included a priori in the cost function, as often used in the adjoint method for ice-hardness inversion [@furst2015assimilation; @wang2022controls]. Finally, PINNs leverage the compuational speedup using GPUs.
 
 Despite the above advantages, there are also several unanswered questions to be explored. NN training tends to capture the main variations (low-frequency information) in the data. While this can be beneficial, preventing disturbances from high-frequency errors or noise often present in the data and removing the need to include regularization terms in the loss function, users should be aware of the NN's tendency to miss high-frequency signals. Hence, we use XPINN in this repository. Exploring the regularization effects of the NN architecture is the subject of future work.
+
+
+![**PINN setup**. (**a**) The structure and workflow of physics-informed neural networks (PINNs) for inferring ice viscosity $\mu$ from (**b**) the remote-sensing data of ice velocity $u,v$ [@Mouginot2019velo] and thickness $h$ [@Morlighem2020thick], and governing equations $(f_1,f_2,f_3,$ and $f_4=0)$. The loss function $\mathcal{L}$ contains two terms, the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. (**c**) Prediction of trained neural network for velocity $(u, v)$ and thickness $h$, which shows high agreement with the remote-sensing data with relatively error around 1-3%. The inferred viscosity well satisfies the equation with small residue values, indicating the accuracy of the inferred viscosity.   \label{fig:PINN}](PINN_setup.png)
+
 
 # Examples
 
@@ -134,11 +138,6 @@ $$ \mathcal{L_e} = \frac{\gamma_e}{N_e}\left(\sum_{i=1}^{N_e} [f_1({\bf \hat{x_e
 
 
 where $f_1$ and $f_2$ represent the residues of the normalized isotropic SSA equations, and $g_1$ and $g_2$ are residues of the normalized dynamic boundary conditions. ${\bf \hat{x}_e}$ and ${\bf \hat{x}_b}$ are the normalized locations of collocations points to evaluate the residues of equations and boundary conditions, respectively. $N_e$ and $N_b$ are their total numbers. Here, the equation residue is the left-hand side minus of the right-hand side of the equation. $\gamma_e$ and $\gamma_b$ are the weighting pre-factors for the equation and boundary loss. With systematic test, we set $\gamma_b = 1$ around 10 times higher than $\gamma_e = 0.1$ for the success of training; PINNs priortize the solution that satisfies the boundary conditions, which guarantees the NN converges to a unique solution as long as the equation residue reduces.
-
-
-# Figures
-
-![**PINN setup**. (**a**) The structure and workflow of physics-informed neural networks (PINNs) for inferring ice viscosity $\mu$ from (**b**) the remote-sensing data of ice velocity $u,v$ [@Mouginot2019velo] and thickness $h$ [@Morlighem2020thick], and governing equations $(f_1,f_2,f_3,$ and $f_4=0)$. The loss function $\mathcal{L}$ contains two terms, the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. (**c**) Prediction of trained neural network for velocity $(u, v)$ and thickness $h$, which shows high agreement with the remote-sensing data with relatively error around 1-3%. The inferred viscosity well satisfies the equation with small residue values, indicating the accuracy of the inferred viscosity.   \label{fig:PINN}](PINN_setup.png)
 
 
 # Acknowledgements

@@ -50,15 +50,15 @@ Critical features of `DIFFICE_jax` that go beyond off-the-shelf PINNs, and the n
 Proper training of NNs requires both input and output of the NN to be normalized. However, the values of observational data of ice velocity and thickness differ by several order of magnitude in their original units. The `DIFFICE_jax` package provides the algorithm that can automatically normalize the observational data and derive normalized SSA equations for the training.
 
 **(2) Optimal setting of equation weight:** 
-The cost function of PINNs involves two terms: the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. With the normalized data and equations, the weighting pre-factors of the data and equation loss are optimally set that can minimize the training loss effectively for different ice shelves.
+The cost function of PINNs involves two terms: the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. The weighting pre-factors of the data and equation loss are optimally set in the package to enure effective convergence of training for different ice shelves.
 
 **(3) Design of NNs to enforce positive-definiteness:**
-The effective viscosity $\mu$ must be positive everywhere. In addition, evidence shows that the spatial variation of $\mu$ within the ice shelf could cover several order of magnitude. We introduce the viscosity expression as 
+Considering that the effective viscosity $\mu$ is positive with large spatial variation within the ice shelf, we introduce the viscosity expression as 
 
 $$\mu = \exp(\mathrm{NN_\mu}),$$ 
 
-where $\mathrm{NN}_\mu$ is the output of the fully-connected NN created for $\mu$. This setting ensures the positive-definiteness of the inferred 
-viscosity and enhance the training to capture both the local and global profile of viscosity with high accuracy over large spatial domain.
+where $\mathrm{NN}_\mu$ is a fully-connected network for $\mu$. This setting ensures the positive-definiteness of the inferred 
+viscosity and enhance the training to capture the large-varying viscosity profile with high accuracy.
 
 **(4) Residual-based re-sampling of collocation points during training:**
 PINN training with observational data can often result in the cheating effects [@wang2022discovering; @charlie2024euler] due to errors and noise in the data. Here, cheating refers to the situation where the NN overfits the training data, leading to a small training loss but a large validation error elsewhere. 

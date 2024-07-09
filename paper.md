@@ -1,5 +1,5 @@
 ---
-title: 'DIFFICE-jax: Differentiable neural network solver for data assimilation of ice shelves in JAX'
+title: 'DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX'
 tags:
   - Python
   - physics-informed deep learning

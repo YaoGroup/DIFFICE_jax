@@ -1,5 +1,5 @@
 ---
-title: 'DiffIceJAX: Neural-network-based differentiable solver for ice shelf analysis in JAX'
+title: 'DiffIceJAX: Neural-network-based differentiable solver for ice-shelf dynamics in JAX'
 tags:
   - Python
   - physics-informed deep learning

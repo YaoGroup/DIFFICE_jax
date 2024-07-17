@@ -34,16 +34,16 @@ np.random.seed(seed)
 keys = random.split(key, 4)
 
 # select the size of neural network
-n_hl = 5
-n_unit = 30
+n_hl = 6
+n_unit = 40
 # set the weight for 1. equation loss and 2. boundary condition loss
 lw = [0.05, 0.1]
 
 # number of sampling points
-n_smp = 4000    # for velocity data
-nh_smp = 3000   # for thickness data
-n_col = 4000    # for collocation points
-n_cbd = 600     # for boundary condition (calving front)
+n_smp = 8000    # for velocity data
+nh_smp = 8000   # for thickness data
+n_col = 8000    # for collocation points
+n_cbd = 1000     # for boundary condition (calving front)
 # group all the number of points
 n_pt = jnp.array([n_smp, nh_smp, n_col, n_cbd], dtype='int32')
 # double the points for L-BFGS training
@@ -99,8 +99,8 @@ NN_loss.lref = NN_loss(trained_params, data)[0]
 #%% networks training
 
 # set the training iteration
-epoch1 = 100000
-epoch2 = 100000
+epoch1 = 200000
+epoch2 = 200000
 # (above is the number of iterations required for high accuracy,
 #  users are free to modify it based on your need)
 

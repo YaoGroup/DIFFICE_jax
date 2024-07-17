@@ -65,8 +65,10 @@ isExist = os.path.exists(outdir)
 if not isExist:
     os.mkdir(outdir)
 
+# load the datafile
+rawdata = loadmat(filepath)
 # obtain the data for training
-data_all = normalize_data(filepath)
+data_all = normalize_data(rawdata)
 scale = data_all[4][0:2]
 
 

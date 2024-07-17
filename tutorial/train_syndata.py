@@ -54,7 +54,7 @@ n_pt2 = n_pt * 2
 
 # create the dataset filename
 filename = 'SynData_exp1.mat'
-filepath = str(rootdir.joinpath(filename))
+filepath = str(rootdir.joinpath('COMSOL').joinpath(filename))
 
 # create the output file name
 outputName = f'SynData_pinns_idx{seed:.0f}'

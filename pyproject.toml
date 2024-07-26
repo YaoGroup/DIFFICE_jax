@@ -1,0 +1,18 @@
+[project]
+name = "DIFFICE_jax"
+version = "0.0.1"
+authors = [
+  { name="Yongji Wang", email="yw8211@nyu.edu" },
+]
+description = "A differentiable neural-network solver for data assimilation of ice shelves written in JAX"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/YaoGroup/DIFFICE_jax"
+Issues = "https://github.com/YaoGroup/DIFFICE_jax/issues"

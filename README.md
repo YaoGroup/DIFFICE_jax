@@ -69,9 +69,19 @@ that allows users to compare the given viscosity with the PINN inferred viscosit
 
 
 ## Real-data Examples 
-Beside the synthetic data in the `tutorial` folder, we also provided the real velocity and thickness data for **four** different ice shelves surrounding the Antarctica
-in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. We summarized **six algorithm features** of the `DIFFICE_jax`
-package beyond the Vanilla PINNs code in the [paper](https://github.com/YaoGroup/DIFFICE_jax/tree/main/paper.md). 
+Besides the synthetic data in the `tutorial` folder, we provide the real velocity and thickness data for **four** different ice shelves surrounding the Antarctica
+in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. In the [paper](https://github.com/YaoGroup/DIFFICE_jax/tree/main/paper.md), we
+summarized **six algorithm features** of the `DIFFICE_jax` package beyond the Vanilla PINNs code. Implementing different features, we provide four example codes in the 
+[`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders that can be used to analyze different ice-shelf datasets. 
+The ice-shelf viscosity inversion examples and the corresponding implemented features are listed in the table below. Well-documented codes can be found in their corresponding subfolders.
+
+| Example codes  | Feature # | Ice shelf |
+| ------------- | ------------- | ------------- |
+| train_pinns_iso | (1), (2), (3), (4) | Amery, Larsen C, synthetic |
+| train_pinns_aniso | (1), (2), (3), (4), (6)  | Amery, Larsen C|
+| train_xpinns_iso  | (1), (2), (3), (4), (5)  | Ross, Ronne-Filchner|
+| train_xpinns_aniso  | (1), (2), (3), (4), (5), (6)   |  Ross, Ronne-Filchner|
+
 
 ![](docs/figure/PINN_setup.png)
 

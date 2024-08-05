@@ -84,15 +84,14 @@ well-documented in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree
 | train_xpinns_iso  | (1), (2), (3), (4), (5)  | Ross, Ronne-Filchner|
 | train_xpinns_aniso  | (1), (2), (3), (4), (5), (6)   |  Ross, Ronne-Filchner|
 
-
-![](docs/figure/PINN_setup.png)
-
-
  
 ## Google Colab
 Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
 ice-shelf examples. They are provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders for a synthetic ice shelf and real ice shelves,
 respectively. 
+
+## Diagram of Algorithm and Results.
+![](docs/figure/PINN_setup.png)
 
 
 

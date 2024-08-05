@@ -16,7 +16,7 @@ continuous and smooth across the sub-regions. The continuity condition is also e
 inferred quantities from PINNs.
 
 <p align="center">
-    <img src="xpinns.png" alt="results" width="90%">
+    <img src="figure/xpinns.png" alt="results" width="90%">
 </p>
 
 ## Cost function for XPINNs

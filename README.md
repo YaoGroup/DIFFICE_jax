@@ -67,7 +67,12 @@ viscosity profile. Users can then use the PINNs code prepared in the folder to i
 We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)
 that allows users to compare the given viscosity with the PINN inferred viscosity to validate the accuracy of PINNs on inverse problem.
 
- ![](PINN_setup.png)
+
+## Real-data Examples 
+Beside the synthetic data in the `tutorial` folder, we also provided the real velocity and thickness data for different ice shelves in the 
+[`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders
+
+![](docs/figure/PINN_setup.png)
 
 
  

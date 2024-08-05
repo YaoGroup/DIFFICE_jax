@@ -68,6 +68,9 @@ Regular PINN training with a single network cannot capture the rich spatial vari
 **(6) Inversion of anisotropic viscosity:**
 Prior studies have shown that the viscosity of Antarctica Ice Shelves could be anisotropic [@wang2024deep]. The `DIFFICE_jax` package involves the first algorithm designed to infer anisotropic viscosity. The governing equations, associated boundary conditions, and the cost function for inferring anisotropic viscosity are described in the `docs` folder. 
 
+![**PINN setup**. (**a**) The structure and workflow of physics-informed neural networks (PINNs) for inferring ice viscosity $\mu$ from (**b**) the remote-sensing data of ice velocity $u,v$ [@Mouginot2019velo] and thickness $h$ [@Morlighem2020thick], and governing equations $(f_1,f_2,f_3,$ and $f_4=0)$. The loss function $\mathcal{L}$ contains two terms, the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. (**c**) Prediction of trained neural network for velocity $(u, v)$ and thickness $h$, which shows high agreement with the remote-sensing data with relatively error around 1-3%. The inferred viscosity well satisfies the equation with small residue values, indicating the accuracy of the inferred viscosity.   \label{fig:PINN}](docs/PINN_setup.png)
+
+
 
 
 # Acknowledgements

@@ -53,7 +53,7 @@ the associated boundary conditions are given in [this link](https://github.com/Y
  <br />
  <br />
 
-## `DIFFICE_jax/model`
+## Folder: `DIFFICE_jax/model`
 
 This folder provides the core codes for generating neural network, creating
 loss function and predicting output variables for the PINN training on assimilating 

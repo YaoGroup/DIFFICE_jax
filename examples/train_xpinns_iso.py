@@ -59,7 +59,7 @@ shelfname = 'RnFlch'
 
 # create the dataset filename
 filename = 'data_xpinns_' + shelfname + '.mat'
-filepath = str(project_root.joinpath('data').joinpath(filename))
+filepath = str(rootdir.joinpath('real_data').joinpath(filename))
 
 # create the output file name
 outputName = shelfname + f'_xpinns_iso_seed={seed:.0f}'

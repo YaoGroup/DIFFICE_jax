@@ -40,12 +40,16 @@ for each sub-region, not the entire domain.
 The folder includes the codes that compute the residues of governing equations and boundary conditions 
 involved in the PINN training. 
 
+ <br />
+ 
 ### `DIFFICE_jax/equation/ssa_eqn_iso.py`
 
 involving functions to compute the residue of the normalized **isotropuc** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. Both the SSA equations and
 the boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md) .
 
+ <br />
+ 
 ### `DIFFICE_jax/equation/ssa_eqn_aniso_zz.py`
 
 involving functions to compute the residue of the normalized **anisotropic** Shallow-Shelf Approximation (SSA) 
@@ -55,6 +59,8 @@ the associated boundary conditions are given in [this link](https://github.com/Y
 
  <br />
  <br />
+
+ 
 
 ## Folder: `DIFFICE_jax/model`
 
@@ -72,6 +78,7 @@ component for PINN training. Detailed instructions for correctly calling the fun
 scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
 within the `examples` folder of this repository.
 
+ <br />
 
 ### `DIFFICE_jax/model/pinns/initialization.py`
 ### `DIFFICE_jax/model/xpinns/initialization.py`
@@ -82,7 +89,8 @@ two layers are generated following a truncated normal distribution with zero mea
 variance equal to $2/(n_{l-1}+n_{l})$, where $n_{l}$ and $n_{l+1}$ indicates the number of
 units in the previous and next layers. The biases are initialized with all zero.
 
-
+ <br />
+ 
 ### `DIFFICE_jax/model/pinns/networks.py`
 ### `DIFFICE_jax/model/xpinns/networks.py`
 
@@ -95,7 +103,8 @@ fully-connected multiple-layer preceptrons (MLP) using `tanh` as the default act
 When creating the neural networks, users need to specify whether the neural networks are created for isotropic 
 and anistropic viscosity, as these two cases requires different number of outputs.
 
-
+ <br />
+ 
 ### `DIFFICE_jax/model/pinns/loss.py`
 ### `DIFFICE_jax/model/xpinns/loss.py`
 
@@ -107,7 +116,8 @@ The loss function for the XPINN training is given [here](https://github.com/YaoG
 We note that users should call different functions in the `loss.py` script to generate the loss functions
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
 
-
+ <br />
+ 
 ### `DIFFICE_jax/model/pinns/prediction.py`
 ### `DIFFICE_jax/model/xpinns/prediction.py`
 

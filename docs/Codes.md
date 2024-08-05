@@ -115,10 +115,15 @@ output on other higher-resolution grids. Furthermore, the prediction function fo
 will automatically stitch the network outputs from different sub-regions into a single large domain that 
 covers all the sub-regions.
 
+ <br />
+ <br />
 
-## Folder: `Optimizer`
+ 
+## Folder: `DIFFICE_jax/optimizer`
 
-The `optimization.py` provides two optimization methods. 
+### `DIFFICE_jax/model/Optimizer/Optimization.py`
+
+Providing provides two optimization methods:
 
 [**Adam**](https://arxiv.org/pdf/1412.6980): a first-order gradient-based optimization method 
 based on adaptive estimates of lower-order moments.

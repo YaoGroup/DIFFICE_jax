@@ -69,8 +69,8 @@ that allows users to compare the given viscosity with the PINN inferred viscosit
 
 
 ## Real-data Examples 
-Beside the synthetic data in the `tutorial` folder, we also provided the real velocity and thickness data for different ice shelves in the 
-[`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. We summarized **six algorithm features** of the `DIFFICE_jax`
+Beside the synthetic data in the `tutorial` folder, we also provided the real velocity and thickness data for **four** different ice shelves surrounding the Antarctica
+in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. We summarized **six algorithm features** of the `DIFFICE_jax`
 package beyond the Vanilla PINNs code in the [paper](https://github.com/YaoGroup/DIFFICE_jax/tree/main/paper.md). 
 
 ![](docs/figure/PINN_setup.png)

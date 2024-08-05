@@ -57,11 +57,7 @@ python3 DIFFICE_jax/tutorial/train_syndata.py
 
 # example using real data of ice shelves
 python3 DIFFICE_jax/examples/train_pinns_iso.py
-```   
-## Google Colab
-Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
-ice-shelf examples. They are provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders for a synthetic ice shelf and real ice shelves,
-respectively. 
+```
 
 ## Getting start with a Tutorial
 We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar
@@ -72,6 +68,15 @@ We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/
 that allows users to compare the given viscosity with the PINN inferred viscosity to validate the accuracy of PINNs on inverse problem.
 
  ![](PINN_setup.png)
+
+
+ 
+## Google Colab
+Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
+ice-shelf examples. They are provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders for a synthetic ice shelf and real ice shelves,
+respectively. 
+
+
 
 ## Contributors
 This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you have questions about this code and documentation, or are interested in contributing the development of the `DIFFICE_jax` package, feel free to get in touch.  

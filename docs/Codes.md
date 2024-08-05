@@ -8,6 +8,8 @@ network output, including re-normalization and reshaping. Two versions of codes 
 folder. The `pinns` subfolder involves the code is for the **regular PINN** training,  and the `xpinns` 
 subfolder is for the **extended-PINN (XPINN**) training.
 
+ <br />
+ 
 ### `DIFFICE_jax/data/pinns/preprocessing.py`
 ### `DIFFICE_jax/data/xpinns/preprocessing.py`
 
@@ -17,7 +19,8 @@ dataset, including the spatial coordiates $(x,y)$, velocity $(u, v)$ and thickne
 normalize those variables to be within the range of $[-1, 1]$. The script also re-organizes and reshapes
 the data that is required by the code in the `model` folder to ensure the success of the PINN training.
 
-
+ <br />
+ 
 ### `DIFFICE_jax/data/pinns/sampling.py`
 ### `DIFFICE_jax/data/xpinns/sampling.py`
 

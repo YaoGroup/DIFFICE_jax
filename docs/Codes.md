@@ -5,8 +5,8 @@
 This folder provides the codes that conduct the pre-preprocessing of the input data,
 including the normalization, flattening and random sampling, and the post-processing of the neural
 network output, including re-normalization and reshaping. Two versions of codes are provided in this 
-folder. The `pinns` subfolder involves the code is for the **regular PINN** training,  and the `xpinns` 
-subfolder is for the **extended-PINN (XPINN**) training.
+folder. The `pinns` subfolder involves the code is for the **regular PINNs** training,  and the `xpinns` 
+subfolder is for the **extended-PINNs (XPINNs**) training.
 
 The mathematical formation for the **regular PINNs** training is provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Isotropic.md), 
 and the description of the **XPINNs** setting is given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/XPINNs.md).

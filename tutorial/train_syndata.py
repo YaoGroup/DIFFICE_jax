@@ -4,7 +4,7 @@ import jax.numpy as jnp
 import numpy as np
 from jax import random
 import time
-from scipy.io import savemat
+from scipy.io import savemat, loadmat
 from pathlib import Path
 import pickle
 

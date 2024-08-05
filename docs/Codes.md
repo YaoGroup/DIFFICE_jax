@@ -1,7 +1,7 @@
 # Code description
 
 
-## `DIFFICE_jax/data` 
+## Folder: `DIFFICE_jax/data` 
 This folder provides the codes that conduct the pre-preprocessing of the input data,
 including the normalization, flattening and random sampling, and the post-processing of the neural
 network output, including re-normalization and reshaping. Two versions of codes are provided in this 
@@ -32,7 +32,7 @@ for each sub-region, not the entire domain.
  <br />
  
 
-## `DIFFICE_jax/equation` 
+## Folder: `DIFFICE_jax/equation` 
 
 The folder includes the codes that compute the residues of governing equations and boundary conditions 
 involved in the PINN training. 

@@ -1,8 +1,8 @@
 # Examples
 
-This folder provides four example codes that use `DIFFICE_jax` package to assimilate remote-sensing velocity
+We provides four different examples that use `DIFFICE_jax` package to assimilate remote-sensing velocity
 and thickness data and infer effective ice viscosity under either **isotropic** or **anisotropic** assumption
-via regular PINNs or extended-PINNs (XPINNs). 
+via **regular PINNs** or **extended-PINNs (XPINNs)**. 
 
 The mathematical formulation for inferring **isotropic** ice viscosity
 via regular PINNs are provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md).  The 

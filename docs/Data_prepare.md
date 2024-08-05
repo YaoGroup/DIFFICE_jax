@@ -1,4 +1,4 @@
-# Input Data
+# Data source
 
 This folder contains several examples of remote-sensing velocity and thickness data for different 
 ice shelves. The dataset for each ice shelf is directly cropped from the raw data files published online, 

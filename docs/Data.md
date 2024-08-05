@@ -13,7 +13,7 @@ available in the package.
 
  <br />
  
-## Data Format
+# Data Format
 
 To be successfully loaded by the PINN code in this package, the input data of each ice shelf needs to be organized 
 and named in a particular way as shown in the example dataset in this folder. Users need to strictly follow the

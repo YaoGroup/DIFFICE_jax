@@ -73,7 +73,9 @@ Besides the synthetic data in the `tutorial` folder, we provide the real velocit
 in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. In the [paper](https://github.com/YaoGroup/DIFFICE_jax/tree/main/paper.md), we
 summarized **six algorithm features** of the `DIFFICE_jax` package beyond the Vanilla PINNs code. Implementing different features, we provide four example codes in the 
 [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders that can be used to analyze different ice-shelf datasets. 
-The ice-shelf viscosity inversion examples and the corresponding implemented features are listed in the table below. Well-documented codes can be found in their corresponding subfolders.
+
+The relation of the example code with the corresponding implemented features, and the ice-shelf dataset it can analyze are listed in the table below. All example codes are
+well-documented in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folder.
 
 | Example codes  | Feature # | Ice shelf |
 | ------------- | ------------- | ------------- |

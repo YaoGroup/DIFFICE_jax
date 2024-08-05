@@ -1,4 +1,4 @@
-# Data
+# Input Data
 
 This folder contains several examples of remote-sensing velocity and thickness data for different 
 ice shelves. The dataset for each ice shelf is directly cropped from the raw data files published online, 
@@ -11,7 +11,7 @@ with a 450m resolution. The thickness data is downloaded from NASA MEaSUREs BedM
  
 ## Data Format
 
-To be successfully loaded by the PINN code in this package, the raw data of each ice shelf needs to be organized 
+To be successfully loaded by the PINN code in this package, the input data of each ice shelf needs to be organized 
 and named in a particular way as shown in the example dataset in this folder. Users need to strictly follow the
 same way if you want to create datasets for other ice shelves. The datasets for **PINN** and **XPINN** training 
 shares certain similarity, but also contain differences that users need to pay attention to. 

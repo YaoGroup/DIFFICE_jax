@@ -41,10 +41,6 @@ The `DIFFICE_jax` package is designed to make the inversion of ice-shelf viscosi
 Another advantage of PINNs is its effectiveness with irregularly sampled data. The `DIFFICE_jax` package supports the direct use of thickness data from radar profiles available only at flight lines. In addition, the outputs of PINNs (velocity, thickness, and viscosity fields) are continuous functions parameterized by a fixed number of weights and biases, requiring less memory than the output of classical methods with discretized grid points when higher resolutions are demanded [@wang2024multi]. Finally, the `DIFFICE_jax` package, along with other deep-learning-based solver for ice-dynamics [@brinkerhoff2021constraining; @riel2021data; @riel2023variational; @wang2022discovering; @iwasaki2023one; @jouvet2022deep; @jouvet2023inversion; @jouvet2023ice; @bolibar2023universal; @he2023hybrid; @cheng2024unified], leverages GPUs for computational speedup. 
 
 
-![**PINN setup**. (**a**) The structure and workflow of physics-informed neural networks (PINNs) for inferring ice viscosity $\mu$ from (**b**) the remote-sensing data of ice velocity $u,v$ [@Mouginot2019velo] and thickness $h$ [@Morlighem2020thick], and governing equations $(f_1,f_2,f_3,$ and $f_4=0)$. The loss function $\mathcal{L}$ contains two terms, the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. (**c**) Prediction of trained neural network for velocity $(u, v)$ and thickness $h$, which shows high agreement with the remote-sensing data with relatively error around 1-3%. The inferred viscosity well satisfies the equation with small residue values, indicating the accuracy of the inferred viscosity.   \label{fig:PINN}](PINN_setup.png)
-
-
-
 # Algorithm features
 
 Key features of `DIFFICE_jax` that go beyond off-the-shelf PINNs, and the necessity of these features to ensure the success and robustness of viscosity inference are explained below:
@@ -71,6 +67,9 @@ Regular PINN training with a single network cannot capture the rich spatial vari
 
 **(6) Inversion of anisotropic viscosity:**
 Prior studies have shown that the viscosity of Antarctica Ice Shelves could be anisotropic [@wang2024deep]. The `DIFFICE_jax` package involves the first algorithm designed to infer anisotropic viscosity. The governing equations, associated boundary conditions, and the cost function for inferring anisotropic viscosity are described in the `docs` folder. 
+
+
+![**PINN setup**. (**a**) The structure and workflow of physics-informed neural networks (PINNs) for inferring ice viscosity $\mu$ from (**b**) the remote-sensing data of ice velocity $u,v$ [@Mouginot2019velo] and thickness $h$ [@Morlighem2020thick], and governing equations $(f_1,f_2,f_3,$ and $f_4=0)$. The loss function $\mathcal{L}$ contains two terms, the data loss $\mathcal{L}_d$ and the equation loss $\mathcal{L}_e$. (**c**) Prediction of trained neural network for velocity $(u, v)$ and thickness $h$, which shows high agreement with the remote-sensing data with relatively error around 1-3%. The inferred viscosity well satisfies the equation with small residue values, indicating the accuracy of the inferred viscosity.   \label{fig:PINN}](PINN_setup.png)
 
 
 # Acknowledgements

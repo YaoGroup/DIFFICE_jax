@@ -74,7 +74,7 @@ in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
 summarized **six algorithm features** of the `DIFFICE_jax` package beyond the Vanilla PINNs code. Implementing different features, we provide four example codes in the 
 [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders that can be used to analyze different ice-shelf datasets. 
 
-The relation of the example code with the corresponding implemented features, and the ice-shelf dataset it can analyze are listed in the table below. All example codes are
+For each example code, the corresponding implemented features and the ice-shelf dataset it can analyze are listed in the table below. All example codes are
 well-documented in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folder.
 
 | Example codes  | Feature # | Ice shelf |
@@ -84,15 +84,17 @@ well-documented in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree
 | train_xpinns_iso  | (1), (2), (3), (4), (5)  | Ross, Ronne-Filchner|
 | train_xpinns_aniso  | (1), (2), (3), (4), (5), (6)   |  Ross, Ronne-Filchner|
 
+ <br />
  
 ## Google Colab
 Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
 ice-shelf examples. They are provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders for a synthetic ice shelf and real ice shelves,
 respectively. 
 
+ <br />
+ 
 ## Diagram of Algorithm and Results.
 ![](docs/figure/PINN_setup.png)
-
 
 
 ## Contributors

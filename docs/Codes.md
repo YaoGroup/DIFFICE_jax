@@ -7,6 +7,14 @@ including the normalization, flattening and random sampling, and the post-proces
 network output, including re-normalization and reshaping. Two versions of codes are provided in this 
 folder. The `pinns` subfolder involves the code is for the **regular PINN** training,  and the `xpinns` 
 subfolder is for the **extended-PINN (XPINN**) training.
+
+The mathematical formation for the regular PINN training is provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Isotropic.md), 
+and the description of the XPINNs setting is given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/XPINNs.md).
+Both the `pinns` and `xpinns` folders contain four Python scripts, each specifying a key 
+component for PINN training. Detailed instructions for correctly calling the functions in these 
+scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
+within the `examples` folder of this repository.
+
  
 ### `DIFFICE_jax/data/pinns/preprocessing.py` / `DIFFICE_jax/data/xpinns/preprocessing.py`
 
@@ -61,13 +69,6 @@ remote-sensing data of ice shelves and infer their effective viscosity. Two vers
 of codes are provided in this folder. The `pinns` folder involves the code is for 
 the **regular PINN** training, and the `xpinns` folder is for the **extended-PINN
 (XPINN)** training. 
-
-The mathematical formation for the regular PINN training is provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/paper.md), 
-and the description of the XPINNs setting is given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/model/XPINNs.md).
-Both the `pinns` and `xpinns` folders contain four Python scripts, each specifying a key 
-component for PINN training. Detailed instructions for correctly calling the functions in these 
-scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
-within the `examples` folder of this repository.
 
 
 ### `DIFFICE_jax/model/pinns/initialization.py` / `DIFFICE_jax/model/xpinns/initialization.py`

@@ -14,6 +14,7 @@ name = "DIFFICE_jax"
 version = "0.0.7"
 authors = [
   { name="Yongji Wang", email="yw8211@nyu.edu" },
+  { name="Ching-Yao Lai", email="cyaolai@stanford.edu" },
 ]
 description = "A differentiable neural-network solver for data assimilation of ice shelves written in JAX"
 readme = "README.md"

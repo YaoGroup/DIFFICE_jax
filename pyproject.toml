@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "diffice_jax"
+name = "DIFFICE_jax"
 version = "0.0.3"
 authors = [
   { name="Yongji Wang", email="yw8211@nyu.edu" },

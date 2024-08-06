@@ -7,8 +7,8 @@ from .data.xpinns.sampling import data_sample_create as dsample_xpinn
 from .equation.eqn_iso import vectgrad
 from .equation.eqn_iso import gov_eqn as ssa_iso
 from .equation.eqn_iso import front_eqn as dbc_iso
-from .equation.eqn_aniso import gov_eqn as ssa_aniso
-from .equation.eqn_aniso import front_eqn as dbc_aniso
+from .equation.eqn_aniso_zz import gov_eqn as ssa_aniso
+from .equation.eqn_aniso_zz import front_eqn as dbc_aniso
 
 from .model.pinns.networks import solu_create as solu_pinn
 from .model.xpinns.networks import solu_create as solu_xpinn

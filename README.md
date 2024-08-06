@@ -6,7 +6,7 @@ A user-friendly DIFFerentiable neural-network solver for data assimilation of IC
 
 
 <p align="center" style="margin-top:-2rem;margin-bottom:-2rem">
-    <img alt="xpinns." width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/figure/xpinns.png"> 
+    <img alt="xpinns." width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/xpinns.png"> 
 </p>
 
 ## Installation
@@ -61,7 +61,7 @@ respectively.
  
 ## Diagram of Algorithm and Results.
 <p align="center" style="margin-top:-2rem;margin-bottom:-2rem">
-    <img alt="setups" width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/figure/PINN_setup.png"> 
+    <img alt="setups" width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/PINN_setup.png"> 
 </p>
 
 ## Contributors

@@ -1,3 +1,7 @@
+"""
+@author: Yongji Wang
+"""
+
 import jax.numpy as jnp
 from jax import random
 from jax.tree_util import tree_map

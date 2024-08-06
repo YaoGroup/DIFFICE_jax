@@ -17,6 +17,11 @@ You can install the package using pip as follows:
 python -m pip install DIFFICE_jax
 ```
 
+## Documentation
+
+The documentation for the algorithms and the mathematical formulation for the data assimilation of ice shelves 
+are provided in the `docs` folder. Documentations for the `tutorial` and real-data `examples` are separately 
+given in each folder.
 
 ## Getting start with a Tutorial
 We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar

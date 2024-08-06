@@ -64,8 +64,6 @@ def gov_eqn(net, x, scale):
     rx0 = lx0 / l0m
     ry0 = ly0 / l0m
 
-    mu0 = rho * gd * h0 * (l0m / u0m)
-
     def grad1stOrder(net, x):
         grad, sol = vectgrad(net, x)
         h = sol[:, 2:3]
@@ -129,8 +127,6 @@ def front_eqn(net, x, nb, scale):
     rv0 = v0 / u0m
     rx0 = lx0 / l0m
     ry0 = ly0 / l0m
-
-    mu0 = rho * gd * h0 * (l0m / u0m)
 
     grad, sol = vectgrad(net, x)
     h = sol[:, 2:3]

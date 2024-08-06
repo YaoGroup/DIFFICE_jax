@@ -10,39 +10,11 @@ A user-friendly DIFFerentiable neural-network solver for data assimilation of IC
 
 ## Installation
 
-Instructions are for installation into a virtual Python Environment. Please ensure that Python 3.x has been installed in your 
-local machine or the remote compute machine, such as HPC cluster or Google Cloud Platform (GCP). We recommend the Python of 
-version later than 3.9.0. 
+We recommend executing the following command in a virtual environment. The package require the Python of 
+version later than 3.9.0.  
 
-1. Create a virtual environment named `DIFFICE_jax`
 ```python
-python -m venv DIFFICE_jax
-```
-
-2. Activate the Virtual Environment (for MacOS/linux)
-```python
-source DIFFICE_jax/bin/activate
-```
-
-3. Install JAX. The package only works for JAX version 0.4.23 or later.
-```python
-# Install JAX on CPU (not recommended, too slow)
-pip install jax[cpu]==0.4.23 -f https://storage.googleapis.com/jax-releases/jax_releases.html
-
-# Install JAX on GPU (recommended if GPUs are available)
-pip install jax==0.4.23 jaxlib==0.4.23+cuda12.cudnn89 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-```
-
-4. Install other Python Dependencies required for the package
-```python
-# required for Adam optimizer
-pip install optax
-
-# required for L-BFGS optimizer
-pip install tfp-nightly
-
-# for output ploting
-pip install matplotlib
+python -m pip install DIFFICE_jax
 ```
 
 5. Clone the `DIFFICE_jax` package locally from GitHub

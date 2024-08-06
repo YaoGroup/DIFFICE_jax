@@ -44,6 +44,8 @@ def vectgrad(func, x):
     return grad_all, sol
 
 
+#%% Anisotropic shallow-shelf approximation (SSA) equations in the normalized form
+
 def gov_eqn(net, x, scale):
     """
     :param net: the neural net instance for calculating the informed part
@@ -104,7 +106,7 @@ def gov_eqn(net, x, scale):
     return f_eqn, val_term
 
 
-#%%
+#%% Anisotorpic dynamic boundary condition at calving front in the normalized form
 
 def front_eqn(net, x, nb, scale):
     """

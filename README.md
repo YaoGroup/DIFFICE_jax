@@ -13,12 +13,9 @@ A user-friendly DIFFerentiable neural-network solver for data assimilation of IC
 We recommend executing the following command in a virtual environment. The package require the Python of 
 version later than 3.9.0.  
 
+You can install the package using pip as follows:
 ```python
 python -m pip install DIFFICE_jax
-```
-or
-```python
-python -m pip install " diffice_jax @ git+https://github.com/YaoGroup/DIFFICE_jax.git"
 ```
 
 

@@ -1,3 +1,7 @@
+"""
+@author: Yongji Wang
+"""
+
 import sys
 import jax.numpy as jnp
 import optax

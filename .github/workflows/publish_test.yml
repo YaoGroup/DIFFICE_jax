@@ -1,9 +1,11 @@
 name: Publish Python Package to TestPyPI
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'  # Triggers the workflow on new version tags
+  release:
+    types: [published]
+
+permissions:
+  contents: read
 
 jobs:
   build-and-publish:
@@ -11,10 +13,10 @@ jobs:
 
     steps:
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.x'
 

@@ -16,20 +16,11 @@ version later than 3.9.0.
 ```python
 python -m pip install DIFFICE_jax
 ```
-
-5. Clone the `DIFFICE_jax` package locally from GitHub
+or
 ```python
-git clone https://github.com/YaoGroup/DIFFICE_jax.git
+python -m pip install " diffice_jax @ git+https://github.com/YaoGroup/DIFFICE_jax.git"
 ```
 
-6. Run the example codes
-```python
-# tutorial example using synthetic data
-python3 DIFFICE_jax/tutorial/train_syndata.py
-
-# example using real data of ice shelves
-python3 DIFFICE_jax/examples/train_pinns_iso.py
-```
 
 ## Getting start with a Tutorial
 We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar

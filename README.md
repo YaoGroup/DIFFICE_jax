@@ -10,8 +10,7 @@ A user-friendly DIFFerentiable neural-network solver for data assimilation of IC
 
 ## Installation
 
-We recommend executing the following command in a virtual environment. The package require the Python of 
-version later than 3.9.0.  
+The build of the code is tesed on Python version (3.9, 3.10 and 3.11) and JAX version (0.4.20, 0.4.23, 0.4.26)
 
 You can install the package using pip as follows:
 ```python

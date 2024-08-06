@@ -60,8 +60,9 @@ respectively.
  <br />
  
 ## Diagram of Algorithm and Results.
-<img src="https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/figure/PINN_setup.png" alt="results" width="90%">
-
+<p align="center" style="margin-top:-2rem;margin-bottom:-2rem">
+    <img alt="setups" width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/figure/PINN_setup.png"> 
+</p>
 
 ## Contributors
 This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you have questions about this code and documentation, or are interested in contributing the development of the `DIFFICE_jax` package, feel free to get in touch.  

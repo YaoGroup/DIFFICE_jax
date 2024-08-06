@@ -1,0 +1,4 @@
+exclude *.md
+exclude examples/*
+exclude docs/*
+exclude tutorial/*

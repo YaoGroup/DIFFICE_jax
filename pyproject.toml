@@ -2,6 +2,10 @@
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+packages = ["diffice_jax"]
+include-package-data = true
+
 [project]
 name = "DIFFICE_jax"
 version = "0.0.3"
@@ -30,8 +34,3 @@ Homepage = "https://github.com/YaoGroup/DIFFICE_jax"
 Issues = "https://github.com/YaoGroup/DIFFICE_jax/issues"
 repository = "https://github.com/YaoGroup/DIFFICE_jax"
 
-[tool.setuptools]
-package-dir = {"" = "diffice_jax"}
-
-[tool.setuptools.packages.find]
-where = ["diffice_jax"]

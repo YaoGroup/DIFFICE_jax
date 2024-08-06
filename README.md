@@ -94,7 +94,7 @@ respectively.
  <br />
  
 ## Diagram of Algorithm and Results.
-![](docs/figure/PINN_setup.png)
+<img src="https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/figure/PINN_setup.png" alt="results" width="90%">
 
 
 ## Contributors

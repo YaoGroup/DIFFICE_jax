@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "DIFFICE_jax"
-version = "0.0.2"
+name = "diffice_jax"
+version = "0.0.3"
 authors = [
   { name="Yongji Wang", email="yw8211@nyu.edu" },
 ]
@@ -13,15 +17,21 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
-# dependencies = [
-#   "jax >= 0.4.20",
-#   "jaxlib >= 0.4.20",
-#   "tensorflow-probability >= 0.23.0",
-#   "matplotlib >= 3.8.0",
-#   "optax >= 0.1.7"
-# ]
+dependencies = [
+  "jax >= 0.4.20",
+  "jaxlib >= 0.4.20",
+  "tensorflow-probability >= 0.23.0",
+  "matplotlib >= 3.8.0",
+  "optax >= 0.1.7"
+]
 
 [project.urls]
 Homepage = "https://github.com/YaoGroup/DIFFICE_jax"
 Issues = "https://github.com/YaoGroup/DIFFICE_jax/issues"
 repository = "https://github.com/YaoGroup/DIFFICE_jax"
+
+[tool.setuptools]
+package-dir = {"" = "diffice_jax"}
+
+[tool.setuptools.packages.find]
+where = ["diffice_jax"]

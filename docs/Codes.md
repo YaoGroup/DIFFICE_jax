@@ -1,7 +1,7 @@
 # Code description
 
 
-## Folder: `DIFFICE_jax/data` 
+## Folder: `diffice_jax/data` 
 This folder provides the codes that conduct the pre-preprocessing of the input data,
 including the normalization, flattening and random sampling, and the post-processing of the neural
 network output, including re-normalization and reshaping. Two versions of codes are provided in this 
@@ -16,7 +16,7 @@ scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_
 within the `examples` folder of this repository.
 
  
-### `DIFFICE_jax/data/pinns/preprocessing.py` / `DIFFICE_jax/data/xpinns/preprocessing.py`
+### `diffice_jax/data/pinns/preprocessing.py` / `diffice_jax/data/xpinns/preprocessing.py`
 
 Involving essential functions to normalize the raw data loaded from the MATLAB format (`.mat`). The 
 function in the script will automatically detect the characterisitc scale of each variable in the 
@@ -25,7 +25,7 @@ normalize those variables to be within the range of $[-1, 1]$. The script also r
 the data that is required by the code in the `model` folder to ensure the success of the PINN training.
 
  
-### `DIFFICE_jax/data/pinns/sampling.py` / `DIFFICE_jax/data/xpinns/sampling.py`
+### `diffice_jax/data/pinns/sampling.py` / `diffice_jax/data/xpinns/sampling.py`
 
 Involving essential functions to sample a batch of pre-processed data used for the PINN training. Users
 can specify the number of sampling points for both velocity and thickness data, as well as the collocation 
@@ -38,18 +38,18 @@ for each sub-region, not the entire domain.
  <br />
  
 
-## Folder: `DIFFICE_jax/equation` 
+## Folder: `diffice_jax/equation` 
 
 The folder includes the codes that compute the residues of governing equations and boundary conditions 
 involved in the PINN training. 
  
-### `DIFFICE_jax/equation/ssa_eqn_iso.py`
+### `diffice_jax/equation/eqn_iso.py`
 
 involving functions to compute the residue of the normalized **isotropuc** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. Both the SSA equations and
 the boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Isotropic.md) .
  
-### `DIFFICE_jax/equation/ssa_eqn_aniso_zz.py`
+### `diffice_jax/equation/eqn_aniso_zz.py`
 
 involving functions to compute the residue of the normalized **anisotropic** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. The suffix `_zz` indicate the
@@ -61,7 +61,7 @@ the associated boundary conditions are given in [this link](https://github.com/Y
 
  
 
-## Folder: `DIFFICE_jax/model`
+## Folder: `diffice_jax/model`
 
 This folder provides the core codes for generating neural network, creating
 loss function and predicting output variables for the PINN training on assimilating 
@@ -71,7 +71,7 @@ the **regular PINN** training, and the `xpinns` folder is for the **extended-PIN
 (XPINN)** training. 
 
 
-### `DIFFICE_jax/model/pinns/initialization.py` / `DIFFICE_jax/model/xpinns/initialization.py`
+### `diffice_jax/model/pinns/initialization.py` / `diffice_jax/model/xpinns/initialization.py`
 
 Involving essential functions to intialize weights and biases for all neural networks required 
 for the problem. The code use Xavier initialization scheme, so that the weights between each 
@@ -80,7 +80,7 @@ variance equal to $2/(n_{l-1}+n_{l})$, where $n_{l}$ and $n_{l+1}$ indicates the
 units in the previous and next layers. The biases are initialized with all zero.
 
 
-### `DIFFICE_jax/model/pinns/networks.py` / `DIFFICE_jax/model/xpinns/networks.py`
+### `diffice_jax/model/pinns/networks.py` / `diffice_jax/model/xpinns/networks.py`
 
 Involving essential functions to generate the neural network model for each physical variable 
 involved in the problem. For regular PINN training, two networks are created. One network has 
@@ -92,7 +92,7 @@ When creating the neural networks, users need to specify whether the neural netw
 and anistropic viscosity, as these two cases requires different number of outputs.
 
  
-### `DIFFICE_jax/model/pinns/loss.py` / `DIFFICE_jax/model/xpinns/loss.py`
+### `diffice_jax/model/pinns/loss.py` / `diffice_jax/model/xpinns/loss.py`
 
 Involving essential functions to generate the total loss function for PINN training on assimilating
 remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
@@ -103,7 +103,7 @@ We note that users should call different functions in the `loss.py` script to ge
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
 
  
-### `DIFFICE_jax/model/pinns/prediction.py` / `DIFFICE_jax/model/xpinns/prediction.py`
+### `diffice_jax/model/pinns/prediction.py` / `diffice_jax/model/xpinns/prediction.py`
 
 Involving functions to predict the neural network output at the high-resolution grids for evaluation or 
 visualization. The default setting of the function is to predict the data at the same resolution grid of
@@ -116,9 +116,9 @@ covers all the sub-regions.
  <br />
 
  
-## Folder: `DIFFICE_jax/optimizer`
+## Folder: `diffice_jax/optimizer`
 
-### `DIFFICE_jax/model/Optimizer/Optimization.py`
+### `diffice_jax/model/Optimizer/Optimization.py`
 
 Providing provides two optimization methods:
 

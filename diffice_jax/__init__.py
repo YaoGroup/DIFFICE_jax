@@ -21,9 +21,10 @@ from .model.xpinns.loss import loss_aniso_create as loss_aniso_xpinn
 from .model.pinns.prediction import predict as predict_pinn
 from .model.xpinns.prediction import predict as predict_xpinn
 
-from .optimizer.optimization import adam_optimizer, lbfgs_optimizer
+from .optimizer.optimization import adam_optimizer as adam_opt
+from .optimizer.optimization import lbfgs_optimizer as lbfgs_opt
 
-__all__ = ["normdata_pinn", "normdata_xpinn", "dsample_pinn", "dsample_xpinn",
-           "ssa_eqn_iso", "ssa_eqn_aniso", "solu_pinn", "solu_xpinn", 
+__all__ = ["normdata_pinn", "normdata_xpinn", "dsample_pinn", "dsample_xpinn", "vectgrad", 
+           "ssa_iso", "dbc_iso", "ssa_aniso", "dbc_aniso", "solu_pinn", "solu_xpinn", 
            "loss_iso_pinn", "loss_aniso_pinn", "loss_iso_xpinn", "loss_aniso_xpinn",
-           "predict_pinn", "predict_xpinn", "adam_optimizer", "lbfgs_optimizer"]
+           "predict_pinn", "predict_xpinn", "adam_opt", "lbfgs_opt"]

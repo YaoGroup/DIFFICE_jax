@@ -104,7 +104,7 @@ def gov_eqn(net, x, scale):
     return f_eqn, val_term
 
 
-#%%
+#%% Isotorpic dynamic boundary condition at calving front in the normalized form
 
 def front_eqn(net, x, nb, scale):
     """

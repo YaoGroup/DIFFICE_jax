@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e60977da-543c-47c6-ae7c-8370f0657fcd)# DIFFICE_jax
+# DIFFICE_jax
 A DIFFerentiable neural-network solver for data assimilation of ICE shelves written in JAX. 
 
 ## Introduction 

@@ -6,7 +6,7 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent.parent
 sys.path.append(str(project_root))
 
-from equation.ssa_eqn_iso import vectgrad
+from equation.eqn_iso import vectgrad
 
 # define the basic formation of neural network
 def neural_net(params, x, scl, act_s=0):

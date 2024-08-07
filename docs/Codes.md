@@ -118,7 +118,7 @@ covers all the sub-regions.
  
 ## Folder: `diffice_jax/optimizer`
 
-### `diffice_jax/optimizer/Optimization.py`
+### `diffice_jax/optimizer/optimization.py`
 
 Providing provides two optimization methods:
 

@@ -17,7 +17,7 @@ def init_single_net(parent_key, layer_widths):
 
 
 # generate weights and biases for all networks required in the problem
-def init_pinns(parent_key, n_hl, n_unit, aniso=False):
+def init_nets(parent_key, n_hl, n_unit, aniso=False):
     '''
     :param n_hl: number of hidden layers [int]
     :param n_unit: number of units in each layer [int]

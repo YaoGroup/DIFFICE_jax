@@ -22,7 +22,7 @@ python -m pip install DIFFICE_jax
 
 The documentation for the algorithms and the mathematical formulation for the data assimilation of ice shelves 
 are provided in the [`docs`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/docs)  folder. Documentations for the **tutorial** examples and **real-data** examples are  
-given in the  [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial)  folder and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
+given in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial)  folder and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
 folders, respectively.
 
 ## Getting start with a Tutorial

@@ -25,7 +25,7 @@ are provided in the [`docs`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/d
 folders, respectively.
 
 ## Getting start with a Tutorial
-We highly recommend new users to get familar with the software by reading the document and playing with the synthetic example prepared in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) folder. The tutorial example allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in a rectangular domain with any given viscosity profile. Users can then use the PINNs code prepared in the folder to infer the given viscosity from the synthetic code. We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)
+We highly recommend new users to get familar with the software by reading the document and playing with the synthetic example prepared in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) folder. The synthetic example allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in a rectangular domain with any given viscosity profile. Users can then use the PINNs code prepared in the folder to infer the given viscosity from the synthetic code. We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)
 that allows users to compare the given viscosity with the PINN inferred viscosity to validate the accuracy of PINNs on inverse problem.
 
 
@@ -43,7 +43,7 @@ summarized **six algorithm features** of the `DIFFICE_jax` package beyond the va
  <br />
  
 ## Google Colab
-Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the tutorial example and real
+Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the synthetic and real
 ice-shelf examples. They are provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders for a synthetic ice shelf and real ice shelves,
 respectively. 
 

@@ -66,7 +66,7 @@ if not isExist:
 # load the datafile
 rawdata = loadmat(filepath)
 # obtain the data for training
-data_all = normalize_data(rawdata)
+data_all = normdata_pinn(rawdata)
 scale = data_all[4][0:2]
 
 

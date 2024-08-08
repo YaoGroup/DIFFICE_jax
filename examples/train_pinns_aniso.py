@@ -8,17 +8,12 @@ from scipy.io import savemat, loadmat
 from pathlib import Path
 import pickle
 
-project_root = Path(__file__).parent.parent
-sys.path.append(str(project_root))
-
-from data.pinns.preprocessing import normalize_data
-from data.pinns.sampling import data_sample_create
-from equation.ssa_eqn_aniso_zz import vectgrad, gov_eqn, front_eqn
-from model.pinns.initialization import init_pinns
-from model.pinns.networks import solu_create
-from model.pinns.loss import loss_aniso_create
-from model.pinns.prediction import predict
-from optimizer.optimization import adam_optimizer, lbfgs_optimizer
+from diffice_jax import normdata_pinn, dsample_pinn
+from diffice_jax import vectgrad, ssa_aniso, dbc_aniso
+from diffice_jax import init_pinn, solu_pinn
+from diffice_jax import loss_aniso_pinn
+from diffice_jax import predict_pinn
+from diffice_jax import adam_opt, lbfgs_opt
 
 # find the root directory
 rootdir = Path(__file__).parent
@@ -71,7 +66,7 @@ if not isExist:
 # load the datafile
 rawdata = loadmat(filepath)
 # obtain the data for training
-data_all = normalize_data(rawdata)
+data_all = normdata_pinn(rawdata)
 scale = data_all[4][0:2]
 
 
@@ -81,20 +76,20 @@ scale = data_all[4][0:2]
 trained_params = init_pinns(keys[0], n_hl, n_unit, aniso=True)
 
 # create the solution function
-pred_u = solu_create()
+pred_u = solu_pinn()
 
 # create the data function for Adam
-dataf = data_sample_create(data_all, n_pt)
+dataf = dsample_pinn(data_all, n_pt)
 keys_adam = random.split(keys[1], 5)
 data = dataf(keys_adam[0])
 # create the data function for L-BFGS
-dataf_l = data_sample_create(data_all, n_pt2)
+dataf_l = dsample_pinn(data_all, n_pt2)
 key_lbfgs = keys[2]
 
 # group the gov. eqn and bd cond.
 eqn_all = (gov_eqn, front_eqn)
 # calculate the loss function
-NN_loss = loss_aniso_create(pred_u, eqn_all, scale, lw)
+NN_loss = loss_aniso_pinn(pred_u, eqn_all, scale, lw)
 # calculate the initial loss and set it as the loss reference value
 NN_loss.lref = NN_loss(trained_params, data)[0]
 
@@ -115,13 +110,13 @@ wsp_schdul = lambda x: lax.max(10 ** (-x/epoch1 * 2), 0.0125)
 start_time = time.time()
 
 """training with Adam"""
-trained_params, loss1 = adam_optimizer(
+trained_params, loss1 = adam_opt(
     keys_adam[0], NN_loss, trained_params, dataf, epoch1, lr=lr, aniso=True, schdul=wsp_schdul)
 
 # sample the data for L-BFGS training
 data_l = dataf_l(key_lbfgs)
 """training with L-BFGS"""
-trained_params, loss2 = lbfgs_optimizer(NN_loss, trained_params, data_l, epoch2)
+trained_params, loss2 = lbfgs_opt(NN_loss, trained_params, data_l, epoch2)
 
 elapsed = time.time() - start_time
 print('Training time: %.4f' % elapsed, file=sys.stderr)
@@ -146,7 +141,7 @@ f_gu = lambda x: vectgrad(f_u, x)[0][:, 0:6]
 # group all the function
 func_all = (f_u, f_gu, gov_eqn)
 # calculate the solution and equation residue at given grids for visualization
-results = predict(func_all, data_all, aniso=True)
+results = predict_pinn(func_all, data_all, aniso=True)
 
 # generate the last loss
 loss_all = jnp.array(loss1 + loss2)

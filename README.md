@@ -21,16 +21,11 @@ python -m pip install DIFFICE_jax
 ## Documentation
 
 The documentation for the algorithms and the mathematical formulation for the data assimilation of ice shelves 
-are provided in the [`docs`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/docs)  folder. Documentations for the **tutorial** examples and **real-data** examples are  
-given in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial)  folder and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
+are provided in the [`docs`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/docs)  folder. Documentations for the **synthetic** examples and **real-data** examples are given in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial)  folder and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
 folders, respectively.
 
 ## Getting start with a Tutorial
-We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar
-with the software by reading the document and playing with the synthetic example prepared in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) folder. The tutorial example
-allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in a rectangular domain with any given 
-viscosity profile. Users can then use the PINNs code prepared in the folder to infer the given viscosity from the synthetic code.
-We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)
+We highly recommend the user who has no previous experience in either PINNs or inverse problems in Glaciology to get familar with the software by reading the document and playing with the synthetic example prepared in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) folder. The tutorial example allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in a rectangular domain with any given viscosity profile. Users can then use the PINNs code prepared in the folder to infer the given viscosity from the synthetic code. We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)
 that allows users to compare the given viscosity with the PINN inferred viscosity to validate the accuracy of PINNs on inverse problem.
 
 

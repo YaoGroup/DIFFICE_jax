@@ -8,9 +8,6 @@ from scipy.io import savemat, loadmat
 from pathlib import Path
 import pickle
 
-project_root = Path(__file__).parent.parent
-sys.path.append(str(project_root))
-
 from diffice_jax import normdata_pinn, dsample_pinn
 from diffice_jax import vectgrad, ssa_iso, dbc_iso
 from diffice_jax import init_pinn, solu_pinn

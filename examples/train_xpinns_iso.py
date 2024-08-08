@@ -9,17 +9,12 @@ from scipy.io import savemat, loadmat
 from pathlib import Path
 import pickle
 
-project_root = Path(__file__).parent.parent
-sys.path.append(str(project_root))
-
-from data.xpinns.preprocessing import normalize_data
-from data.xpinns.sampling import data_sample_create
-from equation.ssa_eqn_iso import vectgrad, gov_eqn, front_eqn
-from model.xpinns.initialization import init_xpinns
-from model.xpinns.networks import solu_create
-from model.xpinns.loss import loss_iso_create
-from model.xpinns.prediction import predict
-from optimizer.optimization import adam_optimizer, lbfgs_optimizer
+from diffice_jax import normdata_xpinn, dsample_xpinn
+from diffice_jax import vectgrad, ssa_iso, dbc_iso
+from diffice_jax import init_xpinn, solu_xpinn
+from diffice_jax import loss_iso_xpinn
+from diffice_jax import predict_xpinn
+from diffice_jax import adam_opt, lbfgs_opt
 
 # find the root directory
 rootdir = Path(__file__).parent
@@ -73,30 +68,30 @@ if not isExist:
 # load the datafile
 rawdata = loadmat(filepath)
 # obtain the data for training
-data_all, idxgall, posi_all, idxcrop_all = normalize_data(rawdata)
+data_all, idxgall, posi_all, idxcrop_all = normdata_xpinn(rawdata)
 scale = tree_map(lambda x: data_all[x][4][0:2], idxgall)
 
 
 #%% initialization
 
 # initialize the weights and biases of the network
-trained_params = init_xpinns(keys[0], n_hl, n_unit, n_sub=len(idxgall))
+trained_params = init_xpinn(keys[0], n_hl, n_unit, n_sub=len(idxgall))
 
 # create the solution function [tuple(callable, callable)]
-solNN = solu_create(scale)
+solNN = solu_xpinn(scale)
 
 # create the data function for Adam
-dataf = data_sample_create(data_all, idxgall, n_pt)
+dataf = dsample_xpinn(data_all, idxgall, n_pt)
 keys_adam = random.split(keys[1], 5)
 data = dataf(keys_adam[0])
 # create the data function for L-BFGS
-dataf_l = data_sample_create(data_all, idxgall, n_pt2)
+dataf_l = dsample_xpinn(data_all, idxgall, n_pt2)
 key_lbfgs = keys[2]
 
 # group the gov. eqn and bd cond.
 eqn_all = (gov_eqn, front_eqn)
 # calculate the loss function
-NN_loss = loss_iso_create(solNN, eqn_all, scale, idxgall, lw)
+NN_loss = loss_iso_xpinn(solNN, eqn_all, scale, idxgall, lw)
 # set the loss reference based on the loss of the initialized network
 NN_loss.lref = NN_loss(trained_params, data)[0]
 
@@ -115,12 +110,12 @@ lr = 1e-3
 start_time = time.time()
 
 """training with Adam"""
-trained_params, loss1 = adam_optimizer(keys_adam[0], NN_loss, trained_params, dataf, epoch1, lr=lr)
+trained_params, loss1 = adam_opt(keys_adam[0], NN_loss, trained_params, dataf, epoch1, lr=lr)
 
 # sample the data for L-BFGS training
 data_l = dataf_l(key_lbfgs)
 """training with L-bfgs"""
-trained_params, loss2 = lbfgs_optimizer(NN_loss, trained_params, data_l, epoch2)
+trained_params, loss2 = lbfgs_opt(NN_loss, trained_params, data_l, epoch2)
 
 elapsed = time.time() - start_time
 print('Training time: %.4f' % elapsed, file=sys.stderr)
@@ -144,7 +139,7 @@ f_u = lambda x, idx: solNN[0](trained_params, x, idx)
 # group all the function
 func_all = (f_u, gov_eqn)
 # calculate the solution and equation residue at given grids for visualization
-results = predict(func_all, data_all, posi_all, idxcrop_all, idxgall)
+results = predict_xpinn(func_all, data_all, posi_all, idxcrop_all, idxgall)
 
 # generate the last loss
 loss_all = jnp.array(loss1 + loss2)

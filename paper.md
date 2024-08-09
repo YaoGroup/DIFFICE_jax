@@ -60,7 +60,7 @@ where $\mathrm{NN}_\mu$ is a fully-connected network for $\mu$. This setting ens
 viscosity and enhance the training to capture the large-varying viscosity profile with high accuracy.
 
 **(4) Residual-based re-sampling of collocation points during training:**
-Due to errors and noise, PINN training with observational data often "cheats", where the networks overfit the training data [@wang2022discovering; @charlie2024euler]. To prevent the issue, the `DIFFICE_jax` package uses residual-based re-sampling scheme during training [@lu2021deepxde; @daw2022mitigating], where more collocation points are sampled in the area with large training residue.
+Due to errors and noise, PINN training with observational data often "cheats", where the networks overfit the training data [@wang2022discovering; @charlie2024euler]. To prevent the issue, the `DIFFICE_jax` package uses residual-based re-sampling scheme during training [@lu2021deepxde; @daw2022mitigating], where more training data and collocation points are sampled in the area with large training residue.
 
 **(5) Extended-PINNs (XPINNs) for large ice shelve:**
 Regular PINN training with a single network cannot capture the rich spatial variation of large ice shelves, such as Ross. The `DIFFICE_jax` package adopts the approach of extended PINNs (XPINNs) [@jagtap2020extended] for studying large ice shelves. This method divides the training domains into several sub-regions, with different networks assigned to each. Detailed description of XPINNs are provided in the `doc` folder of the GitHub repository.

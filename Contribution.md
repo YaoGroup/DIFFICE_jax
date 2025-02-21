@@ -26,7 +26,7 @@ We welcome contributions of new datasets, whether for the existing ice shelves i
 ## Pull Request
 
 To contribute via Pull Request, follow these steps:
-### Getting started
+### Getting Started
 
 1. **Fork the Repository** – Click on the "Fork" button at the top-right corner of this repository.
 2. **Clone Your Fork** – Clone your forked repository to your local machine:
@@ -38,4 +38,27 @@ To contribute via Pull Request, follow these steps:
 4. **Set Up the Environment** – Install dependencies and ensure everything runs smoothly:
    ```sh
    pip install -r requirements.txt
-   
+
+### Contribution Workflow
+
+1. **Create a New Branch**: Always create a feature branch before making changes:
+   ```sh
+   git checkout -b feature/your-feature-name
+2. **Make Your Changes**
+   - Ensure your code follows the project's coding style.
+   - Add tests if applicable.
+3. **Commit Your Changes**: Write a clear message to describe your changes:
+   ```sh
+   git commit -m "Add feature: short description"
+4. **Push to Your Fork**: Push the branch to your fork on GitHub.
+   ```sh
+   git push origin feature/your-feature-name
+5. **Open a Pull Request (PR)** in the `DIFFICE_jax` repository.
+   - Navigate to the main repository.
+   - Click on "New Pull Request".
+   - Select your branch and describe your changes.
+
+## License
+
+By contributing to pyMechT, you agree that your contributions will be licensed
+under the LICENSE file in the root directory of this source tree.

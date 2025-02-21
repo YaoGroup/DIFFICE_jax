@@ -1,0 +1,8 @@
+jax == 0.4.26
+jaxlib == 0.4.26
+chex==0.1.85
+scipy==1.11.4
+numpy==1.26.3
+optax >= 0.1.7
+tensorflow-probability == 0.23.0
+matplotlib == 3.8.2

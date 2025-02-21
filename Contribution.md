@@ -11,6 +11,14 @@ Thank you for considering contributing to `DIFFICE-jax`! We welcome all contribu
   
 - **Submit a Report** — If the issue hasn't been reported, open a new issue in the project.
 
+### Suggesting Improvement
+
+If you Have a great idea to improve our package, please open an issue to discuss your suggestion.
+
+### Adding new datasets
+
+You are welcome to provide new datasets for either the ice shelves existing in the `examples` folder, or for the new ice shelves. Please organize the dataset based on the provided data format
+
 ## 🛠 Getting Started
 
 To start contributing, follow these steps:

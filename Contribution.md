@@ -17,7 +17,7 @@ If you Have a great idea to improve our package, please open an issue to discuss
 
 ### Adding new datasets
 
-You are welcome to provide new datasets for either the ice shelves existing in the `examples` folder, or for the new ice shelves. Please organize the dataset based on the provided data format
+We welcome contributions of new datasets, whether for the existing ice shelves in the examples folder or for new ice shelves. Please ensure that your dataset follows the specified [data format](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/data.md). To submit your data, create a Pull Request (see details below).
 
 ## 🛠 Getting Started
 

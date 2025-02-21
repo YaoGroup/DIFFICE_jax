@@ -55,7 +55,7 @@ respectively.
 </p>
 
 ## Contributors
-This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you have questions about this code and documentation, or are interested in contributing the development of the `DIFFICE_jax` package, please see the contributing [guidelines](CONTRIBUTING.md) for information on submitting issues and pull requests.
+This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you have questions about this code and documentation, or are interested in contributing the development of the `DIFFICE_jax` package, please see the contributing [guidelines](./CONTRIBUTING.md) for information on submitting issues and pull requests.
 
 ## License
 `DIFFICE_jax` is an open-source software. All code within the project is licensed under the MIT License. For more details, please refer to the [LICENSE](./LICENSE) file.

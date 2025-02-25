@@ -108,7 +108,7 @@ def normalize_each(data, idx, ng):
     ymd_n = (y_md - y_mean) / y_range
 
     # group the raw data
-    data_raw = [x0, y0, u0, v0, h0]
+    data_raw = [x0, y0, u0, v0, x0_h, y0_h, h0]
     # group the normalized data
     data_norm = [x_n, y_n, u_n, v_n, xh_n, yh_n, h_n]
     # group the nan info of original data

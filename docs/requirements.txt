@@ -7,6 +7,7 @@ sphinxcontrib-jquery==4.1
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==2.0.0
 sphinxcontrib-serializinghtml==2.0.0
+nbsphinx==5.9.2
 jax==0.4.26
 jaxlib==0.4.26
 chex==0.1.85

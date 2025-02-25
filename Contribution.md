@@ -38,6 +38,12 @@ To contribute via Pull Request, follow these steps:
 4. **Set Up the Environment** – Install dependencies and ensure everything runs smoothly:
    ```sh
    pip install -r requirements.txt
+5. **Install Developer version of DIFFICE_jax**
+   ```sh
+   pip install -e .
+   ```
+   An editable version of `DIFFICE_jax` is then installed. All local changes you make to the cloned source code files will be immediately reflected when you import the `diffice_jax` module. Additionly, `pytest` will now be able to locate and test the `diffice_jax` module without any issues.
+   
 
 ### Contribution Workflow
 
@@ -46,7 +52,10 @@ To contribute via Pull Request, follow these steps:
    git checkout -b feature/your-feature-name
 2. **Make Your Changes**
    - Ensure your code follows the project's coding style.
-   - Add tests if applicable.
+
+3. **Run Unit Test**: we use `pytest` to run unit tests
+   ```sh
+   python -m pytest  # or pytest
 3. **Commit Your Changes**: Write a clear message to describe your changes:
    ```sh
    git commit -m "Add feature: short description"

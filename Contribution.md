@@ -55,7 +55,7 @@ To contribute via Pull Request, follow these steps:
 
 3. **Run Unit Test**: we use `pytest` to run unit tests
    ```sh
-   python -m pytest  # or pytest
+   python -m pytest  # or pytest  
 3. **Commit Your Changes**: Write a clear message to describe your changes:
    ```sh
    git commit -m "Add feature: short description"

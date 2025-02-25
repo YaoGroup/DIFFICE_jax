@@ -18,5 +18,8 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Theory:
+
+   Anisotropic.md
+   Isotropic.md
 

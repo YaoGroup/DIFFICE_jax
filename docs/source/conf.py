@@ -27,7 +27,7 @@ author = 'Yongji Wang & Ching-Yao Lai'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst-parser", 
+extensions = ["myst_parser", 
               "sphinx.ext.autodoc", 
               "sphinx.ext.napoleon", 
               "sphinx.ext.mathjax", 

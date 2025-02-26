@@ -29,6 +29,20 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Extended-PINNs:
+
+   XPINNs.md
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tutorial:
+
+   tutorial
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Remote Datasets:
 
    Data.md
@@ -36,9 +50,9 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Extended-PINNs:
+   :caption: Real-data examples:
 
-   XPINNs.md
+   examples
 
 
 .. toctree::

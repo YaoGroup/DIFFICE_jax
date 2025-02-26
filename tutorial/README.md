@@ -8,7 +8,7 @@ shelves using synthetic data of ice velocity and thickness via physics-informed 
 inversion are included. All codes are well-documented for easy understanding. Additionally, we
 have provided a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb) that allows users to run the code online in Google Colab.
 
-<br />
+<br /><br />
 
 # Forward problem setup
 Considering the floating ice moving in a given domain, the synthetic data of ice velocity 
@@ -54,9 +54,9 @@ the synthetic data by numerically solving the govnering equation. For simplicity
 solve the equations using **COMSOL Multiphysics**, which, we believe, provides a intuitive 
 user interface to set up the forward problem and conduct the calculation. 
 
-<br />
+<br /><br />
 
-# Code description
+# File descriptions
 ### `tutorial/COMSOL/IceShelf2D_forward.mph`  
 
 A COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
@@ -111,7 +111,8 @@ need to install python environments and library on a local machine. Different fr
 after the training, the notebook plots the trained networks for the data assimilation and viscosity 
 inversion, and compare them directly with the synthetic data and the given viscosity profile.
 
-<br />
+
+<br /><br />
 
 
 # Results

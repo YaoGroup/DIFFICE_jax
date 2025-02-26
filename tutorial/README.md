@@ -103,7 +103,8 @@ from the example data `SynData_exp1.mat` to achieve high accuracy.
 <br />
 
 
-### `tutorial/train_syndata.ipynb`
+### `tutorial/train_syndata.ipynb`[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb)
+
 The Colab notebook, similar to the script `pinn_syndata.py` that can conduct the PINN training to infer ice 
 viscosity from the synthetic data. The user can run the notebook directly in Google Colab online without any 
 need to install python environments and library on a local machine. Different from the script `pinn_syndata.py`,

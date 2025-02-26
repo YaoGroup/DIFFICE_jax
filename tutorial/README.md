@@ -36,7 +36,7 @@ scale to $u_0 = 1$ $\mathrm{km/yr}$ $= 3.17 \times 10^{-5}$ $\mathrm{m/s}$ and t
 scale to $h_0 = 500$ $\mathrm{m}$.
 
 <p align="center">
-    <img src="../docs/figure/syndata_cond.png" alt="boundary conditions" width="100%">
+    <img alt="boundary conditions" width="100%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/syndata_cond.png"> 
 </p>
 
 Besides the governing equations and the boundary condition, a **known** viscosity profile $\mu(x,y)$ 
@@ -122,5 +122,5 @@ This results were obtained after **100k** iterations of training using **Adams**
 iterations of training using **L-BFGS** optimizer.
 
 <p align="center">
-    <img src="../docs/figure/results.png" alt="results" width="90%">
+    <img alt="results" width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/results.png"> 
 </p>

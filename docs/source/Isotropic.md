@@ -17,7 +17,7 @@ where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu
 
 ## Dynamic boundary conditions
 
-The associated boundary conditions required for the equations is the *dynamic boundary condition* at the calving front of the ice shelf, which indicates the balance of the extensional stress of ice shelves with ocean hydrostatic pressure:
+The associated boundary conditions required for viscosity inversion is the *dynamic boundary condition* at the calving front of the ice shelf, which indicates the balance of the extensional stress of ice shelves with ocean hydrostatic pressure:
 
 $$\begin{array}{l}
 \displaystyle 2\mu \left(2\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) n_x 

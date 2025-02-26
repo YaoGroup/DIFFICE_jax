@@ -73,6 +73,17 @@ This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@st
 `DIFFICE_jax` is an open-source software. All code within the project is licensed under the MIT License. For more details, please refer to the [LICENSE](https://github.com/YaoGroup/DIFFICE_jax/tree/main/LICENSE) file.
 
 ## Citation
+Y. Wang and C.-Y. Lai, "DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX," under review, 2025
+```
+@article{wang2025diffice
+  title={DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX},
+  author={Wang, Yongji and Lai, Ching-Yao},
+  year={2025},
+  journal={},
+  doi = {},
+}
+```
+
 Y. Wang, C.-Y. Lai, D. J. Prior and C. Cowen-Breen, "Deep learning the flow law of Antarctica ice shelves," *Science*, 2025
 ```
 @article{wang2025deep

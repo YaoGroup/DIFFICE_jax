@@ -1,4 +1,4 @@
-# Isotropic viscosity inversion via PINNs
+# Isotropic viscosity inversion
 
 Ice shelf is a viscous gravity current. Due to the absence of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
 is approximate to a two-dimensional flow, independent of the vertical direction. Assuming isotropic property, the ice-shelf dynamics is governed by the 2-dimensional Shallow-Shelf Approximation (SSA) equations [@MacAyeal1989], which read:

@@ -23,6 +23,7 @@ DIFFICE_jax documentation
    :maxdepth: 2
    :caption: Theory:
 
-   ../Anisotropic.md
-   ../Isotropic.md
+   Isotropic.md
+   Anisotropic.md
+   Data.md
 

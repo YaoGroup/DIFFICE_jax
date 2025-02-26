@@ -12,7 +12,7 @@ the **regular PINN** training, and the `xpinns` folder is for the **extended-PIN
 <br /> 
 
 
-### `diffice_jax/model/pinns/initialization.py` / `diffice_jax/model/xpinns/initialization.py`
+### `/pinns/initialization.py` / `/xpinns/initialization.py`
 
 Involving essential functions to intialize weights and biases for all neural networks required 
 for the problem. The code use Xavier initialization scheme, so that the weights between each 

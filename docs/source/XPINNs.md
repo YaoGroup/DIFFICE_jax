@@ -19,7 +19,7 @@ inferred quantities from PINNs.
     <img src="../figure/xpinns.png" alt="results" width="90%">
 </p>
 
-# Loss function
+# Loss function for XPINNs
 
 To ensure that the neural networks prediction of two consecutive sub-regions remain continuous at their interface, 
 Several continuity loss terms needs to be added in the cost function. The first continuity loss term is given as

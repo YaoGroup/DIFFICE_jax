@@ -26,6 +26,8 @@ dataset, including the spatial coordiates $(x,y)$, velocity $(u, v)$ and thickne
 normalize those variables to be within the range of $[-1, 1]$. The script also re-organizes and reshapes
 the data that is required by the code in the `model` folder to ensure the success of the PINN training.
 
+
+<br />
  
 ### `/pinns/sampling.py` / `/xpinns/sampling.py`
 

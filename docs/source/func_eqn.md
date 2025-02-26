@@ -5,13 +5,13 @@
 The folder includes the codes that compute the residues of governing equations and boundary conditions 
 involved in the PINN training. 
  
-### `diffice_jax/equation/eqn_iso.py`
+### `/eqn_iso.py`
 
 involving functions to compute the residue of the normalized **isotropuc** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. Both the SSA equations and
 the boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Isotropic.md) .
  
-### `diffice_jax/equation/eqn_aniso_zz.py`
+### `/eqn_aniso_zz.py`
 
 involving functions to compute the residue of the normalized **anisotropic** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. The suffix `_zz` indicate the

@@ -10,6 +10,7 @@ DIFFICE_jax documentation
 =========================
 
 .. include:: ../../README.md
+   :parser: myst_parser
 
 .. automodule:: diffice_jax
    :members:

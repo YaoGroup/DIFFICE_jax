@@ -20,7 +20,7 @@ DIFFICE_jax documentation
    :end-before: <!-- stop-session2 -->
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Inverse problem:
 
    Isotropic.md
@@ -28,14 +28,21 @@ DIFFICE_jax documentation
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Datasets:
 
    Data.md
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :caption: XPINNs:
+
+   XPINNs.md
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Code Quickview:
 
    code_data.md

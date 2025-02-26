@@ -1,5 +1,6 @@
 # Isotropic viscosity inversion
 
+## Governing equations
 Ice shelf is a viscous gravity current. Due to the absence of shear stresses at both of its top and bottom surfaces, the motion of ice shelf 
 is approximate to a two-dimensional flow, independent of the vertical direction. Assuming isotropic property, the ice-shelf dynamics is governed by the 2-dimensional Shallow-Shelf Approximation (SSA) equations [@MacAyeal1989], which read:
 
@@ -12,7 +13,11 @@ $$\begin{array}{l}
 = \rho g \left(1-\frac{\rho}{\rho_w}\right)h\frac{\partial h}{\partial y}
 \end{array}$$
 
-where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity. The associated boundary conditions required for the equations is the *dynamic boundary condition* at the calving front of the ice shelf, which indicates the balance of the extensional stress of ice shelves with ocean hydrostatic pressure:
+where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity. 
+
+## Dynamic boundary conditions
+
+The associated boundary conditions required for the equations is the *dynamic boundary condition* at the calving front of the ice shelf, which indicates the balance of the extensional stress of ice shelves with ocean hydrostatic pressure:
 
 $$\begin{array}{l}
 \displaystyle 2\mu \left(2\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) n_x 
@@ -23,7 +28,11 @@ $$\begin{array}{l}
  	= \frac{1}{2}\rho g h\left(1 - \frac{\rho}{\rho_w} \right)  n_y
 \end{array} \quad \text{at} \  (x, y) \in {\partial \Omega_c} $$
 
-where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front. Both of the equations and boundary conditions needs to be involved in the PINN training for inferring isotropic ice viscosity. Thus, the loss function of the PINN training is expressed by
+where $\partial \Omega_c$ indicates the set of points at the calving front of the ice shelf, and $(n_x, n_y)$ is the unit normal vector towards outwards to the calving front. 
+
+## Loss function for PINNs
+
+Both of the equations and boundary conditions needs to be involved in the PINN training for inferring isotropic ice viscosity. Thus, the loss function of the PINN training is expressed by
 
 $$\mathcal{L} = \mathcal{L}_d + \mathcal{L}_e$$
 

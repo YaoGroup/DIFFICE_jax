@@ -21,10 +21,11 @@ $$\begin{eqnarray}
 	 \frac{\partial} {\partial y}\left(2 {\mu_h} h \frac{\partial  v}{\partial y} + 2 {\mu_v} h \left[\frac{\partial  u}{\partial x}  + \frac{\partial  v}{\partial y} \right]  \right)
   +\frac{\partial} {\partial x} \left({\mu_h} h \left[\frac{\partial  u}{\partial y}  + \frac{\partial  v}{\partial x} \right]  \right)  = \rho g \left(1-{\frac{\rho}{\rho_w}}\right)h\frac{\partial h}{\partial y}\ .   \qquad 
 \end{eqnarray}$$
+where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu$ is the effective isotropic viscosity of the ice shelf. $\rho$ and $\rho_w$ are the density of the ice shelf and ocean water, respectively. $g$ is the gravity.
 
 ## Dynamic boundary conditions
 
-Similarly, the dynamic boundary conditions at the calving front with respect to the anisotropic viscosity components ($\mu_h$, $\mu_v$) becomes
+The dynamic boundary conditions at the calving front with respect to the anisotropic viscosity components ($\mu_h$, $\mu_v$) becomes
 
 $$\begin{array}{l}
 \displaystyle 2\left({\mu_h}\frac{\partial u}{\partial x} + {\mu_v} \left[ \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_x 

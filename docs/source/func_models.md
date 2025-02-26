@@ -9,6 +9,8 @@ of codes are provided in this folder. The `pinns` folder involves the code is fo
 the **regular PINN** training, and the `xpinns` folder is for the **extended-PINN
 (XPINN)** training. 
 
+<br /> 
+
 
 ### `diffice_jax/model/pinns/initialization.py` / `diffice_jax/model/xpinns/initialization.py`
 
@@ -17,6 +19,9 @@ for the problem. The code use Xavier initialization scheme, so that the weights 
 two layers are generated following a truncated normal distribution with zero mean and the 
 variance equal to $2/(n_{l-1}+n_{l})$, where $n_{l}$ and $n_{l+1}$ indicates the number of
 units in the previous and next layers. The biases are initialized with all zero.
+
+
+<br /> 
 
 
 ### `diffice_jax/model/pinns/networks.py` / `diffice_jax/model/xpinns/networks.py`
@@ -30,7 +35,10 @@ fully-connected multiple-layer preceptrons (MLP) using `tanh` as the default act
 When creating the neural networks, users need to specify whether the neural networks are created for isotropic 
 and anistropic viscosity, as these two cases requires different number of outputs.
 
- 
+
+ <br /> 
+
+
 ### `diffice_jax/model/pinns/loss.py` / `diffice_jax/model/xpinns/loss.py`
 
 Involving essential functions to generate the total loss function for PINN training on assimilating
@@ -41,7 +49,8 @@ The loss function for the XPINN training is given [here](https://github.com/YaoG
 We note that users should call different functions in the `loss.py` script to generate the loss functions
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
 
- 
+ <br /> 
+
 ### `diffice_jax/model/pinns/prediction.py` / `diffice_jax/model/xpinns/prediction.py`
 
 Involving functions to predict the neural network output at the high-resolution grids for evaluation or 

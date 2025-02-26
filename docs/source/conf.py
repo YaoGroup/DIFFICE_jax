@@ -45,6 +45,12 @@ exclude_patterns = []
 source_suffix = ['.rst', '.md']
 
 
+# Enable dollar signs for inline and block math
+myst_enable_extensions = [
+    "dollarmath",  # Allows $...$ and $$...$$ math equations
+]
+
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 

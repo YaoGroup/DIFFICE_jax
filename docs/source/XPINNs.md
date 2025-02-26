@@ -1,4 +1,4 @@
-# Extended physics-informed neural networks (XPINNs) for inferring effective viscosity of large ice shelves.
+# Why we need.
 
 Large ice shelves surrounding the Antarctica, such as Ross and Ronne Ice Shelves, contain many local structural provinces,
 including suture zones, margin shear zones, and fast-flowing zones, causing local variations of their physical properties, such as viscosity. However, neural networks training exhibits [spectral bias](https://proceedings.mlr.press/v97/rahaman19a/rahaman19a.pdf), 
@@ -19,7 +19,7 @@ inferred quantities from PINNs.
     <img src="../figure/xpinns.png" alt="results" width="90%">
 </p>
 
-## Cost function for XPINNs
+# Loss function
 
 To ensure that the neural networks prediction of two consecutive sub-regions remain continuous at their interface, 
 Several continuity loss terms needs to be added in the cost function. The first continuity loss term is given as

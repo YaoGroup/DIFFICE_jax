@@ -4,7 +4,9 @@
 
 The folder includes the codes that compute the residues of governing equations and boundary conditions 
 involved in the PINN training. 
- 
+
+<br /> 
+
 ### `/eqn_iso.py`
 
 involving functions to compute the residue of the normalized **isotropuc** Shallow-Shelf Approximation (SSA) 

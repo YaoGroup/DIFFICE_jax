@@ -40,6 +40,8 @@ $$\begin{array}{l}
 where $\partial \Omega_c$ indicates the position of ice-shelf calving front, and $(n_x, n_y)$ is the unit normal 
 vector towards outwards to the calving front.
 
+## Loss functions for PINNs
+
 It is important to note that the above governing equation and boundary conditions remain insufficient to guarantee 
 the unique inversion of the two viscosity components ($\mu_h$, $\mu_v$). A **regularization condition** is, thus, required 
 to ensure the uniqueness for inferring the anisotropic viscosity components ($\mu_h$, $\mu_v$). The regularization

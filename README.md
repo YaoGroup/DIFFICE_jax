@@ -6,9 +6,13 @@ A DIFFerentiable neural-network solver for data assimilation of ICE shelves writ
 ## Introduction 
 `DIFFICE_jax` is a Python package that solves the depth-integrated Stokes equation for **ice shelves**, and can be adopted for **ice sheets** by modifying the partial differential equations (PDE) in the neural network loss function. It uses PDEs to interpolate descretized remote-sensing data into meshless and differentible functions, and infer ice shelves' viscosity structure via back-propagation and automatic differentiation (AD). The algorithm is based on physics-informed neural networks [(PINNs)](https://www.sciencedirect.com/science/article/abs/pii/S0021999118307125) and implemented in [JAX](https://jax.readthedocs.io/en/latest/index.html). The `DIFFICE_jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collocation points resampling, non-dimensionalization of the data adnd equations, extended-PINNs [(XPINNs)](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/XPINNs.md) (see figure below), viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and real-data [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) for users at different levels to have a good command of the package.
 
+<br />
+
 <p align="center" style="margin-top:-2rem;margin-bottom:-2rem">
     <img alt="xpinns." width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/xpinns.png"> 
 </p>
+
+<br />
 
 ## Statement of Needs
 This package provides a neural network-based approach for solving inverse problems in glaciology, specifically for estimating effective ice viscosity from high-resolution remote sensing data. Ice viscosity is a key parameter for predicting ice-shelf dynamics, but direct in-situ measurements across Antarctica are impractical. Traditional adjoint methods require deriving additional equations and applying regularization techniques to handle noisy data. In contrast, neural networks can inherently de-noise while solving the inverse problem without explicit regularization. Additionally, this solver is fully differentiable using automatic differentiation (AD), eliminating the need for manual adjoint derivations and enabling efficient exploration of complex PDEs, including anisotropic ice flow models. This approach offers a scalable and flexible alternative to conventional inverse methods in glaciology.

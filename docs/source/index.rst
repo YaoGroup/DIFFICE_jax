@@ -25,7 +25,6 @@ DIFFICE_jax documentation
 
    Isotropic.md
    Anisotropic.md
-   
 
 
 .. toctree::

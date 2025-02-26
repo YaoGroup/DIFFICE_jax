@@ -11,6 +11,13 @@ DIFFICE_jax documentation
 
 .. include:: ../../README.md
    :parser: myst_parser.sphinx_
+   :start-after: <!-- index.rst session1 start -->
+   :end-before: <!-- stop-session1 -->
+
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_
+   :start-after: <!-- index.rst session2 start -->
+   :end-before: <!-- stop-session2 -->
 
 .. toctree::
    :maxdepth: 2

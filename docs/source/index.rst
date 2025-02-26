@@ -29,6 +29,13 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 2
+   :caption: Datasets:
+
+   Data.md
+
+
+.. toctree::
+   :maxdepth: 2
    :caption: Code Quickview:
 
    code_data.md

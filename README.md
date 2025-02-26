@@ -73,11 +73,12 @@ This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@st
 ## Citation
 BibTex:
 ```
-@article{wang2022discovering,
+@article{wang2025deep
   title={Discovering the rheology of Antarctic Ice Shelves via physics-informed deep learning},
-  author={Wang, Yongji and Lai, Ching-Yao and Cowen-Breen, Charlie},
-  year={2022},
-  doi = {https://doi.org/10.21203/rs.3.rs-2135795/v1},
+  author={Wang, Yongji and Lai, Ching-Yao and Prior, David J. and Cowen-Breen, Charlie},
+  year={2025},
+  journal={Science},
+  doi = {https://doi.org/10.1126/science.adp3300},
 }
 ```
 

@@ -1,4 +1,4 @@
-# Why we need.
+# Why we need
 
 Large ice shelves surrounding the Antarctica, such as Ross and Ronne Ice Shelves, contain many local structural provinces,
 including suture zones, margin shear zones, and fast-flowing zones, causing local variations of their physical properties, such as viscosity. However, neural networks training exhibits [spectral bias](https://proceedings.mlr.press/v97/rahaman19a/rahaman19a.pdf), 

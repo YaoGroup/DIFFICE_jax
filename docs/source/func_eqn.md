@@ -12,7 +12,10 @@ involved in the PINN training.
 involving functions to compute the residue of the normalized **isotropuc** Shallow-Shelf Approximation (SSA) 
 equations and their associated dynamic boundary conditions at the calving front. Both the SSA equations and
 the boundary conditions are given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Isotropic.md) .
- 
+
+<br /> 
+
+
 ### `/eqn_aniso_zz.py`
 
 involving functions to compute the residue of the normalized **anisotropic** Shallow-Shelf Approximation (SSA) 

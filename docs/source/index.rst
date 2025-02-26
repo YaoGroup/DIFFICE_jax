@@ -21,9 +21,19 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Theory:
+   :caption: Inverse problem:
 
    Isotropic.md
    Anisotropic.md
-   Data.md
+   
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Code Quickview:
+
+   code_data.md
+   code_eqn.md
+   code_models.md
+   code_optimizer.md
 

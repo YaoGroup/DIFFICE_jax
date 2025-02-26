@@ -1,4 +1,4 @@
-# Anisotropic viscosity inversions
+# Anisotropic viscosity inversion
 
 The conventional Shallow-shelf Approximation (SSA) equations is derived under the assumption that ice shelves have 
 isotropic properties. However, evidence shows that ice shelves could exhibit anisotropic properties, leading to 

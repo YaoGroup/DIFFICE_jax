@@ -1,7 +1,7 @@
 # DIFFICE_jax
 A DIFFerentiable neural-network solver for data assimilation of ICE shelves written in JAX. 
 
-<!-- index.rst content start -->
+<!-- index.rst session1 start -->
 
 ## Introduction 
 `DIFFICE_jax` is a Python package that solves the depth-integrated Stokes equation for **ice shelves**, and can be adopted for **ice sheets** by modifying the partial differential equations (PDE) in the neural network loss function. It uses PDEs to interpolate descretized remote-sensing data into meshless and differentible functions, and infer ice shelves' viscosity structure via back-propagation and automatic differentiation (AD). The algorithm is based on physics-informed neural networks [(PINNs)](https://www.sciencedirect.com/science/article/abs/pii/S0021999118307125) and implemented in [JAX](https://jax.readthedocs.io/en/latest/index.html). The `DIFFICE_jax` package involves several advanced features in addition to vanilla PINNs algorithms, including collocation points resampling, non-dimensionalization of the data adnd equations, extended-PINNs [(XPINNs)](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/XPINNs.md) (see figure below), viscosity exponential scaling function, which are essential for accurate inversion. The package is designed to be user-friendly and accessible for beginners. The Github respository also provides [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and real-data [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) for users at different levels to have a good command of the package.
@@ -23,7 +23,7 @@ You can install the package using pip as follows:
 python -m pip install DIFFICE_jax
 ```
 
-<!-- stop-here -->
+<!-- stop-session1 -->
 
 
 ## Documentation
@@ -62,6 +62,8 @@ respectively.
     <img alt="setups" width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/PINN_setup.png"> 
 </p>
 
+<!-- index.rst session2 start -->
+
 ## Contributors
 This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@stanford.edu) and Ching-Yao Lai (cyaolai@stanford.edu). If you have questions about this code and documentation, or are interested in contributing the development of the `DIFFICE_jax` package, please see the contributing [guidelines](./Contribution.md) for information on submitting issues and pull requests.
 
@@ -78,3 +80,6 @@ BibTex:
   doi = {https://doi.org/10.21203/rs.3.rs-2135795/v1},
 }
 ```
+
+<!-- stop-session2 -->
+

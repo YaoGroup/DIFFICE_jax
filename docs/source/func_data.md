@@ -15,8 +15,10 @@ component for PINN training. Detailed instructions for correctly calling the fun
 scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 
 within the `examples` folder of this repository.
 
- 
-### `diffice_jax/data/pinns/preprocessing.py` / `diffice_jax/data/xpinns/preprocessing.py`
+<br />
+
+
+### `/pinns/preprocessing.py` / `/xpinns/preprocessing.py`
 
 Involving essential functions to normalize the raw data loaded from the MATLAB format (`.mat`). The 
 function in the script will automatically detect the characterisitc scale of each variable in the 
@@ -25,7 +27,7 @@ normalize those variables to be within the range of $[-1, 1]$. The script also r
 the data that is required by the code in the `model` folder to ensure the success of the PINN training.
 
  
-### `diffice_jax/data/pinns/sampling.py` / `diffice_jax/data/xpinns/sampling.py`
+### `/pinns/sampling.py` / `/xpinns/sampling.py`
 
 Involving essential functions to sample a batch of pre-processed data used for the PINN training. Users
 can specify the number of sampling points for both velocity and thickness data, as well as the collocation 

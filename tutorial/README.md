@@ -1,14 +1,16 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb)
 
-# Tutorial example for viscosity inversion
+# Overview
 
-This folder contains a tutorial example for inferring the effective viscosity $\mu$ of ice 
+Here, we provide a tutorial example for inferring the effective viscosity $\mu$ of ice 
 shelves using synthetic data of ice velocity and thickness via physics-informed neural networks 
 (PINNs). Both the simulation code for synthetic data generation and the PINN code for viscosity
 inversion are included. All codes are well-documented for easy understanding. Additionally, we
 have provided a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb) that allows users to run the code online in Google Colab.
 
-## Forward problem setup
+<br />
+
+# Forward problem setup
 Considering the floating ice moving in a given domain, the synthetic data of ice velocity 
 and thickness can be calculated by numerically solving the Shallow-shelf Approximation (SSA)
 equations and the steady mass conservation equation with a given viscosity, which read
@@ -52,7 +54,9 @@ the synthetic data by numerically solving the govnering equation. For simplicity
 solve the equations using **COMSOL Multiphysics**, which, we believe, provides a intuitive 
 user interface to set up the forward problem and conduct the calculation. 
 
-## Code description
+<br />
+
+# Code description
 ### `tutorial/COMSOL/IceShelf2D_forward.mph`  
 
 A COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
@@ -62,6 +66,7 @@ domain size, geometry, boundary conditions, and given viscosity profile in the C
 create different synthetic data. The provided COMSOL file can export the synthetic data in a `.txt` 
 format by default. The `SynData_exp1.txt` is the data file exported from the current COMSOL file.
 
+<br />
 
 ### `tutorial/COMSOL/txt2mat.m` 
 
@@ -81,6 +86,8 @@ figure; surf(xd_h, yd_h, hd);  % surface plot of the thickness h (at different g
 shading interp;
 ```
 
+<br />
+
 
 ### `tutorial/train_syndata.py`
 
@@ -93,6 +100,8 @@ files will be stored in the `Results` subfolder, which will be automatically gen
 not already exist. The current hyper-parameters set in the script allow the viscosity inversion 
 from the example data `SynData_exp1.mat` to achieve high accuracy.
 
+<br />
+
 
 ### `tutorial/train_syndata.ipynb`
 The Colab notebook, similar to the script `pinn_syndata.py` that can conduct the PINN training to infer ice 
@@ -101,7 +110,10 @@ need to install python environments and library on a local machine. Different fr
 after the training, the notebook plots the trained networks for the data assimilation and viscosity 
 inversion, and compare them directly with the synthetic data and the given viscosity profile.
 
-## Results
+<br />
+
+
+# Results
 
 The figure below shows the trained results of PINNs for the synthetic data provided in this folder. The 
 trained networks for ice velocity and thickness match well with the synthetic data, and the inferred 

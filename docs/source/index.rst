@@ -29,14 +29,14 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Datasets:
+   :caption: Remote Datasets:
 
    Data.md
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: XPINNs:
+   :caption: Extended-PINNs:
 
    XPINNs.md
 

@@ -6,7 +6,7 @@ for which the neural networks tend to learn low-frequency information of the tar
 Considering a large ice shelf as a singje domain, those local variations thus become high-frequency information that
 is hard to capture by a single neural network. 
 
-To resolve this issuse, the extended-PINNs (XPINNs) separate any large domain into several sub-regions (see the figure)
+To resolve this issuse, the **extended-PINNs (XPINNs)** separate any large domain into several sub-regions (see the figure)
 and arrange different networks for them. In that case, each network only need to capture the physical variables within 
 a small local region, largely increase the capacity for predicting the multiscale variation of different physical variables.
 

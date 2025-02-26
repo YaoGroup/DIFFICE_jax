@@ -26,7 +26,7 @@ where $u$ and $v$ are the horizontal velocity, $h$ is the ice thickness and $\mu
 
 ## Dynamic boundary conditions
 
-The dynamic boundary conditions at the calving front with respect to the anisotropic viscosity components ($\mu_h$, $\mu_v$) becomes
+The dynamic boundary conditions at the calving front of ice shelves indicates the balance of the extensional stress of ice shelves with ocean hydrostatic pressure. It can written with respect to the anisotropic viscosity components ($\mu_h$, $\mu_v$) as
 
 $$\begin{array}{l}
 \displaystyle 2\left({\mu_h}\frac{\partial u}{\partial x} + {\mu_v} \left[ \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right] \right) n_x 

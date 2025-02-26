@@ -9,15 +9,18 @@
 DIFFICE_jax documentation
 =========================
 
-.. automodule:: diffice_jax
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_
+
+#.. automodule:: diffice_jax
+#   :members:
+#   :undoc-members:
+#   :show-inheritance:
 
 .. toctree::
    :maxdepth: 2
    :caption: Theory:
 
-   Anisotropic.md
-   Isotropic.md
+   Anisotropic
+   Isotropic
 

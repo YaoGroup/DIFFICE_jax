@@ -35,10 +35,7 @@ To contribute via Pull Request, follow these steps:
 3. **Navigate to the Project Directory**
    ```sh
    cd DIFFICE_jax
-4. **Set Up the Environment** – Install dependencies and ensure everything runs smoothly:
-   ```sh
-   pip install -r requirements.txt
-5. **Install Developer version of DIFFICE_jax**
+4. **Install Developer version of DIFFICE_jax** – Install dependencies and ensure everything runs smoothly:
    ```sh
    pip install -e .
    ```

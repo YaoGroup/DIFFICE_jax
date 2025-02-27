@@ -12,7 +12,7 @@ the **regular PINN** training, and the `xpinns` folder is for the **extended-PIN
 <br /> 
 
 
-### `/pinns/initialization.py` / `/xpinns/initialization.py`
+### `/pinns/initialization.py`  &  `/xpinns/initialization.py`
 
 Involving essential functions to intialize weights and biases for all neural networks required 
 for the problem. The code use Xavier initialization scheme, so that the weights between each 
@@ -24,7 +24,7 @@ units in the previous and next layers. The biases are initialized with all zero.
 <br /> 
 
 
-### `/pinns/networks.py` / `/xpinns/networks.py`
+### `/pinns/networks.py`  &  `/xpinns/networks.py`
 
 Involving essential functions to generate the neural network model for each physical variable 
 involved in the problem. For regular PINN training, two networks are created. One network has 
@@ -39,7 +39,7 @@ and anistropic viscosity, as these two cases requires different number of output
  <br /> 
 
 
-### `/pinns/loss.py` / `/xpinns/loss.py`
+### `/pinns/loss.py`  &  `/xpinns/loss.py`
 
 Involving essential functions to generate the total loss function for PINN training on assimilating
 remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
@@ -51,7 +51,7 @@ for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.
 
  <br /> 
 
-### `/pinns/prediction.py` / `/xpinns/prediction.py`
+### `/pinns/prediction.py`  &  `/xpinns/prediction.py`
 
 Involving functions to predict the neural network output at the high-resolution grids for evaluation or 
 visualization. The default setting of the function is to predict the data at the same resolution grid of

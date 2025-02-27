@@ -54,8 +54,7 @@ summarized **six algorithm features** of the `DIFFICE_jax` package beyond the va
  
 ## Google Colab
 Apart from the Python scripts to run locally, we also provide **Colab Notebooks** for both the synthetic and real
-ice-shelf examples. They are provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders for a synthetic ice shelf and real ice shelves,
-respectively. 
+ice-shelf examples, provided in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) and [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders, respectively. 
 
  <br />
  

@@ -56,7 +56,9 @@ user interface to set up the forward problem and conduct the calculation.
 <br /><br />
 
 # File descriptions
-### `tutorial/COMSOL/IceShelf2D_forward.mph`  
+## Location: `tutorial`
+
+### `/COMSOL/IceShelf2D_forward.mph`  
 
 A COMSOL file `.mph` in the `COMSOL` folder solves the governing equations with the boundary 
 conditions and given viscosity as described above. Users need to have the basic COMSOL software 
@@ -67,14 +69,24 @@ format by default. The `SynData_exp1.txt` is the data file exported from the cur
 
 <br />
 
-### `tutorial/COMSOL/txt2mat.m` 
+### `/COMSOL/SynData_exp1.txt`
+
+A Raw data file exported from the current COMSOL file `IceShelf2D_forward.mph`
+
+<br />
+
+### `/COMSOL/txt2mat.m` 
 
 A MATLAB script that converts the raw data file (`.txt`) exported from COMSOL into MATLAB data 
 format (`.mat`). The synthetic data in `.mat` format are also organized in the way that allow them
-to be loaded into the Python code for the PINN training. The current `SynData_exp1.mat` in the `COMSOL`
-folder is the MATLAB data file converted from the `SynData_exp1.txt` raw data file. Additionally,
-we recognize that the MATLAB data format (`.mat`) is convenient for users to observe the synthetic
-data in MATLAB using simple commands.
+to be loaded into the Python code for the PINN training. 
+
+<br />
+
+
+### `/COMSOL/SynData_exp1.mat`
+A MATLAB data file converted from the `SynData_exp1.txt` raw data file. The MATLAB data format (`.mat`)
+allows users to observe the synthetic data in MATLAB using simple commands.
 
 ```matlab
 load('SynData_exp1.mat')
@@ -88,9 +100,9 @@ shading interp;
 <br />
 
 
-### `tutorial/train_syndata.py`
+### `/train_syndata.py`
 
-The main Python script conducts the PINN training to infer ice viscosity from the synthetic data.
+A main Python script conducts the PINN training to infer ice viscosity from the synthetic data.
 This script is intended to be run on a local machine or a cluster. Users should select the 
 synthetic data file and set the hyper-parameters for the training. After the training is complete,
 the script will automatically save the trained network weights and biases in `.pkl` format, and the
@@ -102,13 +114,21 @@ from the example data `SynData_exp1.mat` to achieve high accuracy.
 <br />
 
 
-### `tutorial/train_syndata.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb)
+### `/colab/train_syndata.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb)
 
-The Colab notebook, similar to the script `pinn_syndata.py` that can conduct the PINN training to infer ice 
+A Colab notebook, correpsonding to the script `pinn_syndata.py` that conducts the PINN training to infer ice 
 viscosity from the synthetic data. The user can run the notebook directly in Google Colab online without any 
 need to install python environments and library on a local machine. Different from the script `pinn_syndata.py`,
 after the training, the notebook plots the trained networks for the data assimilation and viscosity 
 inversion, and compare them directly with the synthetic data and the given viscosity profile.
+
+
+<br />
+
+### `/results/SynData_pinns_idx1234.mat` 
+A matlab data file that includes both the weights and biases of a pretrained PINNs model, as well as the 
+prediction results, generated through the Python script `pinn_syndata.py` on the current synthetic data `SynData_exp1.mat` 
+in the `COMSOL` folder.
 
 
 <br /><br />

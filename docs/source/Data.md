@@ -64,7 +64,7 @@ Apart from the above quantities, below are the additional quantities particularl
 | `idxcrop_h` | vertex position of sub-regional thickness data in the whole domain | cell[4x1 array]|
 
 `x_md` and `y_md` are the positions of the interface between each two consecutive sub-regions, which are required to 
-evaluate the [continuity loss](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/XPINNs.md) for the **XPINNs**
+evaluate the [continuity loss](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/source/XPINNs.md) for the **XPINNs**
 training. The other 6 quantities are the required information to merge the variable of all sub-regions into a 
 large entity matrix, representing the whole domain.
 

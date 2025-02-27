@@ -18,7 +18,7 @@ within the `examples` folder of this repository.
 <br />
 
 
-### `/pinns/preprocessing.py` / `/xpinns/preprocessing.py`
+### `/pinns/preprocessing.py`  &  `/xpinns/preprocessing.py`
 
 Involving essential functions to normalize the raw data loaded from the MATLAB format (`.mat`). The 
 function in the script will automatically detect the characterisitc scale of each variable in the 
@@ -29,7 +29,7 @@ the data that is required by the code in the `model` folder to ensure the succes
 
 <br />
  
-### `/pinns/sampling.py` / `/xpinns/sampling.py`
+### `/pinns/sampling.py`  &  `/xpinns/sampling.py`
 
 Involving essential functions to sample a batch of pre-processed data used for the PINN training. Users
 can specify the number of sampling points for both velocity and thickness data, as well as the collocation 

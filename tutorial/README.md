@@ -136,7 +136,8 @@ in the `COMSOL` folder.
 
 # Results
 
-The figure below shows the trained results of PINNs for the synthetic data provided in this folder. The 
+The figure below shows the trained results of PINNs (in `SynData_pinns_idx1234.mat`) based on the synthetic data 
+`SynData_exp1.mat` in the `COMSOL` folder. The 
 trained networks for ice velocity and thickness match well with the synthetic data, and the inferred 
 viscosity shows a good agreement with the given viscosity profile with a relative error less than 1%.
 This results were obtained after **100k** iterations of training using **Adams** optimizer, followed by another **100K** 

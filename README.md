@@ -35,8 +35,7 @@ python -m pip install DIFFICE_jax
 Find the full documentation [here](https://diffice-jax.readthedocs.io/en/latest/). We provided the documentation for both the algorithms and the mathematical formulation for the data assimilation of ice shelves.
 
 ## Getting Started with a Tutorial using Synthetic Data [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb)
-We highly recommend new users to get familar with the software by reading the document and playing with the synthetic example prepared in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) folder. The synthetic example allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in a rectangular domain with any given viscosity profile. Users can then use the PINNs code prepared in the folder to infer the given viscosity from the synthetic code. We provide a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/train_syndata.ipynb)
-that allows users to compare the given viscosity with the PINN inferred viscosity to validate the accuracy of PINNs on inverse problem.
+We highly recommend new users to get familar with the software by reading the document and playing with the synthetic example prepared in the [`tutorial`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/tutorial) folder. The synthetic example allow users to generate the synthetic data of velocity and thickness of an ice-shelf flow in an idealized rectangular domain with a prescribed viscosity profile. Users can use the Colab Notebook to infer the viscosity from the synthetic velocity and thickness, and compare with the given synthetic viscosity to validate the PINN result.
 
 
 ## Real-data Examples 

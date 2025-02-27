@@ -21,7 +21,7 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Inverse problem:
+   :caption: Inverse Problems:
 
    Isotropic.md
    Anisotropic.md
@@ -43,14 +43,14 @@ DIFFICE_jax documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Remote Datasets:
+   :caption: Training Data:
 
    Data.md
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Real-data examples:
+   :caption: Real-data Examples:
 
    examples
 

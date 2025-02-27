@@ -8,8 +8,8 @@ network output, including re-normalization and reshaping. Two versions of codes 
 folder. The `pinns` subfolder involves the code is for the **regular PINNs** training,  and the `xpinns` 
 subfolder is for the **extended-PINNs (XPINNs**) training.
 
-The mathematical formation for the **regular PINNs** training is provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Isotropic.md), 
-and the description of the **XPINNs** setting is given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/XPINNs.md).
+The mathematical formation for the **regular PINNs** training is provided in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/source/Isotropic.md), 
+and the description of the **XPINNs** setting is given in [this link](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/source/XPINNs.md).
 Both the `pinns` and `xpinns` folders contain four Python scripts, each specifying a key 
 component for PINN training. Detailed instructions for correctly calling the functions in these 
 scripts can be found in the [example codes](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) 

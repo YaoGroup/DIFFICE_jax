@@ -40,8 +40,8 @@ that allows users to compare the given viscosity with the PINN inferred viscosit
 
 
 ## Real-data Examples 
-The inversion codes with the real velocity and thickness data for **four** different ice shelves surrounding the Antarctica are provided in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. The original source and the required format for the datasets are described [here](https://github.com/YaoGroup/DIFFICE_jax/tree/main/docs/source/Data.md). In the [paper](https://github.com/YaoGroup/DIFFICE_jax/tree/main/paper.md), we
-summarized **six algorithm features** of the `DIFFICE_jax` package beyond the vanilla PINNs code. We provide four example codes in [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) that can be used to analyze different ice-shelf datasets. For each example code, the corresponding implemented features and the ice-shelf dataset it can analyze are listed in the table below. 
+The inversion codes with the real velocity and thickness data for **four** different ice shelves surrounding the Antarctica are provided in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. For each example code, the corresponding implemented features and the ice-shelf dataset it can analyze are listed in the table below. The original source and the required format for the datasets are described [here](https://github.com/YaoGroup/DIFFICE_jax/tree/main/docs/source/Data.md). In the [paper](https://github.com/YaoGroup/DIFFICE_jax/tree/main/paper.md), we
+summarized **six algorithm features** of the `DIFFICE_jax` package beyond the vanilla PINNs code.  
 
 | Example codes  | Feature # | Ice shelf |
 | ------------- | ------------- | ------------- |

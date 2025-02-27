@@ -16,11 +16,13 @@ interface (blue line in the figure) between consecutive sub-regions that ensure 
 continuous and smooth across the sub-regions. The continuity condition is also essential for the uniqueness of the 
 inferred quantities from PINNs.
 
+<br />
+
 <p align="center" style="margin-top:-2rem;margin-bottom:-2rem">
     <img alt="xpinns." width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/xpinns.png"> 
 </p>
 
-<br />
+<br /><br />
 
 # Loss function for XPINNs
 

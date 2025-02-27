@@ -40,7 +40,7 @@ We highly recommend new users to get familar with the software by reading the do
 
 ## Real-data Examples 
 The inversion codes with the real velocity and thickness data for **four** different ice shelves surrounding the Antarctica are provided in the [`examples`](https://github.com/YaoGroup/DIFFICE_jax/tree/main/examples) folders. For each example code, the corresponding implemented features and the ice-shelf dataset it can analyze are listed in the table below. The original source and the required format for the datasets are described [here](https://github.com/YaoGroup/DIFFICE_jax/tree/main/docs/source/Data.md). In the [paper](https://github.com/YaoGroup/DIFFICE_jax/tree/main/paper.md), we
-summarized **six algorithm features** of the `DIFFICE_jax` package beyond the vanilla PINNs code.  
+summarized **six algorithm features** of the `DIFFICE_jax` package, (1)-(6), beyond the vanilla PINNs code.  
 
 | Example codes  | Feature # | Ice shelf |
 | ------------- | ------------- | ------------- |

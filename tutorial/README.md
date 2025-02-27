@@ -5,8 +5,7 @@
 Here, we provide a tutorial example for inferring the effective viscosity $\mu$ of ice 
 shelves using synthetic data of ice velocity and thickness via physics-informed neural networks 
 (PINNs). Both the simulation code for synthetic data generation and the PINN code for viscosity
-inversion are included. All codes are well-documented for easy understanding. Additionally, we
-have provided a [Colab Notebook](https://colab.research.google.com/github/YaoGroup/DIFFICE_jax/blob/main/tutorial/colab/train_syndata.ipynb) that allows users to run the code online in Google Colab.
+inversion are included. All codes are well-documented for easy understanding. 
 
 <br /><br />
 

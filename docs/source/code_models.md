@@ -43,9 +43,9 @@ and anistropic viscosity, as these two cases requires different number of output
 
 Involving essential functions to generate the total loss function for PINN training on assimilating
 remote-sensing data of ice shelves and inferring their effective viscosity. The mathematical formation
-of the loss function for inferring isotropic viscosity via regular PINNs is provided [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Isotropic.md). 
-The description for inferring anisotorpic viscosity is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/Anisotropic.md). 
-The loss function for the XPINN training is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/XPINNs.md). 
+of the loss function for inferring isotropic viscosity via regular PINNs is provided [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/source/Isotropic.md). 
+The description for inferring anisotorpic viscosity is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/source/Anisotropic.md). 
+The loss function for the XPINN training is given [here](https://github.com/YaoGroup/DIFFICE_jax/blob/main/docs/source/XPINNs.md). 
 We note that users should call different functions in the `loss.py` script to generate the loss functions
 for inferring isotropic (i.e. `loss_iso_create()`) and anisotropic viscosity (i.e. `loss_aniso_create()`)
 

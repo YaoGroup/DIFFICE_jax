@@ -144,5 +144,5 @@ This results were obtained after **100k** iterations of training using **Adams**
 iterations of training using **L-BFGS** optimizer.
 
 <p align="center">
-    <img alt="results" width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/results.png"> 
+    <img alt="results" width="90%" src="https://github.com/YaoGroup/DIFFICE_jax/raw/main/docs/figure/result.png"> 
 </p>

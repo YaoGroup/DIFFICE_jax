@@ -11,7 +11,7 @@ include-package-data = true
 
 [project]
 name = "DIFFICE_jax"
-version = "0.0.10"
+version = "1.0.0"
 authors = [
   { name="Yongji Wang", email="yw8211@nyu.edu" },
   { name="Ching-Yao Lai", email="cyaolai@stanford.edu" },

@@ -71,7 +71,7 @@ This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@st
 `DIFFICE_jax` is an open-source software. All code within the project is licensed under the MIT License. For more details, please refer to the [LICENSE](https://github.com/YaoGroup/DIFFICE_jax/tree/main/LICENSE) file.
 
 ## Citation
-Y. Wang and C.-Y. Lai, "DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX," under review, 2025
+Wang, Y. and Lai, C.Y., 2025. DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX. Journal of Open Source Software, 10(109), p.7254.
 ```
 @article{wang2025diffice,
   title={DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX},
@@ -84,14 +84,17 @@ Y. Wang and C.-Y. Lai, "DIFFICE-jax: Differentiable neural-network solver for da
 }
 ```
 
-Y. Wang, C.-Y. Lai, D. J. Prior and C. Cowen-Breen, "Deep learning the flow law of Antarctica ice shelves," *Science*, 2025
+Wang, Y., Lai, C.Y., Prior, D.J. and Cowen-Breen, C., 2025. Deep learning the flow law of Antarctic ice shelves. Science, 387(6739), pp.1219-1224.
 ```
-@article{wang2025deep
+@article{wang2025deep,
   title={Deep learning the flow law of Antarctic ice shelves},
-  author={Wang, Yongji and Lai, Ching-Yao and Prior, David J. and Cowen-Breen, Charlie},
-  year={2025},
+  author={Wang, Yongji and Lai, Ching-Yao and Prior, David J and Cowen-Breen, Charlie},
   journal={Science},
-  doi = {https://doi.org/10.1126/science.adp3300},
+  volume={387},
+  number={6739},
+  pages={1219--1224},
+  year={2025},
+  publisher={American Association for the Advancement of Science}
 }
 ```
 

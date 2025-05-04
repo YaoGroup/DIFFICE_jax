@@ -73,12 +73,14 @@ This package is written by Yongji Wang and maintained by Yongji Wang (yongjiw@st
 ## Citation
 Y. Wang and C.-Y. Lai, "DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX," under review, 2025
 ```
-@article{wang2025diffice
+@article{wang2025diffice,
   title={DIFFICE-jax: Differentiable neural-network solver for data assimilation of ice shelves in JAX},
   author={Wang, Yongji and Lai, Ching-Yao},
-  year={2025},
-  journal={},
-  doi = {},
+  journal={Journal of Open Source Software},
+  volume={10},
+  number={109},
+  pages={7254},
+  year={2025}
 }
 ```
 

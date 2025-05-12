@@ -7,7 +7,7 @@ import jax.numpy as jnp
 import optax
 from jax import random, jit, grad
 import jax.flatten_util as flat_utl
-import jax.debug.callback as call
+from jax.debug import callback as call
 from tensorflow_probability.substrates import jax as tfp
 import functools
 

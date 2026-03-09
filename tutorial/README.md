@@ -26,8 +26,9 @@ $$\begin{array}{l}
 $$ \qquad \nabla \cdot (hu) = \frac{\partial (hu)} {\partial x} + \frac{\partial (hv)} {\partial y} = \dot{a} - \dot{b} \qquad \qquad \text{(Steady mass conserv.)} $$
 
 where $(u, v)$, $h$ and $\mu$ are the velocity vector, thickness and viscosity of the floating 
-ice, respectively.  $\dot{a}$ and $\dot{b}$  are the snow accumulation rate and basel melting rate,
-respectively. For the tutorial example provided in this folder, we consider floating 
+ice, respectively. $\dot{a}$ and $\dot{b}$  are the snow accumulation rate and basel melting rate,
+respectively.  $\rho=0.917\times 10^{3} \mathrm{g/m^3}$ and $\rho_w=1.030\times 10^{3}\mathrm{ g/m^3}$ 
+are the glacial ice and ocean water density. For the tutorial example provided in this folder, we consider floating 
 ice moving in a confined rectangular channel. For simplicity, we assume that both $\dot{a}$ and $\dot{b}$
 are equal to 0. The domain size and the associated boundary conditions for the ice flow are listed 
 in the figure below. To make the example realistic for actual ice-shelf flow, we set the velocity 

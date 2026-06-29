@@ -7,7 +7,7 @@ Thank you for considering contributing to `DIFFICE-jax`! We welcome all contribu
 
 ### Reporting issues
 
-- **Check Existing Issues** — Pleae first check whether your issue has already been reported. If yes, directly add comments there.
+- **Check Existing Issues** — Please first check whether your issue has already been reported. If yes, directly add comments there.
   
 - **Submit a Report** — If you find a new bug, please open a new issue with.
   - A clear description of the problem.
